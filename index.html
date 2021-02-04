@@ -21,42 +21,39 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="show-sidebar">
-
+<body>
 
 <!-- Sidebar -->
 <aside class="sidebar">
     <div class="toggle">
-        <a href="#" class="burger js-menu-toggle active" data-toggle="collapse" data-target="#main-navbar">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
         </a>
     </div>
     <div class="side-inner">
         <div class="logo-wrap">
-            <div class="logo">
-                <span>JG</span>
-            </div>
+            <img src="images/logo.png">
         </div>
         <div class="nav-menu">
             <ul>
                 <li class="active">
-                    <a href="#" class="d-flex align-items-center">
+                    <a href="./index.html" class="text-center">
                         <span class="wrap-icon mr-3">
-                            <i class="fas fa-columns"></i>
+                            <span>Home</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="d-flex align-items-center">
+                    <a href="./games.html" class="text-center">
                         <span class="wrap-icon mr-3">
-                            <i class="fas fa-fire-alt"></i>
+                            <span>Spellen</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="d-flex align-items-center">
+                    <a href="#" class="text-center">
                         <span class="wrap-icon mr-3">
-                            <i class="fas fa-user"></i>
+                            <span>Inloggen</span>
                         </span>
                     </a>
                 </li>
@@ -67,38 +64,106 @@
 
 
 <!-- Content -->
-<main>
-    <header class="masthead text-center text-white">
-        <div class="masthead-content">
-            <div class="container">
-                <h1 class="masthead-heading mb-0" data-translate="homepage.headerText">JungleGym</h1>
-                <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Doe het op jou manier!</h2>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" data-translate="homepage.headerButton"
-                   href="#">Creeër jou lesrooster!</a>
+<header class="masthead text-center text-white" style="background-image: url('images/stock-1.jpg')">
+    <div class="masthead-content">
+        <div class="container">
+            <img src="images/logo-white.png" style="width: 500px">
+            <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Doe het op jou manier!</h2>
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" data-translate="homepage.headerButton"
+               href="#">Creeër jou lesrooster!</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+</header>
+
+<div class="container mt-3">
+    <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+                <img alt="" class="img-fluid" src="./images/landing/01.jpg">
             </div>
         </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-    </header>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-                <div class="row">
-                    <button onclick="launch_toast()">Show Toast</button>
-                    <div id="toast"><div id="img">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                        <div id="desc">Is toegevoegd aan uw spellen!</div>
-                    </div>
-                </div>
+        <div class="col-lg-6 order-lg-1">
+            <div>
+                <h2 class="display-4">Vind Spellen!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper tristique lectus
+                   sit amet pretium. Vivamus nulla nisi, lacinia in massa sed, imperdiet imperdiet mauris.
+                   Aliquam at nunc quis tellus suscipit vestibulum. Curabitur non augue quis enim vehicula
+                   ultrices vel ac purus. Ut nisi augue, bibendum nec varius eu, pretium nec ante. Vestibulum
+                   ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam mattis
+                   interdum sapien vel vestibulum. Aenean efficitur fermentum faucibus. Aenean eget libero
+                   accumsan, mollis massa commodo, luctus sapien. </p>
             </div>
         </div>
     </div>
-</main>
+
+
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div class="p-5">
+                <img alt="" class="img-fluid" src="./images/landing/02.jpg">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div>
+                <h2 class="display-4">Maak een Lesrooster!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper tristique lectus
+                   sit amet pretium. Vivamus nulla nisi, lacinia in massa sed, imperdiet imperdiet mauris.
+                   Aliquam at nunc quis tellus suscipit vestibulum. Curabitur non augue quis enim vehicula
+                   ultrices vel ac purus. Ut nisi augue, bibendum nec varius eu, pretium nec ante. Vestibulum
+                   ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam mattis
+                   interdum sapien vel vestibulum. Aenean efficitur fermentum faucibus. Aenean eget libero
+                   accumsan, mollis massa commodo, luctus sapien. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+                <img alt="" class="img-fluid" src="./images/landing/03.jpg">
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div>
+                <h2 class="display-4">Zie wat andere er van denken!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper tristique lectus
+                   sit amet pretium. Vivamus nulla nisi, lacinia in massa sed, imperdiet imperdiet mauris.
+                   Aliquam at nunc quis tellus suscipit vestibulum. Curabitur non augue quis enim vehicula
+                   ultrices vel ac purus. Ut nisi augue, bibendum nec varius eu, pretium nec ante. Vestibulum
+                   ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam mattis
+                   interdum sapien vel vestibulum. Aenean efficitur fermentum faucibus. Aenean eget libero
+                   accumsan, mollis massa commodo, luctus sapien. </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <p class="footer-links">
+                <a class="link-1" href="#">Home</a>
+
+                <a href="#">Spellen</a>
+
+                <a href="#">Inloggen</a>
+
+                <a href="#">Registreren</a>
+
+                <a href="#">Over Ons</a>
+
+                <a href="#">Contact</a>
+            </p>
+
+            <p>JungleGym &copy; 2021</p>
+        </div>
+    </footer>
+</div>
 
 
 <!-- Scripts -->
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
         crossorigin="anonymous"></script>
@@ -108,9 +173,6 @@
 <script crossorigin="anonymous"
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,150 @@
+
+/* Masonry grid */
+.masonry {
+    transition: all .5s ease-in-out;
+    column-gap: 30px;
+    column-fill: initial;
+}
+
+/* Masonry item */
+.masonry .brick {
+    margin-bottom: 30px;
+    display: inline-block; /* Fix the misalignment of items */
+    vertical-align: top; /* Keep the item on the very top */
+}
+
+/* Masonry image effects */
+.masonry .brick img {
+    transition: all .5s ease-in-out;
+    backface-visibility: hidden; /* Remove Image flickering on hover */
+    width: 100%;
+    height: auto;
+}
+
+.masonry .brick:hover img {
+    opacity: .75;
+}
+
+/* Bordered masonry */
+.masonry.bordered {
+    column-rule: 1px solid #eee;
+    column-gap: 50px;
+}
+
+.masonry.bordered .brick {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Gutterless masonry */
+.masonry.gutterless {
+    column-gap: 0;
+}
+
+.masonry.gutterless .brick {
+    margin-bottom: 0;
+}
+
+/* Masonry on tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+/* Masonry on big screens */
+@media only screen and (min-width: 1024px) {
+    .desc {
+        font-size: 1.25em;
+    }
+
+    .intro {
+        letter-spacing: 1px;
+    }
+
+    .masonry {
+        column-count: 3;
+    }
+}
+
+.discover__section__title {
+    display: block;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+ul.discover__tags {
+    display: block;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    white-space: nowrap;
+    color: rgb(158, 158, 158);
+    text-transform: capitalize;
+    list-style: none;
+    padding: 0px;
+    overflow: auto;
+}
+
+ul.discover__tags li {
+    display: inline;
+}
+
+ul.discover__tags li a {
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    margin-right: 0.25rem;
+    cursor: pointer;
+    transition: all 0.15s ease 0s;
+    padding: 0.8rem 1.25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(232, 232, 232);
+    border-image: initial;
+    border-radius: 6px;
+    color: rgb(158, 158, 158);
+    text-decoration: none;
+}
+
+ul.discover__tags li a:hover {
+    background: #e8e8e8;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.4);
+}
+
+.fade {
+    backdrop-filter: blur(5px);
+}
+
+.filter-button {
+    color: #20bf6b !important;
+    font-size: 25px;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    border: 4px solid #20bf6b !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+.filter-button:hover {
+    color: #494949 !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
+    cursor: pointer
+}

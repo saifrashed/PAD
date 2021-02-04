@@ -1,0 +1,121 @@
+
+/**
+Landing
+ */
+
+
+main header h1, main header h2 {
+    color: #fff;
+    word-break: break-all;
+}
+
+main h2 {
+    word-break: break-all;
+}
+
+main .btn-xl {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+
+main .rounded-pill {
+    border-radius: 5rem;
+}
+
+main header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+    background-image: url("../images/stock-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+main header.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+}
+
+main header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem;
+}
+
+main header.masthead .masthead-content .masthead-subheading {
+    font-size: 2rem;
+}
+
+main header.masthead .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
+}
+
+main header.masthead .bg-circle-1 {
+    height: 90rem;
+    width: 75rem;
+    bottom: 5rem;
+    left: -60rem;
+}
+
+main header.masthead .bg-circle-2 {
+    height: 50rem;
+    width: 45rem;
+    top: 9rem;
+    right: -40rem;
+}
+
+
+@media (min-width: 992px) {
+    main header.masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    }
+
+    main header.masthead .masthead-content .masthead-heading {
+        font-size: 6rem;
+    }
+
+    main header.masthead .masthead-content .masthead-subheading {
+        font-size: 4rem;
+    }
+}
+
+main .masthead .bg-primary {
+    background-color: #a8e063 !important;
+}
+
+main .masthead .btn-primary {
+    background-color: #a8e063;
+    border-color: #a8e063;
+}
+
+main .masthead .btn-primary:active, main .masthead .btn-primary:focus, main .masthead .btn-primary:hover {
+    background-color: #56ab2f !important;
+    border-color: #56ab2f !important;
+}
+
+main .masthead .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
+}
+
+main .masthead .btn-secondary {
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+
+main .masthead .btn-secondary:active, main .masthead .btn-secondary:focus, main .btn-secondary:hover {
+    background-color: #cc5500 !important;
+    border-color: #cc5500 !important;
+}
+
+main .masthead .btn-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
+}

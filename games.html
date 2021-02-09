@@ -66,19 +66,21 @@
 
 
 <!-- Content -->
-<header class="masthead text-center text-white" style="background-image: url('images/stock-2.jpg')">
-    <div class="masthead-content">
-        <div class="container">
-            <h1 class="masthead-heading mb-0">Spellen</h1>
+<div class="header-container">
+    <header class="masthead text-center text-white" style="background-image: url('images/stock-2.jpg')">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Spellen</h1>
+            </div>
         </div>
-    </div>
-    <div class="bg-circle-1 bg-circle"></div>
-    <div class="bg-circle-2 bg-circle"></div>
-</header>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </header>
+</div>
 
 <div class="container">
 
-    <div class="row mt-5 " style="padding: 15px;">
+    <div class="row " style="padding: 15px;">
         <div class="jumbotron p-3 p-md-5 text-white"
              style="background-image: url('images/stock-1.jpg');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
             <div class="overlay"></div>
@@ -206,14 +208,15 @@
     </div>
 
     <div class="row">
-        <div class="masonry" style="padding: 15px;">
+        <div class="masonry p-3">
             <div class="brick">
                 <div class="brick__top">
                     <h1 class="brick__title">Korfballen tikkertje</h1>
                     <p class="brick__author">4 tot 6 Jaar</p>
 
                     <button>
-                        <i class="fas fa-plus addGame" onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
+                        <i class="fas fa-plus addGame"
+                           onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
                     </button>
                 </div>
 

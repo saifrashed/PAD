@@ -1,19 +1,18 @@
-
 /**
 Landing
  */
 
 
- header h1,  header h2 {
+header h1, header h2 {
     color: #fff;
     word-break: break-all;
 }
 
- h2 {
+h2 {
     word-break: break-all;
 }
 
- .btn-xl {
+.btn-xl {
     text-transform: uppercase;
     padding: 1.5rem 3rem;
     font-size: 0.9rem;
@@ -22,11 +21,16 @@ Landing
 }
 
 
- .rounded-pill {
+.rounded-pill {
     border-radius: 5rem;
 }
 
- header.masthead {
+.header-container {
+    padding: 15px;
+
+}
+
+header.masthead {
     position: relative;
     overflow: hidden;
     padding-top: calc(7rem + 72px);
@@ -35,36 +39,37 @@ Landing
     background-position: center;
     background-attachment: scroll;
     background-size: cover;
+    border-radius: 15px;
 }
 
- header.masthead .masthead-content {
+header.masthead .masthead-content {
     z-index: 1;
     position: relative;
 }
 
- header.masthead .masthead-content .masthead-heading {
+header.masthead .masthead-content .masthead-heading {
     font-size: 4rem;
 }
 
- header.masthead .masthead-content .masthead-subheading {
+header.masthead .masthead-content .masthead-subheading {
     font-size: 2rem;
 }
 
- header.masthead .bg-circle {
+header.masthead .bg-circle {
     z-index: 0;
     position: absolute;
     border-radius: 100%;
     background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
 }
 
- header.masthead .bg-circle-1 {
+header.masthead .bg-circle-1 {
     height: 90rem;
     width: 75rem;
     bottom: 5rem;
     left: -60rem;
 }
 
- header.masthead .bg-circle-2 {
+header.masthead .bg-circle-2 {
     height: 50rem;
     width: 45rem;
     top: 9rem;
@@ -73,48 +78,63 @@ Landing
 
 
 @media (min-width: 992px) {
-     header.masthead {
+    header.masthead {
         padding-top: calc(10rem + 55px);
         padding-bottom: 10rem;
     }
 
-     header.masthead .masthead-content .masthead-heading {
+    header.masthead .masthead-content .masthead-heading {
         font-size: 6rem;
     }
 
-     header.masthead .masthead-content .masthead-subheading {
+    header.masthead .masthead-content .masthead-subheading {
         font-size: 4rem;
     }
 }
 
- .masthead .bg-primary {
+.masthead .bg-primary {
     background-color: #a8e063 !important;
 }
 
- .masthead .btn-primary {
+.masthead .btn-primary {
     background-color: #a8e063;
     border-color: #a8e063;
 }
 
- .masthead .btn-primary:active,  .masthead .btn-primary:focus,  .masthead .btn-primary:hover {
+.masthead .btn-primary:active, .masthead .btn-primary:focus, .masthead .btn-primary:hover {
     background-color: #56ab2f !important;
     border-color: #56ab2f !important;
 }
 
- .masthead .btn-primary:focus {
+.masthead .btn-primary:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
 }
 
- .masthead .btn-secondary {
+.masthead .btn-secondary {
     background-color: #ff6a00;
     border-color: #ff6a00;
 }
 
- .masthead .btn-secondary:active,  .masthead .btn-secondary:focus,  .btn-secondary:hover {
+.masthead .btn-secondary:active, .masthead .btn-secondary:focus, .btn-secondary:hover {
     background-color: #cc5500 !important;
     border-color: #cc5500 !important;
 }
 
- .masthead .btn-secondary:focus {
+.masthead .btn-secondary:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
+}
+
+.showcase .showcase-text {
+    padding: 3rem;
+}
+
+.showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .showcase .showcase-text {
+        padding: 7rem;
+    }
 }

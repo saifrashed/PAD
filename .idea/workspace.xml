@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e5d2bdb-d9d0-4319-9e15-237bb36e3751" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/landingHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/landingHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/toast.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/toast.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/gameDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/gameDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/gameDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +31,8 @@
       <find>logo</find>
       <find>footer-links</find>
       <find>padding</find>
-      <find>filte</find>
       <find>toast</find>
+      <find>filte</find>
     </findStrings>
     <replaceStrings>
       <replace>.site-section</replace>
@@ -107,7 +107,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1412000" />
+    <option name="totallyTimeSpent" value="5209000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />

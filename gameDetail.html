@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>Home - JungleGym</title>
 
     <!-- Required Fonts -->
@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
 
     <!-- Required Styles -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <link href="https://unpkg.com/notie/dist/notie.min.css" rel="stylesheet" type="text/css">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           rel="stylesheet"/>
     <link href="assets/css/toastr.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/main.css">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 <!-- Sidebar -->
 <aside class="sidebar">
     <div class="toggle">
-        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <a class="burger js-menu-toggle" data-target="#main-navbar" data-toggle="collapse" href="#">
             <span></span>
         </a>
     </div>
@@ -39,23 +39,16 @@
         <div class="nav-menu">
             <ul>
                 <li class="active">
-                    <a href="./index.html" class="text-center">
+                    <a class="text-center" href="./index.html">
                         <span class="wrap-icon mr-3">
                             <span>Home</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="./games.html" class="text-center">
+                    <a class="text-center" href="./games.html">
                         <span class="wrap-icon mr-3">
                             <span>Spellen</span>
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="text-center">
-                        <span class="wrap-icon mr-3">
-                            <span>Inloggen</span>
                         </span>
                     </a>
                 </li>
@@ -68,90 +61,90 @@
 <!-- Authenticatie box -->
 <div class="authentication">
     <div class="user-symbol">
-        <a data-toggle="modal" data-target="#authenticationBox"><i class="far fa-user"></i></a>
+        <a data-target="#authenticationBox" data-toggle="modal"><i class="far fa-user"></i></a>
     </div>
 
-    <div id="authenticationBox" class="modal fade" role="dialog">
+    <div class="modal fade" id="authenticationBox" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">inloggen / Registreren</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
                 </div>
                 <div class="modal-body">
 
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login"
-                               role="tab" aria-controls="pills-login" aria-selected="true">Inloggen</a>
+                            <a aria-controls="pills-login" aria-selected="true" class="nav-link active" data-toggle="pill"
+                               href="#pills-login" id="pills-home-tab" role="tab">Inloggen</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-registreren"
-                               role="tab" aria-controls="pills-registreren" aria-selected="false">Registreren</a>
+                            <a aria-controls="pills-registreren" aria-selected="false" class="nav-link" data-toggle="pill"
+                               href="#pills-registreren" id="pills-profile-tab" role="tab">Registreren</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
-                             aria-labelledby="pills-login-tab">
+                        <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
+                             role="tabpanel">
                             <form>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email adres</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                           aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We zullen uw Email nooit met
+                                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter email" type="email">
+                                    <small class="form-text text-muted" id="emailHelp">We zullen uw Email nooit met
                                                                                        andere delen.
                                     </small>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Wachtwoord</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                           placeholder="Password">
+                                    <input class="form-control" id="exampleInputPassword1" placeholder="Password"
+                                           type="password">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Log in</button>
+                                <button class="btn btn-primary" type="submit">Log in</button>
                             </form>
                         </div>
 
 
-                        <div class="tab-pane fade" id="pills-registreren" role="tabpanel"
-                             aria-labelledby="pills-registreren-tab">
+                        <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
+                             role="tabpanel">
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword4">Wachtwoord</label>
-                                        <input type="password" class="form-control" id="inputPassword4"
-                                               placeholder="Password">
+                                        <input class="form-control" id="inputPassword4" placeholder="Password"
+                                               type="password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress">Adres</label>
-                                    <input type="text" class="form-control" id="inputAddress"
-                                           placeholder="1234 Main St">
+                                    <input class="form-control" id="inputAddress" placeholder="1234 Main St"
+                                           type="text">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputCity">Plaats</label>
-                                        <input type="text" class="form-control" id="inputCity">
+                                        <input class="form-control" id="inputCity" type="text">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputState">Provincie</label>
-                                        <select id="inputState" class="form-control">
+                                        <select class="form-control" id="inputState">
                                             <option selected>Kies...</option>
                                             <option>Suriname</option>
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Maak account aan</button>
+                                <button class="btn btn-primary" type="submit">Maak account aan</button>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                    <button class="btn btn-default" data-dismiss="modal" type="button">Sluiten</button>
                 </div>
             </div>
         </div>
@@ -160,8 +153,7 @@
 
 
 <div class="container gameDetail">
-
-    <div class="row" style="padding: 15px;">
+    <div class="row p-3">
         <div class="jumbotron p-3 p-md-5 m-0 text-white"
              style="background-image: url('https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/istock_000035478638_medium.jpg?itok=FL0uWBVq');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
             <div class="overlay"></div>
@@ -181,7 +173,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="games.html">Spellen</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Voetbal met Groep 6 & 7
+                    <li aria-current="page" class="breadcrumb-item active">Voetbal met Groep 6 & 7
                     </li>
                 </ol>
             </nav>
@@ -235,36 +227,51 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-md-7">
+        <div class="col-xs-12 col-md-3">
             <div class="box">
-                <h2>Makkelijker</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                   dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                   nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                   quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                   nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                   justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                   Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                   porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
-                   viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
-                   Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-                   ullamcorper ultricies nisi. Nam eget dui.</p>
+                <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                    <a aria-controls="v-pills-home" aria-selected="true" class="nav-link active" data-toggle="pill" href="#v-pills-home"
+                       id="v-pills-home-tab" role="tab">Makkelijk</a>
+                    <a aria-controls="v-pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-profile"
+                       id="v-pills-profile-tab" role="tab">Gemiddeld</a>
+                    <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-messages"
+                       id="v-pills-messages-tab" role="tab">Moeilijk</a>
+                </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-5">
+
+
+        <div class="col-xs-12 col-md-9">
             <div class="box">
-                <h2>Moeilijker</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                   dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                   nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                   quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                   nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                   justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                   Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                   porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
-                   viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
-                   Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-                   ullamcorper ultricies nisi. Nam eget dui.</p>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div aria-labelledby="v-pills-home-tab" class="tab-pane fade show active" id="v-pills-home"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                    <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade" id="v-pills-profile"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                    <div aria-labelledby="v-pills-messages-tab" class="tab-pane fade" id="v-pills-messages"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -276,15 +283,15 @@
 
         <div class="col-xs-12">
             <ul>
-                <li>
+                <li class="d-inline-block p-2">
                     <span class="colorbox rounded-circle d-inline-block " style="background-color: red;"></span>
                     <span class="label">Item One</span>
                 </li>
-                <li>
+                <li class="d-inline-block p-2">
                     <span class="colorbox rounded-circle d-inline-block" style="background-color: blue;"></span>
                     <span class="label">Item Two</span>
                 </li>
-                <li>
+                <li class="d-inline-block p-2">
                     <span class="colorbox rounded-circle d-inline-block" style="background-color: green;"></span>
                     <span class="label">Item Three</span>
                 </li>
@@ -319,9 +326,9 @@
 <script src="https://unpkg.com/notie"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+<script crossorigin="anonymous"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
-        crossorigin="anonymous"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script crossorigin="anonymous"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -16,28 +16,29 @@
 
 .gameDetail .list-group-item {
     border-radius: 25px;
-    margin: 5px 0px;
 }
 
 .gameDetail .floorplan ul {
     list-style-type: none;
 }
 
-.gameDetail .floorplan ul li {
-    display: inline-block;
-    padding: 10px;
-}
-
-.gameDetail .floorplan .colorbox  {
+.gameDetail .floorplan .colorbox {
     width: 1rem;
     height: 1rem;
 }
 
-.gameDetail .floorplan img{
+.gameDetail .floorplan img {
     border-radius: 25px;
 }
 
+.nav-pills .nav-link {
+    border-radius: 25px;
+    color: #52565a;
+}
 
+.nav-pills .nav-link.active {
+    background-color: #52565a;
+}
 
 .discover__challenges__challenge {
     transition: .15s all ease;

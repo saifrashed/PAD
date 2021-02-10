@@ -1,4 +1,3 @@
-
 /* Masonry grid */
 .masonry {
     transition: all .5s ease-in-out;
@@ -14,7 +13,7 @@
     vertical-align: top; /* Keep the item on the very top */
 }
 
-    /* Masonry image effects */
+/* Masonry image effects */
 .masonry .brick img {
     transition: all .5s ease-in-out;
     backface-visibility: hidden; /* Remove Image flickering on hover */
@@ -52,14 +51,14 @@
 
 .brick__top h1, .brick__top p {
     color: #ffffff;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 .brick__bottom {
     position: absolute;
     bottom: 0;
     left: 0;
-    right:0;
+    right: 0;
     padding: 15px;
     color: #fff;
 }
@@ -72,7 +71,6 @@
     color: white;
     font-size: 30px;
 }
-
 
 
 /* Gutterless masonry */
@@ -153,19 +151,14 @@ ul.discover__tags li a:hover {
 }
 
 
-
 .overlay {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0,0,0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 25px;
-}
-
-.fade {
-    backdrop-filter: blur(5px);
 }
 
 .filter-button {

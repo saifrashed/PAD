@@ -131,6 +131,7 @@ header.masthead .bg-circle-2 {
 .showcase .showcase-img {
     min-height: 30rem;
     background-size: cover;
+    border-radius: 25px;
 }
 
 @media (min-width: 768px) {
@@ -154,7 +155,8 @@ header.masthead .bg-circle-2 {
     min-width: 100%;
     min-height: 100%;
 }
-.user-symbol{
+
+.user-symbol {
     position: fixed;
     top: 30px;
     right: 30px;
@@ -163,6 +165,7 @@ header.masthead .bg-circle-2 {
     mix-blend-mode: screen;
 
 }
-.user-symbol a{
+
+.user-symbol a {
     color: black;
 }

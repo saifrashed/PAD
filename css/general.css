@@ -31,30 +31,31 @@ body {
     position: relative;
 }
 
-/*body:before {*/
-/*position: fixed;*/
-/*content: "";*/
-/*z-index: 1;*/
-/*top: 0;*/
-/*left: 0;*/
-/*right: 0;*/
-/*bottom: 0;*/
-/*background-color: rgba(0, 0, 0, 0.5);*/
-/*opacity: 0;*/
-/*visibility: hidden;*/
-/*-webkit-transition: .3s all ease-in-out;*/
-/*-o-transition: .3s all ease-in-out;*/
-/*transition: .3s all ease-in-out;*/
-/*}*/
+body:before {
+    position: fixed;
+    content: "";
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(1px);
+}
 
-/*body.show-sidebar {*/
-/*overflow: hidden;*/
-/*}*/
+body.show-sidebar {
+    overflow: hidden;
+}
 
-/*body.show-sidebar:before {*/
-/*opacity: 1;*/
-/*visibility: visible;*/
-/*}*/
+body.show-sidebar:before {
+    opacity: 1;
+    visibility: visible;
+}
 
 main {
 }

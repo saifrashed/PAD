@@ -1,12 +1,9 @@
 $(function() {
-
-  'use strict';
+	'use strict';
 
   $('.js-menu-toggle').click(function(e) {
 
   	var $this = $(this);
-
-
 
   	if ( $('body').hasClass('show-sidebar') ) {
   		$('body').removeClass('show-sidebar');
@@ -33,8 +30,5 @@ $(function() {
 });
 
 
-function launch_toast() {
-	var x = document.getElementById("toast");
-	x.className = "show";
-	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-};
+MicroModal.init();
+MicroModal.show('modal-id');

@@ -1,17 +1,17 @@
 aside {
-    width: 70px;
+    width: 250px;
     left: 0;
     z-index: 1001;
     position: fixed;
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
-    transform: translateX(-70px);
+    transform: translateX(-250px);
     background-color: #fff;
     transition: 0.5s all ease-in-out;
 }
 
 .show-sidebar aside {
-    width: 70px;
+    width: 250px;
     -webkit-transform: translateX(0%);
     -ms-transform: translateX(0%);
     transform: translateX(0);
@@ -53,20 +53,12 @@ aside .side-inner .logo-wrap {
     display: block;
     position: relative;
     width: 100%;
-    float: left;
+    padding: 10px;
 }
 
-aside .side-inner .logo-wrap .logo {
-    width: 50px;
-    float: left;
-    height: 50px;
-    background: green;
-    border-radius: 50%;
-    position: relative;
-    -webkit-transition: .3s margin ease;
-    -o-transition: .3s margin ease;
-    transition: .3s margin ease;
-    margin: 0 auto 50px 10px;
+aside .side-inner .logo-wrap img {
+    width: 100%;
+    height: auto;
 }
 
 aside .side-inner .logo-wrap .logo span {
@@ -134,7 +126,7 @@ aside .side-inner .nav-menu ul li a:hover {
 }
 
 aside .side-inner .nav-menu ul li a .wrap-icon {
-    color: #1c7430;
+    color: #000;
     font-size: 1.2rem;
 }
 

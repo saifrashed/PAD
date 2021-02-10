@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1e5d2bdb-d9d0-4319-9e15-237bb36e3751" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/landingHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/landingHeader.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +93,12 @@
       <workItem from="1612532404572" duration="16000" />
       <workItem from="1612644734333" duration="4410000" />
       <workItem from="1612732119163" duration="1675000" />
+      <workItem from="1612961811157" duration="25000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23438000" />
+    <option name="totallyTimeSpent" value="23463000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />

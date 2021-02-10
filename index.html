@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
 
     <!-- Required Styles -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -63,11 +64,124 @@
 </aside>
 
 
+<div class="authentication">
+    <div class="user-symbol">
+        <a data-toggle="modal" data-target="#filter"><i class="far fa-user"></i></a>
+    </div>
+
+    <div id="filter" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Filteren</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span class="discover__section__title">Materiaal</span>
+                    <ul class="discover__tags">
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Springtouw</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="oude mensen"
+                               href="#">Lintjes</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="leger"
+                               href="#">Pionnen</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="meer"
+                               href="#">Matjes</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="advocaat"
+                               href="#">Ballen</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="bedrijf"
+                               href="#">Korf</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="hoop"
+                               href="#">Basket</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="vraagteken"
+                               href="#">Fluit</a>
+                        </li>
+                    </ul>
+
+
+                    <span class="discover__section__title">Leeftijd</span>
+                    <ul class="discover__tags">
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 1</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 2</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 3</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 4</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 5</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 6</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 7</a>
+                        </li>
+                        <li>
+                            <a class="js-collection-section-tag" data-track-action="discover-page"
+                               data-track-label="collection-tags" data-track-value="denken"
+                               href="#">Groep 8</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- Content -->
 <div class="p-3">
     <header class="masthead text-center text-white">
-        <video autoplay muted loop id="myVideo">
-            <source src="./images/video.mp4" type="video/mp4">
+        <video autoplay muted loop id="homeVideo">
+            <source src="images/home-jungle-video.mp4" type="video/mp4">
         </video>
         <div class="masthead-content">
             <div class="container">
@@ -145,6 +259,7 @@
 
 
 <!-- Scripts -->
+<script src="https://unpkg.com/notie"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"

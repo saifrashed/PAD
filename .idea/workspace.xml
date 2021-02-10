@@ -58,6 +58,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sihem\team-7\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/images/games" />
@@ -103,10 +106,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="407" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612964625491">
+    <state x="407" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612966792407">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="407" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.720@0.0.1280.720" timestamp="1612964625491" />
+    <state x="407" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.720@0.0.1280.720" timestamp="1612966792407" />
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1612962419398">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

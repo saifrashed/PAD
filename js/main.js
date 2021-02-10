@@ -29,6 +29,3 @@ $(function() {
 	});
 });
 
-
-MicroModal.init();
-MicroModal.show('modal-id');

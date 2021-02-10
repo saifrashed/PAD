@@ -18,13 +18,12 @@
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           rel="stylesheet"/>
-    <link href="assets/css/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-<!-- Sidebar -->
+<!-- Sidebar box -->
 <aside class="sidebar">
     <div class="toggle">
         <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
@@ -64,108 +63,90 @@
 </aside>
 
 
+<!-- Authenticatie box -->
 <div class="authentication">
     <div class="user-symbol">
-        <a data-toggle="modal" data-target="#filter"><i class="far fa-user"></i></a>
+        <a data-toggle="modal" data-target="#authenticationBox"><i class="far fa-user"></i></a>
     </div>
 
-    <div id="filter" class="modal fade" role="dialog">
+    <div id="authenticationBox" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Filteren</h4>
+                    <h4 class="modal-title">inloggen / Registreren</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <span class="discover__section__title">Materiaal</span>
-                    <ul class="discover__tags">
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Springtouw</a>
+
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login"
+                               role="tab" aria-controls="pills-login" aria-selected="true">Inloggen</a>
                         </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="oude mensen"
-                               href="#">Lintjes</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="leger"
-                               href="#">Pionnen</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="meer"
-                               href="#">Matjes</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="advocaat"
-                               href="#">Ballen</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="bedrijf"
-                               href="#">Korf</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="hoop"
-                               href="#">Basket</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="vraagteken"
-                               href="#">Fluit</a>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-registreren"
+                               role="tab" aria-controls="pills-registreren" aria-selected="false">Registreren</a>
                         </li>
                     </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                             aria-labelledby="pills-login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email adres</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We zullen uw Email nooit met
+                                                                                       andere delen.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Wachtwoord</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                           placeholder="Password">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Log in</button>
+                            </form>
+                        </div>
 
 
-                    <span class="discover__section__title">Leeftijd</span>
-                    <ul class="discover__tags">
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 1</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 2</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 3</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 4</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 5</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 6</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 7</a>
-                        </li>
-                        <li>
-                            <a class="js-collection-section-tag" data-track-action="discover-page"
-                               data-track-label="collection-tags" data-track-value="denken"
-                               href="#">Groep 8</a>
-                        </li>
-                    </ul>
-
+                        <div class="tab-pane fade" id="pills-registreren" role="tabpanel"
+                             aria-labelledby="pills-registreren-tab">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Wachtwoord</label>
+                                        <input type="password" class="form-control" id="inputPassword4"
+                                               placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Adres</label>
+                                    <input type="text" class="form-control" id="inputAddress"
+                                           placeholder="1234 Main St">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">Plaats</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputState">Provincie</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Kies...</option>
+                                            <option>Suriname</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Maak account aan</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
@@ -176,8 +157,7 @@
 </div>
 
 
-
-<!-- Content -->
+<!-- Content box -->
 <div class="p-3">
     <header class="masthead text-center text-white">
         <video autoplay muted loop id="homeVideo">
@@ -197,8 +177,6 @@
 </div>
 
 <div class="container mt-3">
-
-    <!-- Image Showcases -->
     <section class="showcase">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -208,8 +186,9 @@
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>Gemakkelijk Gymles</h2>
                     <p class="lead mb-0">Bij Jungle Gym kun je als docent gemakkelijk gymles geven
-                        aan basisschool leerlingen. Onze spellen zijn leuk, interactief en sluiten aan bij elke
-                        leeftijdscategorie.</p>
+                                         aan basisschool leerlingen. Onze spellen zijn leuk, interactief en sluiten aan
+                                         bij elke
+                                         leeftijdscategorie.</p>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -218,9 +197,11 @@
                 <div class="col-lg-6 my-auto showcase-text">
                     <h2>Ons Doel</h2>
                     <p class="lead mb-0">We vinden het van groot belang dat elk kind voldoende sport.
-                        Aangezien veel basisschool docenten niet gequalificeerd zijn, en genoeg materiaal hebben om
-                        goed gymles te geven, hebben wij deze website gemaakt om goed gymles te geven toegankelijker te
-                        maken voor allerlei docenten over de hele wereld!</p>
+                                         Aangezien veel basisschool docenten niet gequalificeerd zijn, en genoeg
+                                         materiaal hebben om
+                                         goed gymles te geven, hebben wij deze website gemaakt om goed gymles te geven
+                                         toegankelijker te
+                                         maken voor allerlei docenten over de hele wereld!</p>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -229,13 +210,15 @@
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                     <h2>Spellen</h2>
                     <p class="lead mb-0">De spellen op Jungle Gym zijn gecategoriseerd op leeftijd, materialen en
-                        benodigdheden. Op deze punten kan gesorteerd worden met het filter icoontje op de
-                        spelpagina. Zo kun je makkeijk de geschikte spellen voor je klas kiezen.</p>
+                                         benodigdheden. Op deze punten kan gesorteerd worden met het filter icoontje op
+                                         de
+                                         spelpagina. Zo kun je makkeijk de geschikte spellen voor je klas kiezen.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- footer box -->
     <footer class="footer-distributed">
         <div class="footer-left">
             <p class="footer-links">

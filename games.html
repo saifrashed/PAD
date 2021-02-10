@@ -64,6 +64,100 @@
     </div>
 </aside>
 
+<!-- Authenticatie box -->
+<div class="authentication">
+    <div class="user-symbol">
+        <a data-toggle="modal" data-target="#authenticationBox"><i class="far fa-user"></i></a>
+    </div>
+
+    <div id="authenticationBox" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">inloggen / Registreren</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login"
+                               role="tab" aria-controls="pills-login" aria-selected="true">Inloggen</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-registreren"
+                               role="tab" aria-controls="pills-registreren" aria-selected="false">Registreren</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                             aria-labelledby="pills-login-tab">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email adres</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We zullen uw Email nooit met
+                                                                                       andere delen.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Wachtwoord</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                           placeholder="Password">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Log in</button>
+                            </form>
+                        </div>
+
+
+                        <div class="tab-pane fade" id="pills-registreren" role="tabpanel"
+                             aria-labelledby="pills-registreren-tab">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Wachtwoord</label>
+                                        <input type="password" class="form-control" id="inputPassword4"
+                                               placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Adres</label>
+                                    <input type="text" class="form-control" id="inputAddress"
+                                           placeholder="1234 Main St">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">Plaats</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputState">Provincie</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Kies...</option>
+                                            <option>Suriname</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Maak account aan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Content -->
 <div class="header-container">
@@ -99,12 +193,12 @@
 
     <div class="row mb-5">
         <div class="col-12 text-right">
-            <a class="filter-button" data-toggle="modal" data-target="#filter"><i
+            <a class="filter-button" data-toggle="modal" data-target="#filterBox"><i
                     class="fas fa-filter"></i>
             </a>
         </div>
 
-        <div id="filter" class="modal fade" role="dialog">
+        <div id="filterBox" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

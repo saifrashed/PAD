@@ -95,3 +95,9 @@
     from {bottom: 30px; opacity: 1;}
     to {bottom: 60px; opacity: 0;}
 }
+
+
+
+.notie-textbox-inner {
+    z-index: 100000;
+}

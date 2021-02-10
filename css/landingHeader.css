@@ -160,9 +160,9 @@ header.masthead .bg-circle-2 {
     right: 30px;
     z-index: 500;
     font-size: 25px;
+    mix-blend-mode: screen;
 
 }
 .user-symbol a{
     color: black;
-    text-shadow: 3px 4px 7px rgba(255,255,255,0.8);
 }

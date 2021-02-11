@@ -133,7 +133,7 @@ header.masthead .bg-circle-2 {
 }
 
 .showcase .showcase-text {
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .showcase .showcase-img {
@@ -144,7 +144,7 @@ header.masthead .bg-circle-2 {
 
 @media (min-width: 768px) {
     .showcase .showcase-text {
-        padding: 7rem;
+        padding: 4rem;
     }
 }
 

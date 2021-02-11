@@ -3,8 +3,8 @@ aside {
     left: 0;
     z-index: 1001;
     position: fixed;
-    -webkit-transform: translateX(0px);
-    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(-250px);
+    -ms-transform: translateX(-250px);
     transform: translateX(-250px);
     background-color: #fff;
     transition: 0.5s all ease-in-out;
@@ -27,10 +27,6 @@ aside .toggle {
     -ms-transform: translateX(100%);
     transform: translateX(100%);
 }
-
-/*.show-sidebar aside .toggle .burger:before, .show-sidebar aside .toggle .burger span, .show-sidebar aside .toggle .burger:after {*/
-/*background: #fff;*/
-/*}*/
 
 .show-sidebar aside {
     -webkit-box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.2);

@@ -1,4 +1,7 @@
-.gameDetail .box {
+/**
+Game Detail page styling
+ */
+.box {
     background-color: #FFFFFF;
     padding: 15px;
     margin-bottom: 25px;
@@ -6,77 +9,41 @@
     transition: all 0.3s ease 0s;
 }
 
-.gameDetail .breadcrumb {
+.breadcrumb {
     background-color: #2e573d00;
 }
 
-.gameDetail .breadcrumb li a {
+.breadcrumb li a {
     color: #52565a;
 }
 
-.gameDetail .list-group-item {
+.list-group-item {
     border-radius: 25px;
 }
 
-.gameDetail .floorplan ul {
+.list-group-item:first-child,
+.list-group-item:last-child {
+    border-radius: 25px;
+}
+
+.floorplan ul {
     list-style-type: none;
 }
 
-.gameDetail .floorplan .colorbox {
+.floorplan .colorbox {
     width: 1rem;
     height: 1rem;
 }
 
-.gameDetail .floorplan img {
+.floorplan img {
     border-radius: 25px;
 }
 
 .nav-pills .nav-link {
     border-radius: 25px;
-    color: #52565a;
+    color: #57b846;
 }
 
 .nav-pills .nav-link.active {
-    background-color: #52565a;
+    background-color: #57b846;
 }
-
-.discover__challenges__challenge {
-    transition: .15s all ease;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2.25rem;
-    padding: 1.75rem 2rem;
-    border-radius: 10px;
-    border: 1px solid #e8e8e8;
-    text-decoration: none;
-}
-
-.discover__challenges__challenge__content {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
-.discover__challenges__challenge__content__about__pretitle {
-    display: block;
-    font-size: 15px;
-    line-height: 1.2;
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-bottom: 2rem;
-}
-
-.discover__challenges__challenge__image {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-}
-

@@ -64,3 +64,7 @@ aside, main {
     height: 100vh;
     min-height: 580px;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

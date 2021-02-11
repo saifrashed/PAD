@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
     <title>Home - JungleGym</title>
 
     <!-- Required Fonts -->
@@ -22,7 +23,6 @@
 </head>
 
 <body>
-
 <!-- Sidebar box -->
 <aside class="sidebar">
     <div class="toggle">
@@ -66,91 +66,121 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">inloggen / Registreren</h4>
-                    <button class="close" data-dismiss="modal" type="button">&times;</button>
-                </div>
-                <div class="modal-body">
-
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a aria-controls="pills-login" aria-selected="true" class="nav-link active" data-toggle="pill"
+                            <a aria-controls="pills-login" aria-selected="true" class="nav-link active"
+                               data-toggle="pill"
                                href="#pills-login" id="pills-home-tab" role="tab">Inloggen</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a aria-controls="pills-registreren" aria-selected="false" class="nav-link" data-toggle="pill"
+                            <a aria-controls="pills-registreren" aria-selected="false" class="nav-link"
+                               data-toggle="pill"
                                href="#pills-registreren" id="pills-profile-tab" role="tab">Registreren</a>
                         </li>
                     </ul>
+                </div>
+
+                <div class="modal-body">
                     <div class="tab-content" id="pills-tabContent">
                         <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
                              role="tabpanel">
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email adres</label>
-                                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Enter email" type="email">
-                                    <small class="form-text text-muted" id="emailHelp">We zullen uw Email nooit met
-                                                                                       andere delen.
-                                    </small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Wachtwoord</label>
-                                    <input class="form-control" id="exampleInputPassword1" placeholder="Password"
-                                           type="password">
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Gebruikers Login
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
                                 </div>
 
-                                <button class="btn btn-primary" type="submit">Log in</button>
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Login
+                                    </button>
+                                </div>
                             </form>
                         </div>
 
 
                         <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
                              role="tabpanel">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email</label>
-                                        <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Wachtwoord</label>
-                                        <input class="form-control" id="inputPassword4" placeholder="Password"
-                                               type="password">
-                                    </div>
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Registratie
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Voornaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputAddress">Adres</label>
-                                    <input class="form-control" id="inputAddress" placeholder="1234 Main St"
-                                           type="text">
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Achternaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">Plaats</label>
-                                        <input class="form-control" id="inputCity" type="text">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputState">Provincie</label>
-                                        <select class="form-control" id="inputState">
-                                            <option selected>Kies...</option>
-                                            <option>Suriname</option>
-                                        </select>
-                                    </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Maak account aan</button>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass"
+                                           placeholder="Herhaal wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-redo"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Registreren
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" type="button">Sluiten</button>
+                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- Content box -->
+<!-- Header box -->
 <div class="p-3">
     <header class="masthead text-center text-white">
         <video autoplay id="homeVideo" loop muted>
@@ -158,10 +188,9 @@
         </video>
         <div class="masthead-content">
             <div class="container">
-                <img src="images/logo-white.png" style="width: 500px">
-                <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Doe het op jou manier!</h2>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" data-translate="homepage.headerButton"
-                   href="#">Creeër jou lesrooster!</a>
+                <img src="images/logo-white.png">
+                <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Online Sportonderwijs</h2>
+                <a class="btn btn-primary btn-xl rounded-pill mt-5" data-target="#authenticationBox" data-toggle="modal">Creeër jou lesrooster!</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -169,6 +198,7 @@
     </header>
 </div>
 
+<!-- Content box -->
 <div class="p-3">
     <section class="showcase">
         <div class="container-fluid p-0">
@@ -211,29 +241,52 @@
             </div>
         </div>
     </section>
-
-    <!-- footer box -->
-    <footer class="footer-distributed">
-        <div class="footer-left">
-            <p class="footer-links">
-                <a class="link-1" href="#">Home</a>
-
-                <a href="#">Spellen</a>
-
-                <a href="#">Inloggen</a>
-
-                <a href="#">Registreren</a>
-
-                <a href="#">Over Ons</a>
-
-                <a href="#">Contact</a>
-            </p>
-
-            <p>JungleGym &copy; 2021</p>
-        </div>
-    </footer>
 </div>
 
+<!-- footer box -->
+<div class="p-3">
+    <footer class="pt-4 p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <img src="images/logo.png" width="100%" height="auto">
+                    <small class="d-block mb-3 text-muted">&copy; 2020</small>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Pagina's</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Cool stuff</a></li>
+                        <li><a class="text-muted" href="#">Random feature</a></li>
+                        <li><a class="text-muted" href="#">Team feature</a></li>
+                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                        <li><a class="text-muted" href="#">Another one</a></li>
+                        <li><a class="text-muted" href="#">Last time</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Resource</a></li>
+                        <li><a class="text-muted" href="#">Resource name</a></li>
+                        <li><a class="text-muted" href="#">Another resource</a></li>
+                        <li><a class="text-muted" href="#">Final resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Team</a></li>
+                        <li><a class="text-muted" href="#">Locations</a></li>
+                        <li><a class="text-muted" href="#">Privacy</a></li>
+                        <li><a class="text-muted" href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </footer>
+</div>
 
 <!-- Scripts -->
 <script src="https://unpkg.com/notie"></script>

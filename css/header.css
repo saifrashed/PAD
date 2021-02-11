@@ -47,6 +47,14 @@ header.masthead .masthead-content {
     position: relative;
 }
 
+
+header.masthead .masthead-content img {
+    width: 100%;
+    max-width: 750px;
+}
+
+
+
 header.masthead .masthead-content .masthead-heading {
     font-size: 4rem;
 }
@@ -169,3 +177,17 @@ header.masthead .bg-circle-2 {
 .user-symbol a {
     color: black;
 }
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+}
+
+
+

@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Home - JungleGym</title>
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+    <title>Spellen - JungleGym</title>
 
     <!-- Required Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -18,14 +19,11 @@
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           rel="stylesheet"/>
-    <link href="assets/css/toastr.min.css" rel="stylesheet"/>
     <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
-
-
-<!-- Sidebar -->
+<!-- Sidebar box -->
 <aside class="sidebar">
     <div class="toggle">
         <a class="burger js-menu-toggle" data-target="#main-navbar" data-toggle="collapse" href="#">
@@ -67,11 +65,6 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">inloggen / Registreren</h4>
-                    <button class="close" data-dismiss="modal" type="button">&times;</button>
-                </div>
-                <div class="modal-body">
-
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a aria-controls="pills-login" aria-selected="true" class="nav-link active"
@@ -84,68 +77,102 @@
                                href="#pills-registreren" id="pills-profile-tab" role="tab">Registreren</a>
                         </li>
                     </ul>
+                </div>
+
+                <div class="modal-body">
                     <div class="tab-content" id="pills-tabContent">
                         <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
                              role="tabpanel">
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email adres</label>
-                                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Enter email" type="email">
-                                    <small class="form-text text-muted" id="emailHelp">We zullen uw Email nooit met
-                                                                                       andere delen.
-                                    </small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Wachtwoord</label>
-                                    <input class="form-control" id="exampleInputPassword1" placeholder="Password"
-                                           type="password">
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Gebruikers Login
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
                                 </div>
 
-                                <button class="btn btn-primary" type="submit">Log in</button>
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Login
+                                    </button>
+                                </div>
                             </form>
                         </div>
 
 
                         <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
                              role="tabpanel">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email</label>
-                                        <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Wachtwoord</label>
-                                        <input class="form-control" id="inputPassword4" placeholder="Password"
-                                               type="password">
-                                    </div>
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Registratie
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Voornaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputAddress">Adres</label>
-                                    <input class="form-control" id="inputAddress" placeholder="1234 Main St"
-                                           type="text">
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Achternaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputCity">Plaats</label>
-                                        <input class="form-control" id="inputCity" type="text">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputState">Provincie</label>
-                                        <select class="form-control" id="inputState">
-                                            <option selected>Kies...</option>
-                                            <option>Suriname</option>
-                                        </select>
-                                    </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Maak account aan</button>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass"
+                                           placeholder="Herhaal wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-redo"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Registreren
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" type="button">Sluiten</button>
+                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -153,6 +180,7 @@
 </div>
 
 
+<!-- Header box -->
 <div class="p-3">
     <header class="masthead text-center text-white">
         <video autoplay id="gamesVideo" loop muted>
@@ -168,7 +196,7 @@
     </header>
 </div>
 
-<!-- Content -->
+<!-- Content box -->
 <div class="container pt-3">
     <div class="row " style="padding: 15px;">
         <div class="jumbotron p-3 p-md-5 text-white"
@@ -186,7 +214,7 @@
 
     <div class="row mb-5">
         <div class="col-12 text-right">
-            <a class="filter-button" data-target="#filterBox" data-toggle="modal"><i
+            <a class="filter-button" data-target="#filterBox" data-toggle="modal"> Filter <i
                     class="fas fa-filter"></i>
             </a>
         </div>
@@ -196,7 +224,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Filteren</h4>
-                        <button class="close" data-dismiss="modal" type="button">&times;</button>
                     </div>
                     <div class="modal-body">
                         <span class="discover__section__title">Materiaal</span>
@@ -290,7 +317,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal" type="button">Sluiten</button>
+                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -299,177 +327,156 @@
 
     <div class="row">
         <div class="masonry p-3">
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Korfballen tikkertje</h1>
+                    <p class="brick__author">4 tot 6 Jaar</p>
+                    <i class="fas fa-plus addGame"
+                       onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
+                </div>
 
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Korfballen tikkertje</h1>
-                        <p class="brick__author">4 tot 6 Jaar</p>
-
-                        <i class="fas fa-plus addGame"
-                           onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
-                    </div>
-
+                <a href="gameDetail.html">
                     <img alt="Cherry plant" src="images/games/cherry-plant.jpg" title="Cherry plant">
+                </a>
+            </div>
+
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Pionnenroof</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
+
+                <a href="gameDetail.html">
+                    <img alt="Pionnenroof" src="images/pionnenroof.png" title="Pionnenroof">
+                </a>
+            </div>
 
 
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Pionnenroof</h1>
-                        <p class="brick__author">Alle leeftijden</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-                    <img alt="Pionnenroof" src="images/pionnenroof.png"
-                         title="Pionnenroof">
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Fopbal</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
 
-                    <div class="brick__top">
-                        <h1 class="brick__title">Fopbal</h1>
-                        <p class="brick__author">Alle leeftijden</p>
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
+                <a href="gameDetail.html">
                     <img alt="Fopbal" src="images/fopbal.jpg" title="Fopbal">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Leeuwenkooi</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Leeuwenkooi</h1>
-                        <p class="brick__author">Alle leeftijden</p>
 
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
+                <a href="gameDetail.html">
                     <img alt="Leeuwenkooi" src="images/leeuwenkooi.jpg" title="Leeuwenkooi">
-                </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Estafette</h1>
-                        <p class="brick__author">Alle leeftijden</p>
+                </a>
+            </div>
 
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Estafette</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
                     <img src="images/estafette.jpg" alt="Estafette" title="Estafette">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Commandospel</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
 
-            <a href="#">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Commandospel</h1>
-                        <p class="brick__author">Alle leeftijden</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
+                <a href="gameDetail.html">
                     <img src="images/commando.jpg" alt="Commando" title="Commando">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Stresstikkertje</h1>
+                    <p class="brick__author">Vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
-            </a>
 
-            <a href="#">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Stresstikkertje</h1>
-                        <p class="brick__author">Vanaf 8 jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
+                <a href="#">
                     <img src="images/stresstikkertje.jpg" alt="Stresstikkertje" title="Stresstikkertje">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Eindvakbal</h1>
+                    <p class="brick__author">vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
                 </div>
-            </a>
 
-            <a href="#">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Eindvakbal</h1>
-                        <p class="brick__author">vanaf 8 jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
+                <a href="#">
                     <img src="images/games/cherries.jpg" alt="Eindvakbal" title="Eindvakbal">
-                </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Korfballen tikkertje</h1>
-                        <p class="brick__author">4 tot 6 Jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
-                    <img src="images/games/grapes.jpg" alt="Grapes" title="Grapes">
-                </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Korfballen tikkertje</h1>
-                        <p class="brick__author">4 tot 6 Jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
-                    <img src="images/games/grapes.jpg" alt="Grapes" title="Grapes">
-                </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Korfballen tikkertje</h1>
-                        <p class="brick__author">4 tot 6 Jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
-                    <img src="images/games/grapes.jpg" alt="Grapes" title="Grapes">
-                </div>
-            </a>
-            <a href="gameDetail.html">
-                <div class="brick">
-                    <div class="brick__top">
-                        <h1 class="brick__title">Korfballen tikkertje</h1>
-                        <p class="brick__author">4 tot 6 Jaar</p>
-
-                        <i class="fas fa-plus addGame"></i>
-                    </div>
-
-                    <img alt="Grapes" src="images/games/grapes.jpg" title="Grapes">
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
+</div>
 
-    <footer class="footer-distributed">
-        <div class="footer-left">
-            <p class="footer-links">
-                <a class="link-1" href="#">Home</a>
 
-                <a href="#">Spellen</a>
-
-                <a href="#">Inloggen</a>
-
-                <a href="#">Registreren</a>
-
-                <a href="#">Over Ons</a>
-
-                <a href="#">Contact</a>
-            </p>
-
-            <p>JungleGym &copy; 2021</p>
+<!-- footer box -->
+<div class="p-3">
+    <footer class="pt-4 p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <img src="images/logo.png" width="100%" height="auto">
+                    <small class="d-block mb-3 text-muted">&copy; 2020</small>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Pagina's</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Cool stuff</a></li>
+                        <li><a class="text-muted" href="#">Random feature</a></li>
+                        <li><a class="text-muted" href="#">Team feature</a></li>
+                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                        <li><a class="text-muted" href="#">Another one</a></li>
+                        <li><a class="text-muted" href="#">Last time</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Resource</a></li>
+                        <li><a class="text-muted" href="#">Resource name</a></li>
+                        <li><a class="text-muted" href="#">Another resource</a></li>
+                        <li><a class="text-muted" href="#">Final resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Team</a></li>
+                        <li><a class="text-muted" href="#">Locations</a></li>
+                        <li><a class="text-muted" href="#">Privacy</a></li>
+                        <li><a class="text-muted" href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
     </footer>
 </div>
 

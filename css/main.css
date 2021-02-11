@@ -1,7 +1,8 @@
 @import "general.css";
-@import "sidemenu.css";
+@import "sidebar.css";
 @import "footer.css";
 @import "burger.css";
 @import "header.css";
 @import "games.css";
 @import "gameDetail.css";
+@import "modal.css";

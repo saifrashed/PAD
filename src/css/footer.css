@@ -1,0 +1,27 @@
+footer {
+    /*background-color: #56ab2f;*/
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+footer .bg-circle {
+    z-index: -1;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
+}
+
+footer .bg-circle-1 {
+    height: 90rem;
+    width: 75rem;
+    bottom: 5rem;
+    left: -35rem;
+}
+
+footer .bg-circle-2 {
+    height: 50rem;
+    width: 45rem;
+    top: 9rem;
+    right: -25rem;
+}

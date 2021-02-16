@@ -1,0 +1,193 @@
+/**
+Landing
+ */
+
+
+header h1, header h2 {
+    color: #fff;
+    word-break: break-all;
+}
+
+h2 {
+    word-break: break-all;
+}
+
+.btn-xl {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+
+.rounded-pill {
+    border-radius: 5rem;
+}
+
+.header-container {
+    padding: 15px;
+
+}
+
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+header.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+}
+
+
+header.masthead .masthead-content img {
+    width: 100%;
+    max-width: 750px;
+}
+
+
+
+header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem;
+}
+
+header.masthead .masthead-content .masthead-subheading {
+    font-size: 2rem;
+}
+
+header.masthead .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
+}
+
+header.masthead .bg-circle-1 {
+    height: 90rem;
+    width: 75rem;
+    bottom: 5rem;
+    left: -60rem;
+}
+
+header.masthead .bg-circle-2 {
+    height: 50rem;
+    width: 45rem;
+    top: 9rem;
+    right: -40rem;
+}
+
+
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    }
+
+    header.masthead .masthead-content .masthead-heading {
+        font-size: 6rem;
+    }
+
+    header.masthead .masthead-content .masthead-subheading {
+        font-size: 4rem;
+    }
+}
+
+.masthead .bg-primary {
+    background-color: #a8e063 !important;
+}
+
+.masthead .btn-primary {
+    background-color: #a8e063;
+    border-color: #a8e063;
+}
+
+.masthead .btn-primary:active, .masthead .btn-primary:focus, .masthead .btn-primary:hover {
+    background-color: #56ab2f !important;
+    border-color: #56ab2f !important;
+}
+
+.masthead .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
+}
+
+.masthead .btn-secondary {
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+
+.masthead .btn-secondary:active, .masthead .btn-secondary:focus, .btn-secondary:hover {
+    background-color: #cc5500 !important;
+    border-color: #cc5500 !important;
+}
+
+.masthead .btn-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 156, 10, 0.4);
+}
+
+.showcase .showcase-text {
+    padding: 2rem;
+}
+
+.showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+    border-radius: 25px;
+}
+
+@media (min-width: 768px) {
+    .showcase .showcase-text {
+        padding: 4rem;
+    }
+}
+
+#homeVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#gamesVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.user-symbol {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 500;
+    font-size: 25px;
+    mix-blend-mode: screen;
+
+}
+
+.user-symbol a {
+    color: black;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+}
+
+
+

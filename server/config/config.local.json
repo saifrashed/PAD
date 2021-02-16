@@ -1,0 +1,10 @@
+{
+  "database": {
+    "host": "localhost",
+    "timeout": 30000,
+    "username": "root",
+    "password": "Rashed112",
+    "database": "junglegym",
+    "connectionLimit": 1
+  }
+}

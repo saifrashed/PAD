@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+    <title>Spellen - JungleGym</title>
+
+    <!-- Required Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <!-- Required Styles -->
+    <link href="https://unpkg.com/notie/dist/notie.min.css" rel="stylesheet" type="text/css">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Sidebar box -->
+<aside class="sidebar">
+    <div class="toggle">
+        <a class="burger js-menu-toggle" data-target="#main-navbar" data-toggle="collapse" href="#">
+            <span></span>
+        </a>
+    </div>
+    <div class="side-inner">
+        <div class="logo-wrap">
+            <a href="index.html"><img src="./images/logo.png"></a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a class="text-center" href="index.html">
+                        <span class="wrap-icon mr-3">
+                            <span>Home</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-center" href="./games.html">
+                        <span class="wrap-icon mr-3">
+                            <span>Spellen</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+</aside>
+
+<!-- Authenticatie box -->
+<div class="authentication">
+    <div class="user-symbol">
+        <a data-target="#authenticationBox" data-toggle="modal"><i class="far fa-user"></i></a>
+    </div>
+
+    <div class="modal fade" id="authenticationBox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a aria-controls="pills-login" aria-selected="true" class="nav-link active"
+                               data-toggle="pill"
+                               href="#pills-login" id="pills-home-tab" role="tab">Inloggen</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a aria-controls="pills-registreren" aria-selected="false" class="nav-link"
+                               data-toggle="pill"
+                               href="#pills-registreren" id="pills-profile-tab" role="tab">Registreren</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
+                             role="tabpanel">
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Gebruikers Login
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Login
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
+                             role="tabpanel">
+                            <form class="auth-form-title">
+                                <span class="auth-form-title">
+                                    Registratie
+                                </span>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Voornaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Achternaam">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-signature"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-input-wrap">
+                                    <input class="auth-input" type="password" name="pass"
+                                           placeholder="Herhaal wachtwoord">
+                                    <span class="auth-input-focus"></span>
+                                    <span class="auth-input-symbol">
+                                        <i class="fas fa-redo"></i>
+                                    </span>
+                                </div>
+
+                                <div class="auth-button-container">
+                                    <button class="auth-button">
+                                        Registreren
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Header box -->
+<div class="p-3">
+    <header class="masthead text-center text-white">
+        <video autoplay id="gamesVideo" loop muted>
+            <source src="./images/kinderen-yoga-video.mp4" type="video/mp4">
+        </video>
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Spellen</h1>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </header>
+</div>
+
+<!-- Content box -->
+<div class="container pt-3">
+    <div class="row " style="padding: 15px;">
+        <div class="jumbotron p-3 p-md-5 text-white w-100"
+             style="background-image: url('./images/stock-1.jpg');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
+            <div class="overlay"></div>
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 font-italic">Voetbal met Groep 6 & 7</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
+                                     efficiently about what's most interesting in this post's contents.</p>
+                <p class="lead mb-0"><a class="text-white font-weight-bold" href="#">Meer informatie <i
+                        class="fas fa-arrow-right"></i></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 text-right">
+            <a class="filter-button" data-target="#filterBox" data-toggle="modal"> Filter <i
+                    class="fas fa-filter"></i>
+            </a>
+        </div>
+
+        <div class="modal fade" id="filterBox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Filteren</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span class="discover__section__title">Materiaal</span>
+                        <ul class="discover__tags">
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Springtouw</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="oude mensen"
+                                   href="#">Lintjes</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="leger"
+                                   href="#">Pionnen</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="meer"
+                                   href="#">Matjes</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="advocaat"
+                                   href="#">Ballen</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="bedrijf"
+                                   href="#">Korf</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="hoop"
+                                   href="#">Basket</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="vraagteken"
+                                   href="#">Fluit</a>
+                            </li>
+                        </ul>
+
+
+                        <span class="discover__section__title">Leeftijd</span>
+                        <ul class="discover__tags">
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 1</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 2</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 3</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 4</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 5</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 6</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 7</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 8</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="masonry p-3">
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Korfballen tikkertje</h1>
+                    <p class="brick__author">4 tot 6 Jaar</p>
+                    <i class="fas fa-plus addGame"
+                       onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Cherry plant" src="images/games/cherry-plant.jpg" title="Cherry plant">
+                </a>
+            </div>
+
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Pionnenroof</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Pionnenroof" src="images/pionnenroof.png" title="Pionnenroof">
+                </a>
+            </div>
+
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Fopbal</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Fopbal" src="images/fopbal.jpg" title="Fopbal">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Leeuwenkooi</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Leeuwenkooi" src="images/leeuwenkooi.jpg" title="Leeuwenkooi">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Estafette</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img src="images/estafette.jpg" alt="Estafette" title="Estafette">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Commandospel</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img src="images/commando.jpg" alt="Commando" title="Commando">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Stresstikkertje</h1>
+                    <p class="brick__author">Vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="#">
+                    <img src="images/stresstikkertje.jpg" alt="Stresstikkertje" title="Stresstikkertje">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Eindvakbal</h1>
+                    <p class="brick__author">vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="#">
+                    <img src="images/games/cherries.jpg" alt="Eindvakbal" title="Eindvakbal">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer box -->
+<div class="p-3">
+    <footer class="pt-4 p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <img src="images/logo.png" width="100%" height="auto">
+                    <small class="d-block mb-3 text-muted">&copy; 2020</small>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Pagina's</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Cool stuff</a></li>
+                        <li><a class="text-muted" href="#">Random feature</a></li>
+                        <li><a class="text-muted" href="#">Team feature</a></li>
+                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                        <li><a class="text-muted" href="#">Another one</a></li>
+                        <li><a class="text-muted" href="#">Last time</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Resource</a></li>
+                        <li><a class="text-muted" href="#">Resource name</a></li>
+                        <li><a class="text-muted" href="#">Another resource</a></li>
+                        <li><a class="text-muted" href="#">Final resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Team</a></li>
+                        <li><a class="text-muted" href="#">Locations</a></li>
+                        <li><a class="text-muted" href="#">Privacy</a></li>
+                        <li><a class="text-muted" href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://unpkg.com/notie"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

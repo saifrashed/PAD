@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <link rel="icon" type="image/png" href="./images/favicon.ico">
-    <title>Spellen - JungleGym</title>
+    <title>Game Detail - JungleGym</title>
 
     <!-- Required Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -32,28 +32,31 @@
     </div>
     <div class="side-inner">
         <div class="logo-wrap">
-            <img src="images/logo.png">
+            <a href="index.html"><img src="images/logo.png"></a>
         </div>
         <div class="nav-menu">
             <ul>
                 <li class="active">
-                    <a class="text-center" href="./index.html">
+                    <a class="text-center" href="index.html">
                         <span class="wrap-icon mr-3">
                             <span>Home</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a class="text-center" href="./games.html">
+                    <a class="text-center" href="games.html">
                         <span class="wrap-icon mr-3">
                             <span>Spellen</span>
                         </span>
                     </a>
                 </li>
             </ul>
+
+            <div id="google_translate_element"></div>
         </div>
     </div>
 </aside>
+
 
 <!-- Authenticatie box -->
 <div class="authentication">
@@ -180,260 +183,155 @@
 </div>
 
 
-<!-- Header box -->
-<div class="p-3">
-    <header class="masthead text-center text-white">
-        <video autoplay id="gamesVideo" loop muted>
-            <source src="images/kinderen-yoga-video.mp4" type="video/mp4">
-        </video>
-        <div class="masthead-content">
-            <div class="container">
-                <h1 class="masthead-heading mb-0">Spellen</h1>
-            </div>
-        </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-    </header>
-</div>
-
 <!-- Content box -->
-<div class="container pt-3">
-    <div class="row " style="padding: 15px;">
-        <div class="jumbotron p-3 p-md-5 text-white"
-             style="background-image: url('images/stock-1.jpg');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
+<div class="container gameDetail">
+    <div class="row p-3">
+        <div class="jumbotron p-3 p-md-5 m-0 text-white w-100"
+             style="background-image: url('https://www.1limburg.nl/sites/default/files/public/styles/media-paragraph/public/istock_000035478638_medium.jpg?itok=FL0uWBVq');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
             <div class="overlay"></div>
             <div class="col-md-6 px-0">
                 <h1 class="display-4 font-italic">Voetbal met Groep 6 & 7</h1>
                 <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
                                      efficiently about what's most interesting in this post's contents.</p>
-                <p class="lead mb-0"><a class="text-white font-weight-bold" href="#">Meer informatie <i
-                        class="fas fa-arrow-right"></i></a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-12 text-right">
-            <a class="filter-button" data-target="#filterBox" data-toggle="modal"> Filter <i
-                    class="fas fa-filter"></i>
-            </a>
-        </div>
-
-        <div class="modal fade" id="filterBox" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Filteren</h4>
-                    </div>
-                    <div class="modal-body">
-                        <span class="discover__section__title">Materiaal</span>
-                        <ul class="discover__tags">
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Springtouw</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="oude mensen"
-                                   href="#">Lintjes</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="leger"
-                                   href="#">Pionnen</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="meer"
-                                   href="#">Matjes</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="advocaat"
-                                   href="#">Ballen</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="bedrijf"
-                                   href="#">Korf</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="hoop"
-                                   href="#">Basket</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="vraagteken"
-                                   href="#">Fluit</a>
-                            </li>
-                        </ul>
-
-
-                        <span class="discover__section__title">Leeftijd</span>
-                        <ul class="discover__tags">
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 1</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 2</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 3</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 4</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 5</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 6</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 7</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 8</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
+                <p class="lead mb-0"></p>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="masonry p-3">
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Korfballen tikkertje</h1>
-                    <p class="brick__author">4 tot 6 Jaar</p>
-                    <i class="fas fa-plus addGame"
-                       onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
-                </div>
+        <div class="col-xs-12 col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="games.html">Spellen</a></li>
+                    <li aria-current="page" class="breadcrumb-item active">Voetbal met Groep 6 & 7
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 
-                <a href="gameDetail.html">
-                    <img alt="Cherry plant" src="images/games/cherry-plant.jpg" title="Cherry plant">
-                </a>
-            </div>
-
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Pionnenroof</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="gameDetail.html">
-                    <img alt="Pionnenroof" src="images/pionnenroof.png" title="Pionnenroof">
-                </a>
-            </div>
-
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Fopbal</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="gameDetail.html">
-                    <img alt="Fopbal" src="images/fopbal.jpg" title="Fopbal">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Leeuwenkooi</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="gameDetail.html">
-                    <img alt="Leeuwenkooi" src="images/leeuwenkooi.jpg" title="Leeuwenkooi">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Estafette</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="gameDetail.html">
-                    <img src="images/estafette.jpg" alt="Estafette" title="Estafette">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Commandospel</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="gameDetail.html">
-                    <img src="images/commando.jpg" alt="Commando" title="Commando">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Stresstikkertje</h1>
-                    <p class="brick__author">Vanaf 8 jaar</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="#">
-                    <img src="images/stresstikkertje.jpg" alt="Stresstikkertje" title="Stresstikkertje">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Eindvakbal</h1>
-                    <p class="brick__author">vanaf 8 jaar</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a href="#">
-                    <img src="images/games/cherries.jpg" alt="Eindvakbal" title="Eindvakbal">
-                </a>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="box">
+                <h2>Omschrijving</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                   dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                   nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                   quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+                   nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+                   justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                   Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+                   porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+                   viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+                   Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
+                   ullamcorper ultricies nisi. Nam eget dui.</p>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="box">
+                <h2>Regels</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="box">
+                <h2>Materialen</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <div class="box">
+                <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                    <a aria-controls="v-pills-home" aria-selected="true" class="nav-link active" data-toggle="pill" href="#v-pills-home"
+                       id="v-pills-home-tab" role="tab">Makkelijk</a>
+                    <a aria-controls="v-pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-profile"
+                       id="v-pills-profile-tab" role="tab">Gemiddeld</a>
+                    <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-messages"
+                       id="v-pills-messages-tab" role="tab">Moeilijk</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-md-9">
+            <div class="box">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div aria-labelledby="v-pills-home-tab" class="tab-pane fade show active" id="v-pills-home"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                    <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade" id="v-pills-profile"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                    <div aria-labelledby="v-pills-messages-tab" class="tab-pane fade" id="v-pills-messages"
+                         role="tabpanel">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper ultricies tellus, auctor
+                        sodales mi varius vel. Donec accumsan, sapien sit amet porta bibendum, erat sapien varius enim,
+                        a laoreet lorem ligula in sem. Cras eget odio in massa tempus sagittis nec vitae lectus. Nunc
+                        vitae augue semper, tempus enim et, fermentum nisl. Aenean semper massa leo, porta rutrum neque
+                        aliquam ut. Duis porta faucibus sapien, vel feugiat libero accumsan eu. Phasellus a tortor
+                        eleifend, malesuada diam ac, fermentum ligula.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row floorplan">
+        <div class="col-xs-12 col-md-12">
+            <img class="w-100" src="images/voetbalplatte.jpg">
+        </div>
+
+        <div class="col-xs-12">
+            <ul>
+                <li class="d-inline-block p-2">
+                    <span class="colorbox rounded-circle d-inline-block " style="background-color: red;"></span>
+                    <span class="label">Item One</span>
+                </li>
+                <li class="d-inline-block p-2">
+                    <span class="colorbox rounded-circle d-inline-block" style="background-color: blue;"></span>
+                    <span class="label">Item Two</span>
+                </li>
+                <li class="d-inline-block p-2">
+                    <span class="colorbox rounded-circle d-inline-block" style="background-color: green;"></span>
+                    <span class="label">Item Three</span>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
 
 <!-- footer box -->
 <div class="p-3">
@@ -481,6 +379,7 @@
 </div>
 
 <!-- Scripts -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://unpkg.com/notie"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

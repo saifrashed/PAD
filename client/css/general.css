@@ -29,6 +29,7 @@ h2 {
 
 body {
     position: relative;
+    top: 0 !important;
 }
 
 body:before {

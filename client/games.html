@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <link rel="icon" type="image/png" href="./images/favicon.ico">
-    <title>Home - JungleGym</title>
+    <title>Spellen - JungleGym</title>
 
     <!-- Required Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -32,12 +32,12 @@
     </div>
     <div class="side-inner">
         <div class="logo-wrap">
-            <img src="images/logo.png">
+            <a href="index.html"><img src="images/logo.png"></a>
         </div>
         <div class="nav-menu">
             <ul>
                 <li class="active">
-                    <a class="text-center" href="./index.html">
+                    <a class="text-center" href="index.html">
                         <span class="wrap-icon mr-3">
                             <span>Home</span>
                         </span>
@@ -51,10 +51,11 @@
                     </a>
                 </li>
             </ul>
+
+            <div id="google_translate_element"></div>
         </div>
     </div>
 </aside>
-
 
 <!-- Authenticatie box -->
 <div class="authentication">
@@ -180,17 +181,16 @@
     </div>
 </div>
 
+
 <!-- Header box -->
 <div class="p-3">
     <header class="masthead text-center text-white">
-        <video autoplay id="homeVideo" loop muted>
-            <source src="images/home-jungle-video.mp4" type="video/mp4">
+        <video autoplay id="gamesVideo" loop muted>
+            <source src="images/kinderen-yoga-video.mp4" type="video/mp4">
         </video>
         <div class="masthead-content">
             <div class="container">
-                <img src="images/logo-white.png">
-                <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Online Sportonderwijs</h2>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" data-target="#authenticationBox" data-toggle="modal">Creeër jou lesrooster!</a>
+                <h1 class="masthead-heading mb-0">Spellen</h1>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -199,49 +199,243 @@
 </div>
 
 <!-- Content box -->
-<div class="p-3">
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                     style="background-image: url('images/children-playing.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Gemakkelijk Gymles</h2>
-                    <p class="lead mb-0">Bij Jungle Gym kun je als docent gemakkelijk gymles geven
-                                         aan basisschool leerlingen. Onze spellen zijn leuk, interactief en sluiten aan
-                                         bij elke
-                                         leeftijdscategorie.</p>
-                </div>
+<div class="container pt-3">
+    <div class="row " style="padding: 15px;">
+        <div class="jumbotron p-3 p-md-5 text-white w-100"
+             style="background-image: url('client/images/stock-1.jpg');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
+            <div class="overlay"></div>
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 font-italic">Voetbal met Groep 6 & 7</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
+                                     efficiently about what's most interesting in this post's contents.</p>
+                <p class="lead mb-0"><a class="text-white font-weight-bold" href="#">Meer informatie <i
+                        class="fas fa-arrow-right"></i></a></p>
             </div>
+        </div>
+    </div>
 
-            <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img"
-                     style="background-image: url('images/jongens-met-voetbal.jpg');"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Ons Doel</h2>
-                    <p class="lead mb-0">We vinden het van groot belang dat elk kind voldoende sport.
-                                         Aangezien veel basisschool docenten niet gequalificeerd zijn, en genoeg
-                                         materiaal hebben om
-                                         goed gymles te geven, hebben wij deze website gemaakt om goed gymles te geven
-                                         toegankelijker te
-                                         maken voor allerlei docenten over de hele wereld!</p>
-                </div>
-            </div>
+    <div class="row mb-5">
+        <div class="col-12 text-right">
+            <a class="filter-button" data-target="#filterBox" data-toggle="modal"> Filter <i
+                    class="fas fa-filter"></i>
+            </a>
+        </div>
 
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                     style="background-image: url('images/playing-tag.png');"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Spellen</h2>
-                    <p class="lead mb-0">De spellen op Jungle Gym zijn gecategoriseerd op leeftijd, materialen en
-                                         benodigdheden. Op deze punten kan gesorteerd worden met het filter icoontje op
-                                         de
-                                         spelpagina. Zo kun je makkeijk de geschikte spellen voor je klas kiezen.</p>
+        <div class="modal fade" id="filterBox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Filteren</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span class="discover__section__title">Materiaal</span>
+                        <ul class="discover__tags">
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Springtouw</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="oude mensen"
+                                   href="#">Lintjes</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="leger"
+                                   href="#">Pionnen</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="meer"
+                                   href="#">Matjes</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="advocaat"
+                                   href="#">Ballen</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="bedrijf"
+                                   href="#">Korf</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="hoop"
+                                   href="#">Basket</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="vraagteken"
+                                   href="#">Fluit</a>
+                            </li>
+                        </ul>
+
+
+                        <span class="discover__section__title">Leeftijd</span>
+                        <ul class="discover__tags">
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 1</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 2</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 3</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 4</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 5</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 6</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 7</a>
+                            </li>
+                            <li>
+                                <a class="js-collection-section-tag" data-track-action="discover-page"
+                                   data-track-label="collection-tags" data-track-value="denken"
+                                   href="#">Groep 8</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="row">
+        <div class="masonry p-3">
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Korfballen tikkertje</h1>
+                    <p class="brick__author">4 tot 6 Jaar</p>
+                    <i class="fas fa-plus addGame"
+                       onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Cherry plant" src="images/games/cherry-plant.jpg" title="Cherry plant">
+                </a>
+            </div>
+
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Pionnenroof</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Pionnenroof" src="images/pionnenroof.png" title="Pionnenroof">
+                </a>
+            </div>
+
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Fopbal</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Fopbal" src="images/fopbal.jpg" title="Fopbal">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Leeuwenkooi</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img alt="Leeuwenkooi" src="images/leeuwenkooi.jpg" title="Leeuwenkooi">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Estafette</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img src="images/estafette.jpg" alt="Estafette" title="Estafette">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Commandospel</h1>
+                    <p class="brick__author">Alle leeftijden</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="gameDetail.html">
+                    <img src="images/commando.jpg" alt="Commando" title="Commando">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Stresstikkertje</h1>
+                    <p class="brick__author">Vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="#">
+                    <img src="images/stresstikkertje.jpg" alt="Stresstikkertje" title="Stresstikkertje">
+                </a>
+            </div>
+
+            <div class="brick">
+                <div class="brick__top">
+                    <h1 class="brick__title">Eindvakbal</h1>
+                    <p class="brick__author">vanaf 8 jaar</p>
+
+                    <i class="fas fa-plus addGame"></i>
+                </div>
+
+                <a href="#">
+                    <img src="images/games/cherries.jpg" alt="Eindvakbal" title="Eindvakbal">
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <!-- footer box -->
 <div class="p-3">
@@ -289,6 +483,7 @@
 </div>
 
 <!-- Scripts -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://unpkg.com/notie"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

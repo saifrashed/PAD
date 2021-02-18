@@ -1,4 +1,17 @@
-const CONTROLLER_AUTH = "authentication";
+/**
+ * Entry point front end application - there is also an app.js for the backend (server folder)!
+ *
+ * Available: `sessionManager` or `networkManager` or `app.loadController(..)`
+ *
+ * You only want one instance of this class, therefor always use `app`.
+ *
+ * @author Lennard Fonteijn & Pim Meijer
+ */
+const CONTROLLER_SIDEBAR = "sidebar";
+const CONTROLLER_LOGIN = "login";
+const CONTROLLER_LOGOUT = "logout";
+const CONTROLLER_LANDING = "landing";
+const CONTROLLER_UPLOAD = "upload";
 
 const sessionManager = new SessionManager();
 const networkManager = new NetworkManager();
@@ -7,12 +20,10 @@ class App {
 
     init() {
         //Always load the sidebar
-        this.loadController(CONTROLLER_AUTH);
+        this.loadController(CONTROLLER_SIDEBAR);
 
-        // //Attempt to load the controller from the URL, if it fails, fall back to the welcome controller.
-        // this.loadControllerFromUrl(CONTROLLER_AUTH);
-
-
+        //Attempt to load the controller from the URL, if it fails, fall back to the welcome controller.
+        this.loadControllerFromUrl(CONTROLLER_LANDING);
     }
 
     /**
@@ -31,11 +42,29 @@ class App {
         }
 
         switch (name) {
-            case CONTROLLER_AUTH:
-                this.setCurrentController(name);
-                new AuthController();
-                this.isLoggedIn(() => console.log("Logged in"), () => console.log("Not Logged in"));
+            case CONTROLLER_SIDEBAR:
+                new NavbarController();
                 break;
+
+            case CONTROLLER_LOGIN:
+                this.setCurrentController(name);
+                this.isLoggedIn(() => new WelcomeController(), () => new LoginController());
+                break;
+
+            case CONTROLLER_LOGOUT:
+                this.setCurrentController(name);
+                this.handleLogout();
+                break;
+
+            case CONTROLLER_LANDING:
+                this.setCurrentController(name);
+                new LandingController;
+                break;
+
+            case CONTROLLER_UPLOAD:
+                new UploadController();
+                break;
+
             default:
                 return false;
         }
@@ -79,6 +108,16 @@ class App {
             whenNo();
         }
     }
+
+    /**
+     * Removes username via sessionManager and loads the login screen
+     */
+    handleLogout() {
+        sessionManager.remove("username");
+
+        //go to login screen
+        this.loadController(CONTROLLER_LOGIN);
+    }
 }
 
 const app = new App();
@@ -87,3 +126,11 @@ const app = new App();
 $(function () {
     app.init();
 });
+
+
+/**
+ * Google translate
+ */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'nl'}, 'google_translate_element');
+}

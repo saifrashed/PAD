@@ -4,7 +4,7 @@
  *
  * @author Pim Meijer
  */
-class AuthRepository {
+class UserRepository {
 
     constructor() {
         this.route = "/user"

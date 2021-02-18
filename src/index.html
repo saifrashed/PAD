@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <link rel="icon" type="image/png" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.ico">
     <title>Home - JungleGym</title>
 
     <!-- Required Fonts -->
@@ -12,21 +12,19 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
 
-    <!-- Required Styles -->
+    <!-- Load our stylesheets -->
     <link href="https://unpkg.com/notie/dist/notie.min.css" rel="stylesheet" type="text/css">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           rel="stylesheet"/>
-    <link href="css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet" />
 
 
+    <!-- Scripts -->
 
-
-    <!-- General Scripts -->
-    <script type="text/javascript"
-            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://unpkg.com/notie"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -40,292 +38,79 @@
             integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-    <!-- App Scripts -->
 
     <!-- Prepare our application, load things in the proper order. -->
-    <script src="./js/utils/sessionManager.js"></script>
-    <script src="./js/utils/networkManager.js"></script>
+    <script src="assets/js/utils/sessionManager.js"></script>
+    <script src="assets/js/utils/networkManager.js"></script>
+
     <!-- Controllers -->
-    <script src="./js/controllers/authController.js"></script>
+    <script src="assets/js/controllers/loginController.js"></script>
+    <script src="assets/js/controllers/navbarController.js"></script>
+    <script src="assets/js/controllers/landingController.js"></script>
+    <script src="assets/js/controllers/uploadController.js"></script>
+
     <!-- Repositories -->
-    <script src="./js/repositories/authRepository.js"></script>
+    <script src="assets/js/repositories/roomExampleRepository.js"></script>
+    <script src="assets/js/repositories/userRepository.js"></script>
+
     <!-- Start of our application! -->
-    <script src="./api/config.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/main.js"></script>
-
+    <script src="api/config.js"></script>
+    <script src="assets/js/app.js"></script>
 </head>
-
 <body>
-<!-- Sidebar box -->
-<aside class="sidebar">
-    <div class="toggle">
-        <a class="burger js-menu-toggle" data-target="#main-navbar" data-toggle="collapse" href="#">
-            <span></span>
-        </a>
-    </div>
-    <div class="side-inner">
-        <div class="logo-wrap">
-            <a href="./index.html"><img src="images/logo.png"></a>
-        </div>
-        <div class="nav-menu">
-            <ul>
-                <li class="active">
-                    <a class="text-center" href="./index.html">
-                        <span class="wrap-icon mr-3">
-                            <span>Home</span>
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a class="text-center" href="./games.html">
-                        <span class="wrap-icon mr-3">
-                            <span>Spellen</span>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-
-            <div id="google_translate_element"></div>
-        </div>
-    </div>
-</aside>
-
-
-<!-- Authenticatie box -->
-<div class="authentication">
-    <div class="user-symbol">
-        <a data-target="#authenticationBox" data-toggle="modal"><i class="far fa-user"></i></a>
+    <!-- Navigation -->
+    <div class="sidebar">
+        <!-- Loads navigation via JS -->
     </div>
 
-    <div class="modal fade" id="authenticationBox" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a aria-controls="pills-login" aria-selected="true" class="nav-link active"
-                               data-toggle="pill"
-                               href="#pills-login" id="pills-home-tab" role="tab">Inloggen</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a aria-controls="pills-registreren" aria-selected="false" class="nav-link"
-                               data-toggle="pill"
-                               href="#pills-registreren" id="pills-profile-tab" role="tab">Registreren</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a  class="nav-link active" id="logoutBtn" href="#" role="tab" style="background-color: #dc3545">Uitloggen</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Loads content via JS -->
+    </div>
 
-                <div class="modal-body">
-                    <div class="tab-content" id="pills-tabContent">
-                        <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
-                             role="tabpanel">
-                            <form id="loginForm" class="auth-form-title">
-                                <span class="auth-form-title">
-                                    Gebruikers Login
-                                </span>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="username" placeholder="Email">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="password" placeholder="Wachtwoord">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fa fa-lock" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-button-container">
-                                    <button class="auth-button" type="submit">
-                                        Login
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-
-                        <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
-                             role="tabpanel">
-                            <form class="auth-form-title">
-                                <span class="auth-form-title">
-                                    Registratie
-                                </span>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Voornaam">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fas fa-signature"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Achternaam">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fas fa-signature"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Email">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fa fa-lock" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="pass"
-                                           placeholder="Herhaal wachtwoord">
-                                    <span class="auth-input-focus"></span>
-                                    <span class="auth-input-symbol">
-                                        <i class="fas fa-redo"></i>
-                                    </span>
-                                </div>
-
-                                <div class="auth-button-container">
-                                    <button class="auth-button" type="submit">
-                                        Registreren
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+    <!-- footer box -->
+    <div class="p-3">
+        <footer class="pt-4 p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3">
+                        <img src="./assets/img/logo.png" width="100%" height="auto">
+                        <small class="d-block mb-3 text-muted">&copy; 2020</small>
+                    </div>
+                    <div class="col-xs-12 col-md-3 text-center">
+                        <h5>Pagina's</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="#">Cool stuff</a></li>
+                            <li><a class="text-muted" href="#">Random feature</a></li>
+                            <li><a class="text-muted" href="#">Team feature</a></li>
+                            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                            <li><a class="text-muted" href="#">Another one</a></li>
+                            <li><a class="text-muted" href="#">Last time</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-3 text-center">
+                        <h5>Resources</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="#">Resource</a></li>
+                            <li><a class="text-muted" href="#">Resource name</a></li>
+                            <li><a class="text-muted" href="#">Another resource</a></li>
+                            <li><a class="text-muted" href="#">Final resource</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-3 text-center">
+                        <h5>About</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="#">Team</a></li>
+                            <li><a class="text-muted" href="#">Locations</a></li>
+                            <li><a class="text-muted" href="#">Privacy</a></li>
+                            <li><a class="text-muted" href="#">Terms</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
-                    </button>
-                </div>
             </div>
-        </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+        </footer>
     </div>
-</div>
-
-<!-- Header box -->
-<div class="p-3">
-    <header class="masthead text-center text-white">
-        <video autoplay id="homeVideo" loop muted>
-            <source src="images/home-jungle-video.mp4" type="video/mp4">
-        </video>
-        <div class="masthead-content">
-            <div class="container">
-                <img src="images/logo-white.png">
-                <h2 class="masthead-subheading mb-0" data-translate="homepage.headerSubText">Online Sportonderwijs</h2>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" data-target="#authenticationBox"
-                   data-toggle="modal">Creeër jou lesrooster!</a>
-            </div>
-        </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-    </header>
-</div>
-
-<!-- Content box -->
-<div class="p-3">
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                     style="background-image: url('./images/children-playing.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Gemakkelijk Gymles</h2>
-                    <p class="lead mb-0">Bij Jungle Gym kun je als docent gemakkelijk gymles geven
-                                         aan basisschool leerlingen. Onze spellen zijn leuk, interactief en sluiten aan
-                                         bij elke
-                                         leeftijdscategorie.</p>
-                </div>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img"
-                     style="background-image: url('./images/jongens-met-voetbal.jpg');"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Ons Doel</h2>
-                    <p class="lead mb-0">We vinden het van groot belang dat elk kind voldoende sport.
-                                         Aangezien veel basisschool docenten niet gequalificeerd zijn, en genoeg
-                                         materiaal hebben om
-                                         goed gymles te geven, hebben wij deze website gemaakt om goed gymles te geven
-                                         toegankelijker te
-                                         maken voor allerlei docenten over de hele wereld!</p>
-                </div>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                     style="background-image: url('./images/playing-tag.png');"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Spellen</h2>
-                    <p class="lead mb-0">De spellen op Jungle Gym zijn gecategoriseerd op leeftijd, materialen en
-                                         benodigdheden. Op deze punten kan gesorteerd worden met het filter icoontje op
-                                         de
-                                         spelpagina. Zo kun je makkeijk de geschikte spellen voor je klas kiezen.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-<!-- footer box -->
-<div class="p-3">
-    <footer class="pt-4 p-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-3">
-                    <img src="images/logo.png" width="100%" height="auto">
-                    <small class="d-block mb-3 text-muted">&copy; 2020</small>
-                </div>
-                <div class="col-xs-12 col-md-3 text-center">
-                    <h5>Pagina's</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Cool stuff</a></li>
-                        <li><a class="text-muted" href="#">Random feature</a></li>
-                        <li><a class="text-muted" href="#">Team feature</a></li>
-                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                        <li><a class="text-muted" href="#">Another one</a></li>
-                        <li><a class="text-muted" href="#">Last time</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-md-3 text-center">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Resource</a></li>
-                        <li><a class="text-muted" href="#">Resource name</a></li>
-                        <li><a class="text-muted" href="#">Another resource</a></li>
-                        <li><a class="text-muted" href="#">Final resource</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-md-3 text-center">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-    </footer>
-</div>
 </body>
 </html>

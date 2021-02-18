@@ -2,11 +2,12 @@
 Game Detail page styling
  */
 .box {
-    background-color: #FFFFFF;
+    background-color: #f8f9fa;
     padding: 15px;
     margin-bottom: 25px;
     border-radius: 25px;
     transition: all 0.3s ease 0s;
+    min-height: 100%;
 }
 
 .breadcrumb {
@@ -46,4 +47,27 @@ Game Detail page styling
 
 .nav-pills .nav-link.active {
     background-color: #57b846;
+}
+
+
+/**
+Reviews
+ */
+
+
+.ratings {
+    padding: 54px;
+}
+
+.product-rating {
+    font-size: 50px
+}
+
+.stars i {
+    font-size: 18px;
+    color: #28a745
+}
+
+.rating-text {
+    margin-top: 10px
 }

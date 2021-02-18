@@ -7,11 +7,13 @@
  *
  * @author Lennard Fonteijn & Pim Meijer
  */
-const CONTROLLER_SIDEBAR = "sidebar";
-const CONTROLLER_LOGIN = "login";
-const CONTROLLER_LOGOUT = "logout";
-const CONTROLLER_LANDING = "landing";
-const CONTROLLER_UPLOAD = "upload";
+const CONTROLLER_SIDEBAR    = "sidebar";
+const CONTROLLER_LOGIN      = "login";
+const CONTROLLER_LOGOUT     = "logout";
+const CONTROLLER_LANDING    = "landing";
+const CONTROLLER_GAMES      = "games";
+const CONTROLLER_GAMEDETAIL = "gamedetail";
+const CONTROLLER_UPLOAD     = "upload";
 
 const sessionManager = new SessionManager();
 const networkManager = new NetworkManager();
@@ -59,6 +61,16 @@ class App {
             case CONTROLLER_LANDING:
                 this.setCurrentController(name);
                 new LandingController;
+                break;
+
+            case CONTROLLER_GAMES:
+                this.setCurrentController(name);
+                new GamesController;
+                break;
+
+            case CONTROLLER_GAMEDETAIL:
+                this.setCurrentController(name);
+                new GameDetailController;
                 break;
 
             case CONTROLLER_UPLOAD:

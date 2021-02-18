@@ -4,11 +4,11 @@
  *
  * @author Lennard Fonteijn & Pim Meijer
  */
-class LandingController {
+class GamesController {
     constructor() {
         this.roomExampleRepository = new RoomExampleRepository();
 
-        $.get("views/landing.html")
+        $.get("views/games.html")
             .done((data) => this.setup(data))
             .fail(() => this.error());
     }
@@ -20,11 +20,23 @@ class LandingController {
 
         //Set the name in the view from the session
         this.welcomeView.find(".name").html(sessionManager.get("username"));
+        this.welcomeView.find(".brick a").on("click", this.handleClickGameItem);
+
 
         //Empty the content-div and add the resulting view to the page
         $(".content").empty().append(this.welcomeView);
     }
 
+    handleClickGameItem() {
+        //Get the data-controller from the clicked element (this)
+        const controller = $(this).attr("data-controller");
+
+        //Pass the action to a new function for further processing
+        app.loadController(controller);
+
+        //Return false to prevent reloading the page
+        return false;
+    }
 
     //Called when the login.html fails to load
     error() {

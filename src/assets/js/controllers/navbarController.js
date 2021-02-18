@@ -16,7 +16,7 @@ class NavbarController {
         const sidebarView = $(data);
 
         //Find all anchors and register the click-event
-        // sidebarView.find("a").on("click", this.handleClickMenuItem);
+        sidebarView.find("a").on("click", this.handleClickMenuItem);
         sidebarView.find("button.menu-toggle").on("click", this.handleMenuToggle);
         $(document).mouseup(this.handleOffCanvas);
 
@@ -33,6 +33,9 @@ class NavbarController {
 
         //Pass the action to a new function for further processing
         app.loadController(controller);
+
+        $('body').removeClass('show-sidebar');
+        $("button.burger").removeClass('active');
 
         //Return false to prevent reloading the page
         return false;

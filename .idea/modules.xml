@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PAD.iml" filepath="$PROJECT_DIR$/.idea/PAD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PAD-CLIENT/.idea/PAD-CLIENT.iml" filepath="$PROJECT_DIR$/../PAD-CLIENT/.idea/PAD-CLIENT.iml" />
     </modules>
   </component>
 </project>

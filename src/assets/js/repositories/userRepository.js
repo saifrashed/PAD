@@ -20,9 +20,12 @@ class UserRepository {
      * @param password
      * @returns {Promise<user>}
      */
-    async login(username, password) {
+    async login(email, password) {
         return await networkManager
-            .doRequest(`${this.route}/login`, {"username": username, "password": password}, "POST");
+            .doRequest(`${this.route}/login`, {
+                "email":    email,
+                "password": password
+            }, "POST");
     }
 
     async delete() {
@@ -30,8 +33,15 @@ class UserRepository {
     }
 
 
-    async register(username, password) {
+    async register(firstName, lastName, email, password) {
 
+        return await networkManager
+            .doRequest(`${this.route}/register`, {
+                "firstname": firstName,
+                "lastname":  lastName,
+                "email":     email,
+                "password":  password
+            }, "POST");
     }
 
     async update(id, values = {}) {

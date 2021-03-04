@@ -31,7 +31,6 @@ class NetworkManager {
                 error: (xhr, ajaxOptions, thrownError) => this.__onFail(xhr, reject)
             });
         });
-
     }
 
     /**

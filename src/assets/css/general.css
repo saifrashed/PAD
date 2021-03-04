@@ -70,3 +70,6 @@ aside, main {
     display: none;
 }
 
+.notie-alert {
+    z-index: 1000000000000;
+}

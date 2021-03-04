@@ -16,7 +16,7 @@ class NavbarController {
         const sidebarView = $(data);
 
         //Find all anchors and register the click-event
-        sidebarView.find("a").on("click", this.handleClickMenuItem);
+        sidebarView.find("a.menu-item").on("click", this.handleClickMenuItem);
         sidebarView.find("button.menu-toggle").on("click", this.handleMenuToggle);
         $(document).mouseup(this.handleOffCanvas);
 

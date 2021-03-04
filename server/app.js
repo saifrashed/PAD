@@ -3,14 +3,15 @@
  *
  * @author Pim Meijer
  */
-const express = require("express");
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-const db = require("./utils/databaseHelper");
+const express      = require("express");
+const bodyParser   = require("body-parser");
+const morgan       = require("morgan");
+const db           = require("./utils/databaseHelper");
 const cryptoHelper = require("./utils/cryptoHelper");
-const corsConfig = require("./utils/corsConfigHelper");
-const app = express();
-const fileUpload = require("express-fileupload");
+const corsConfig   = require("./utils/corsConfigHelper");
+const app          = express();
+const fileUpload   = require("express-fileupload");
+const bcrypt       = require('bcrypt');
 
 //logger lib  - 'short' is basic logging info
 app.use(morgan("short"));
@@ -29,23 +30,24 @@ app.use(corsConfig);
 app.use(fileUpload());
 
 // ------ ROUTES - add all api endpoints here ------
-const httpOkCode = 200;
-const badRequestCode = 400;
+const httpOkCode           = 200;
+const badRequestCode       = 400;
 const authorizationErrCode = 401;
 
-app.post("/user/login", (req, res) => {
-    const username = req.body.username;
 
-    //TODO: We shouldn't save a password unencrypted!! Improve this by using cryptoHelper :)
-    const password = req.body.password;
+app.post("/user/login", async (req, res) => {
+    const {email, password} = req.body;
 
     db.handleQuery(connectionPool, {
-        query: "SELECT username, password FROM user WHERE username = ? AND password = ?",
-        values: [username, password]
+        query:  "SELECT userID, email, password FROM user WHERE email = ?",
+        values: [email]
     }, (data) => {
-        if (data.length === 1) {
+
+        const correctPassword = bcrypt.compare(password, data[0].password); // updated
+
+        if (data.length === 1 && correctPassword) {
             //return just the username for now, never send password back!
-            res.status(httpOkCode).json({"username": data[0].username});
+            res.status(httpOkCode).json({"userID": data[0].userID});
         } else {
             //wrong username
             res.status(authorizationErrCode).json({reason: "Wrong username or password"});
@@ -54,30 +56,43 @@ app.post("/user/login", (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
-//dummy data example - rooms
-app.post("/room_example", (req, res) => {
+app.post("/user/register", async (req, res) => {
+    const {firstname, lastname, email, password} = req.body;
+
+    // encrypt password
+    const salt              = await bcrypt.genSalt(10);
+    const encryptedPassword = await bcrypt.hash(password, salt);
 
     db.handleQuery(connectionPool, {
-            query: "SELECT id, surface FROM room_example WHERE id = ?",
-            values: [req.body.id]
-        }, (data) => {
-            //just give all data back as json
-            res.status(httpOkCode).json(data);
-        }, (err) => res.status(badRequestCode).json({reason: err})
-    );
+        query:  "SELECT userID, email, password FROM user WHERE email = ?",
+        values: [email]
+    }, (data) => {
 
+        if (data.length) {
+            res.status(authorizationErrCode).json({reason: "User already exists"});
+        } else {
+            db.handleQuery(connectionPool, {
+                query:  "INSERT INTO user (firstname, lastname, email, password) VALUES (?,?,?,?)",
+                values: [firstname, lastname, email, encryptedPassword]
+            }, (data) => {
+
+            }, (err) => res.status(badRequestCode).json({reason: err}));
+        }
+
+    }, (err) => res.status(badRequestCode).json({reason: err}));
 });
+
 
 app.post("/upload", function (req, res) {
     if (!req.files || Object.keys(req.files).length === 0) {
-        return res.status(badRequestCode).json({ reason: "No files were uploaded." });
+        return res.status(badRequestCode).json({reason: "No files were uploaded."});
     }
 
     let sampleFile = req.files.sampleFile;
 
     sampleFile.mv(wwwrootPath + "/uploads/test.jpg", function (err) {
         if (err) {
-            return res.status(badRequestCode).json({ reason: err });
+            return res.status(badRequestCode).json({reason: err});
         }
 
         return res.status(httpOkCode).json("OK");

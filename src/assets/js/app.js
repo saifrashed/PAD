@@ -8,7 +8,7 @@
  * @author Lennard Fonteijn & Pim Meijer
  */
 const CONTROLLER_SIDEBAR    = "sidebar";
-const CONTROLLER_LOGIN      = "login";
+const CONTROLLER_AUTH       = "auth";
 const CONTROLLER_LOGOUT     = "logout";
 const CONTROLLER_LANDING    = "landing";
 const CONTROLLER_GAMES      = "games";
@@ -23,6 +23,7 @@ class App {
     init() {
         //Always load the sidebar
         this.loadController(CONTROLLER_SIDEBAR);
+        this.loadController(CONTROLLER_AUTH);
 
         //Attempt to load the controller from the URL, if it fails, fall back to the welcome controller.
         this.loadControllerFromUrl(CONTROLLER_LANDING);
@@ -48,9 +49,8 @@ class App {
                 new NavbarController();
                 break;
 
-            case CONTROLLER_LOGIN:
-                this.setCurrentController(name);
-                this.isLoggedIn(() => new WelcomeController(), () => new LoginController());
+            case CONTROLLER_AUTH:
+                new AuthController();
                 break;
 
             case CONTROLLER_LOGOUT:

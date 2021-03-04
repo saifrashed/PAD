@@ -12,14 +12,14 @@
         <div class="nav-menu">
             <ul>
                 <li class="active">
-                    <a class="text-center" data-controller="landing">
+                    <a class="text-center menu-item" data-controller="landing">
                         <span class="wrap-icon mr-3">
                             <span>Home</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a class="text-center" data-controller="games">
+                    <a class="text-center menu-item" data-controller="games">
                         <span class="wrap-icon mr-3">
                             <span>Spellen</span>
                         </span>
@@ -60,7 +60,7 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div aria-labelledby="pills-login-tab" class="tab-pane fade show active" id="pills-login"
                              role="tabpanel">
-                            <form class="auth-form-title">
+                            <form class="auth-form-title login-form" action="javascript:void(0);">
                                 <span class="auth-form-title">
                                     Gebruikers Login
                                 </span>
@@ -74,7 +74,7 @@
                                 </div>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <input class="auth-input" type="password" name="password" placeholder="Wachtwoord">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">
                                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -92,13 +92,13 @@
 
                         <div aria-labelledby="pills-registreren-tab" class="tab-pane fade" id="pills-registreren"
                              role="tabpanel">
-                            <form class="auth-form-title">
+                            <form class="auth-form-title register-form" action="javascript:void(0);">
                                 <span class="auth-form-title">
                                     Registratie
                                 </span>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Voornaam">
+                                    <input class="auth-input" type="text" name="firstname" placeholder="Voornaam">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">
                                         <i class="fas fa-signature"></i>
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Achternaam">
+                                    <input class="auth-input" type="text" name="lastname" placeholder="Achternaam">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">
                                         <i class="fas fa-signature"></i>
@@ -114,7 +114,7 @@
                                 </div>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="text" name="email" placeholder="Email">
+                                    <input class="auth-input" type="text" name="user-email" placeholder="Email">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="pass" placeholder="Wachtwoord">
+                                    <input class="auth-input" type="password" name="user-password" placeholder="Wachtwoord">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">
                                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -130,7 +130,7 @@
                                 </div>
 
                                 <div class="auth-input-wrap">
-                                    <input class="auth-input" type="password" name="pass"
+                                    <input class="auth-input" type="password" name="user-passwordrepeat"
                                            placeholder="Herhaal wachtwoord">
                                     <span class="auth-input-focus"></span>
                                     <span class="auth-input-symbol">

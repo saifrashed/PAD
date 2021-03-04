@@ -1,10 +1,10 @@
 {
   "database": {
-    "host": "localhost",
+    "host": "db.hbo-ict.cloud",
     "timeout": 30000,
-    "username": "root",
-    "password": "Rashed112",
-    "database": "junglegym",
+    "username": "pad_gym_7",
+    "password": "cvUtAIKNKZAit3Ei",
+    "database": "pad_gym_7_dev",
     "connectionLimit": 1
   }
 }

@@ -6,8 +6,6 @@
  */
 class LandingController {
     constructor() {
-        this.roomExampleRepository = new RoomExampleRepository();
-
         $.get("views/landing.html")
             .done((data) => this.setup(data))
             .fail(() => this.error());

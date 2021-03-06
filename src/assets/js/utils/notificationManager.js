@@ -26,4 +26,13 @@ class NotificationManager {
 
         }
     }
+
+
+    select(title, choices) {
+        notie.select({
+            text:       title,
+            cancelText: 'Sluit',
+            choices:    choices
+        })
+    }
 }

@@ -6,8 +6,7 @@
 class AuthController {
 
     constructor() {
-        this.userRepository      = new UserRepository();
-        this.notificationManager = new NotificationManager();
+        this.userRepository = new UserRepository();
 
         $.get("views/navbar.html")
          .done((data) => this.setup(data))
@@ -34,18 +33,37 @@ class AuthController {
             event.preventDefault();
 
             //Find the username and password
-            const email    = this.authView.find("[name='email']").val();
-            const password = this.authView.find("[name='password']").val();
+            const email    = this.authView.find("[name='login-email']").val();
+            const password = this.authView.find("[name='login-password']").val();
+
+
+            // Check if value exists
+            if (!email || !password) {
+                notificationManager.alert("warning", "Vul alle velden in!");
+                return false;
+            }
+
+            // Check email
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.match(mailformat)) {
+                notificationManager.alert("warning", "Email is niet correct!");
+                return false;
+            }
+
+            if (password.length < 6) {
+                notificationManager.alert("warning", "Wachtwoord is te kort!");
+                return false;
+            }
 
             //await keyword 'stops' code until data is returned - can only be used in async function
             const user = await this.userRepository.login(email, password);
 
             sessionManager.set("userID", user.userID);
-            this.notificationManager.alert("success", "U wordt ingelogd!");
+            notificationManager.alert("success", "U wordt ingelogd!");
 
         } catch (e) {
             if (e.code === 401) {
-                this.notificationManager.alert("error", e.reason);
+                notificationManager.alert("error", e.reason);
             } else {
                 console.log(e);
             }
@@ -63,33 +81,33 @@ class AuthController {
             event.preventDefault();
 
 
-            const firstName      = this.authView.find("[name='firstname']").val().toLowerCase();
-            const lastName       = this.authView.find("[name='lastname']").val().toLowerCase();
-            const email          = this.authView.find("[name='user-email']").val().toLowerCase();
-            const password       = this.authView.find("[name='user-password']").val();
-            const passwordRepeat = this.authView.find("[name='user-passwordrepeat']").val();
+            const firstName      = this.authView.find("[name='register-firstname']").val().toLowerCase();
+            const lastName       = this.authView.find("[name='register-lastname']").val().toLowerCase();
+            const email          = this.authView.find("[name='register-email']").val().toLowerCase();
+            const password       = this.authView.find("[name='register-password']").val();
+            const passwordRepeat = this.authView.find("[name='register-passwordrepeat']").val();
 
 
             // Check if value exists
             if (!firstName || !lastName || !email || !password) {
-                this.notificationManager.alert("warning", "Vul alle velden in!");
+                notificationManager.alert("warning", "Vul alle velden in!");
                 return false;
             }
 
             // Check email
             var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             if (!email.match(mailformat)) {
-                this.notificationManager.alert("warning", "Email is niet correct!");
+                notificationManager.alert("warning", "Email is niet correct!");
                 return false;
             }
 
             if (password.length < 6) {
-                this.notificationManager.alert("warning", "Wachtwoord is te kort!");
+                notificationManager.alert("warning", "Wachtwoord is te kort!");
                 return false;
             }
 
             if (password != passwordRepeat) {
-                this.notificationManager.alert("warning", "Wachtwoorden komen niet overeen!");
+                notificationManager.alert("warning", "Wachtwoorden komen niet overeen!");
                 return false;
             }
 
@@ -97,12 +115,12 @@ class AuthController {
             //await keyword 'stops' code until data is returned - can only be used in async function
             const user = await this.userRepository.register(firstName, lastName, email, password);
 
-            this.notificationManager.alert("success", "U bent geregistreerd!");
+            notificationManager.alert("success", "U bent geregistreerd!");
             sessionManager.set("userID", user.userID);
 
         } catch (e) {
             if (e.code === 401) {
-                this.notificationManager.alert("error", e.reason);
+                notificationManager.alert("error", e.reason);
             } else {
                 console.log(e);
             }

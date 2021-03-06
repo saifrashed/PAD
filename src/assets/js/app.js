@@ -15,8 +15,9 @@ const CONTROLLER_GAMES      = "games";
 const CONTROLLER_GAMEDETAIL = "gamedetail";
 const CONTROLLER_UPLOAD     = "upload";
 
-const sessionManager = new SessionManager();
-const networkManager = new NetworkManager();
+const sessionManager      = new SessionManager();
+const networkManager      = new NetworkManager();
+const notificationManager = new NotificationManager();
 
 class App {
 
@@ -37,6 +38,8 @@ class App {
      */
     loadController(name, controllerData) {
         console.log("loadController: " + name);
+
+        $('html,body').scrollTop(0); // scroll to top of page on click
 
         if (controllerData) {
             console.log(controllerData);

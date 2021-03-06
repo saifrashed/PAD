@@ -27,14 +27,6 @@ Game Detail page styling
     border-radius: 25px;
 }
 
-.floorplan ul {
-    list-style-type: none;
-}
-
-.floorplan .colorbox {
-    width: 1rem;
-    height: 1rem;
-}
 
 .floorplan img {
     border-radius: 25px;

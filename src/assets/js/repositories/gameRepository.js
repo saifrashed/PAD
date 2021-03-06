@@ -5,14 +5,15 @@
  *
  * @author Pim Meijer
  */
-class RoomExampleRepository {
+class GameRepository {
 
     constructor() {
-        this.route = "/room_example"
+        this.route = "/game/"
     }
 
     async getAll() {
-
+        return await networkManager
+            .doRequest(this.route, {}, "GET");
     }
 
     /**

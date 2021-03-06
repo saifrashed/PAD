@@ -2,7 +2,7 @@
 <div class="p-3">
     <header class="masthead text-center text-white">
         <video autoplay id="gamesVideo" loop muted>
-            <source src="./assets/img/kinderen-yoga-video.mp4" type="video/mp4">
+            <source src="./assets/img/banners/kinderen-yoga-video.mp4" type="video/mp4">
         </video>
         <div class="masthead-content">
             <div class="container">
@@ -16,7 +16,7 @@
 
 <!-- Content box -->
 <div class="container pt-3">
-    <div class="row " style="padding: 15px;">
+    <div class="row highlighted-game" style="padding: 15px;">
         <div class="jumbotron p-3 p-md-5 text-white w-100"
              style="background-image: url('././assets/img/stock-1.jpg');background-size: cover;background-position: center;position: relative; border-radius: 25px;">
             <div class="overlay"></div>
@@ -24,7 +24,7 @@
                 <h1 class="display-4 font-italic">Voetbal met Groep 6 & 7</h1>
                 <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
                                      efficiently about what's most interesting in this post's contents.</p>
-                <p class="lead mb-0"><a class="text-white font-weight-bold" href="#">Meer informatie <i
+                <p class="lead mb-0"><a class="text-white font-weight-bold" data-controller="gamedetail">Meer informatie <i
                         class="fas fa-arrow-right"></i></a></p>
             </div>
         </div>
@@ -135,119 +135,16 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i>
-                        </button>
+                        <button class="btn btn-default" data-dismiss="modal" type="button"><i class="fas fa-times"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row games">
         <div class="masonry p-3">
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Korfballen tikkertje</h1>
-                    <p class="brick__author">4 tot 6 Jaar</p>
-                    <i class="fas fa-plus addGame"
-                       onclick="notie.alert({type: 'success', text: 'Toegevoegd aan favorieten',position: 'bottom'})"></i>
-                </div>
 
-                <a data-controller="gamedetail">
-                    <img alt="Cherry plant" src="./assets/img/games/cherry-plant.jpg" title="Cherry plant">
-                </a>
-            </div>
-
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Pionnenroof</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img alt="Pionnenroof" src="./assets/img/pionnenroof.png" title="Pionnenroof">
-                </a>
-            </div>
-
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Fopbal</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img alt="Fopbal" src="./assets/img/fopbal.jpg" title="Fopbal">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Leeuwenkooi</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img alt="Leeuwenkooi" src="./assets/img/leeuwenkooi.jpg" title="Leeuwenkooi">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Estafette</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img src="./assets/img/estafette.jpg" alt="Estafette" title="Estafette">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Commandospel</h1>
-                    <p class="brick__author">Alle leeftijden</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img src="./assets/img/commando.jpg" alt="Commando" title="Commando">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Stresstikkertje</h1>
-                    <p class="brick__author">Vanaf 8 jaar</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img src="./assets/img/stresstikkertje.jpg" alt="Stresstikkertje" title="Stresstikkertje">
-                </a>
-            </div>
-
-            <div class="brick">
-                <div class="brick__top">
-                    <h1 class="brick__title">Eindvakbal</h1>
-                    <p class="brick__author">vanaf 8 jaar</p>
-
-                    <i class="fas fa-plus addGame"></i>
-                </div>
-
-                <a data-controller="gamedetail">
-                    <img src="./assets/img/games/cherries.jpg" alt="Eindvakbal" title="Eindvakbal">
-                </a>
-            </div>
         </div>
     </div>
 </div>

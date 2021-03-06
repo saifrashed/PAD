@@ -18,5 +18,15 @@ router.route('/').get(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
+router.route('/:id').get(async (req, res) => {
+    console.log(req.params.id)
+    db.handleQuery(connectionPool, {
+        query: "SELECT * FROM games WHERE gameID = ?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 
 module.exports = router;

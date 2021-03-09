@@ -12,7 +12,7 @@
     display: inline-block; /* Fix the misalignment of items */
     vertical-align: top; /* Keep the item on the very top */
     width: 100%;
-    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     cursor: pointer;
 }
 
@@ -20,6 +20,7 @@
 .masonry .brick:hover {
     transform: scale(1.05);
 }
+
 
 /* Masonry image effects */
 .masonry .brick img {
@@ -29,7 +30,6 @@
     height: auto;
     border-radius: 25px;
 }
-
 
 /* Bordered masonry */
 .masonry.bordered {
@@ -52,8 +52,25 @@
     padding: 15px;
 }
 
+.brick__title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.brick__top h1 {
+    font-size: 25px;
+    display: inline;
+}
+
+.brick
+
 .brick__top h1, .brick__top p {
     color: #ffffff;
+    display: inline;
+
+    padding: 5px 10px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .brick__bottom {
@@ -65,6 +82,13 @@
     font-size: 30px;
     color: #fff;
     text-align: right;
+}
+
+.brick__bottom i {
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Gutterless masonry */

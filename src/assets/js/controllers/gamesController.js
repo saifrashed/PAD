@@ -5,8 +5,9 @@
  * @author Lennard Fonteijn & Pim Meijer
  */
 class GamesController {
-    constructor() {
+    constructor(isLogged) {
         this.gameRepository = new GameRepository();
+        this.isLogged = isLogged;
 
         $.get("views/games.html")
          .done((data) => {
@@ -16,43 +17,48 @@ class GamesController {
     }
 
     //Called when the welcome.html has been loaded
-    setup(data) {
+    async setup(data) {
         //Load the welcome-content into memory
         this.gamesView = $(data);
 
-        this.renderGames();
+        const games = await this.gameRepository.getAll();
 
-        //Empty the content-div and add the resulting view to the page
-        $(".content").empty().append(this.gamesView);
-    }
+        let randomNumber = Math.floor(Math.random() * 3);
+
+        // game highlighted
+        this.gamesView.find('.highlighted-game').html(Highlighted({
+            title:       games[randomNumber].title,
+            imageUrl:    games[randomNumber].imageUrl,
+            description: games[randomNumber].description
+        }));
+
+        // game bricks
+        this.gamesView.find('.games .masonry').html(games.map(Brick).join(''));
+
+        this.gamesView.find(".brick a").on("click", this.handleClickGameItem);
+        this.gamesView.find(".highlighted-game a").on("click", this.handleClickGameItem);
 
 
-    /**
-     * Renders games and assigns actions to its buttons
-     * @param data
-     * @returns {Promise<void>}
-     */
-    async renderGames() {
-        try {
-            const games = await this.gameRepository.getAll();
+        if(this.isLogged) {
 
-            let randomNumber = Math.floor(Math.random() * 3);
+            this.gamesView.find(".favorite-btn").removeAttr("data-target");
+            this.gamesView.find(".favorite-btn").removeData("data-toggle");
 
-            // game highlighted
-            this.gamesView.find('.highlighted-game').html(Highlighted({title: games[randomNumber].title, imageUrl: games[randomNumber].imageUrl, description: games[randomNumber].description}));
+            this.gamesView.find(".add-btn").removeAttr("data-target");
+            this.gamesView.find(".add-btn").removeData("data-toggle");
 
-            // game bricks
-            this.gamesView.find('.games .masonry').html(games.map(Brick).join(''));
-
-            this.gamesView.find(".brick a").on("click", this.handleClickGameItem);
-            this.gamesView.find(".highlighted-game a").on("click", this.handleClickGameItem);
             // action handlers
             this.gamesView.find(".favorite-btn").on("click", this.handleClickFavorites);
             this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
-            this.gamesView.find(".share-btn").on("click", this.handleClickShare);
-        } catch (e) {
-            console.log(e);
         }
+
+
+
+        this.gamesView.find(".share-btn").on("click", () => this.handleClickShare());
+
+
+        //Empty the content-div and add the resulting view to the page
+        $(".content").empty().append(this.gamesView);
     }
 
     handleClickGameItem() {
@@ -69,28 +75,15 @@ class GamesController {
     handleClickShare() {
         console.log(this);
 
-        let choices = [
-            {
-                text:    'Afdrukken',
-                handler: function () {
-                    notie.alert({text: 'Afdrukken', position: 'bottom'})
-                }
-            },
-            {
-                text:    'PDF',
-                handler: function () {
-                    notie.alert({text: 'PDF', position: 'bottom'})
-                }
-            },
-            {
-                text:    'Delen',
-                handler: function () {
-                    notie.alert({text: 'Kopieerd', position: 'bottom'})
-                }
-            },
-        ];
-
-        notificationManager.select('Delen', choices);
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard("lol");
+            return;
+        }
+        navigator.clipboard.writeText("lol").then(function () {
+            notificationManager.alert("success", 'Gekopieerd');
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+        });
     }
 
     handleClickAddTo() {
@@ -127,6 +120,19 @@ class GamesController {
         console.log(this);
 
         notificationManager.alert("success", 'Toegevoegd aan favorieten');
+    }
+
+
+    copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
+        }
+        navigator.clipboard.writeText(text).then(function () {
+            console.log('Async: Copying to clipboard was successful!');
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+        });
     }
 
     //Called when the login.html fails to load

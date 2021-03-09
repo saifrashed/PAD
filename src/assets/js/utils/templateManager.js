@@ -32,7 +32,9 @@ const Brick = ({title, imageUrl, type}) => `
                                             <div class="brick">
                                                 <a data-controller="gamedetail">
                                                     <div class="brick__top">
-                                                        <h1 class="brick__title">${title}</h1>
+                                                        <div class="brick__title">
+                                                         <h1>${title}</h1>
+                                                        </div>
                                                         <p class="brick__author">${type}</p>
                                                     </div>
                                 
@@ -40,9 +42,36 @@ const Brick = ({title, imageUrl, type}) => `
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-heart favorite-btn"></i>
-                                                    <i class="fas fa-plus add-btn"></i>
+                                                    <i class="fas fa-heart favorite-btn" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <i class="fas fa-external-link-alt share-btn"></i>
+                                                </div>
+                                            </div>
+                                            `;
+
+/**
+ * Game Brick Template
+ * @param title
+ * @param imageUrl
+ * @param type
+ * @returns {string}
+ * @constructor
+ */
+const FavoriteBrick = ({title, imageUrl, type}) => `
+                                                                  <div class="brick">
+                                                <a data-controller="gamedetail">
+                                                    <div class="brick__top">
+                                                        <div class="brick__title">
+                                                         <h1>${title}</h1>
+                                                        </div>
+                                                        <p class="brick__author">${type}</p>
+                                                    </div>
+                                
+                                                    <img alt="${title}" src="${imageUrl}" title="${title}">
+                                                </a>
+                                
+                                                <div class="brick__bottom">
+                                                    <i class="fas fa-times remove-favorite"></i>                                                
                                                 </div>
                                             </div>
                                             `;

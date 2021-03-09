@@ -71,17 +71,17 @@ header.masthead .bg-circle {
 }
 
 header.masthead .bg-circle-1 {
-    height: 90rem;
-    width: 75rem;
-    bottom: 5rem;
-    left: -60rem;
+    height: 61rem;
+    width: 45rem;
+    left: -35rem;
+    top: -28rem;
 }
 
 header.masthead .bg-circle-2 {
-    height: 50rem;
+    height: 61rem;
     width: 45rem;
-    top: 9rem;
-    right: -40rem;
+    top: -15rem;
+    right: -37rem;
 }
 
 
@@ -170,8 +170,12 @@ header.masthead .bg-circle-2 {
     right: 30px;
     z-index: 500;
     font-size: 25px;
-    mix-blend-mode: screen;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
 
+.user-symbol:hover {
+    cursor: pointer;
+    transform: scale(1.10);
 }
 
 .user-symbol a {

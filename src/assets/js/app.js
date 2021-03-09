@@ -53,7 +53,7 @@ class App {
                 break;
 
             case CONTROLLER_AUTH:
-                new AuthController();
+                this.isLoggedIn(() => new AuthController(true), () => new AuthController(false));
                 break;
 
             case CONTROLLER_LOGOUT:
@@ -68,7 +68,8 @@ class App {
 
             case CONTROLLER_GAMES:
                 this.setCurrentController(name);
-                new GamesController;
+
+                this.isLoggedIn(() => new GamesController(true), () => new GamesController(false));
                 break;
 
             case CONTROLLER_GAMEDETAIL:
@@ -117,7 +118,7 @@ class App {
      * @param whenNo - function to execute when user is logged in
      */
     isLoggedIn(whenYes, whenNo) {
-        if (sessionManager.get("username")) {
+        if (sessionManager.get("userID")) {
             whenYes();
         } else {
             whenNo();

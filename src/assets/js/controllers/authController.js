@@ -5,23 +5,59 @@
  */
 class AuthController {
 
-    constructor() {
-        this.userRepository = new UserRepository();
+    constructor(isLogged) {
+        this.isLogged = isLogged;
 
-        $.get("views/navbar.html")
-         .done((data) => this.setup(data))
+        $.get("views/authbox.html")
+         .done((data) => {
+             this.setup(data)
+         })
          .fail(() => this.error());
     }
 
     //Called when the login.html has been loaded
-    setup(data) {
+    async setup(data) {
         //Load the login-content into memory
-        this.authView = $(".authentication");
+        const authBox = $(data);
 
-        this.authView.find(".login-form").on("submit", (e) => this.handleLogin(e));
-        this.authView.find(".register-form").on("submit", (e) => this.handleRegistration(e));
+        if (this.isLogged) {
 
+            const user = await this.fetchUser(sessionManager.get("userID"));
+
+            console.log(user);
+
+            authBox.find("#pills-profile-tab").addClass("active");
+            authBox.find("#pills-login").removeClass("active show");
+            authBox.find("#pills-profile").addClass("active show");
+
+            authBox.find("#pills-login-tab").remove();
+            authBox.find("#pills-registration-tab").remove();
+
+            authBox.find("#logout-btn").on("click", this.handleLogout);
+
+            authBox.find("#user-name").html(user.firstname + " " + user.lastname);
+            authBox.find("#user-email").html(user.email);
+
+
+            if(user.favorites) {
+                authBox.find('.masonry').html(user.favorites.map(FavoriteBrick).join(''));
+            } else {
+                authBox.find('.masonry').html("U hebt geen favorieten spellen.");
+            }
+
+        } else {
+
+            authBox.find("#pills-profile-tab").remove();
+            authBox.find("#pills-favorites-tab").remove();
+
+            authBox.find(".login-form").on("submit", this.handleLogin);
+            authBox.find(".register-form").on("submit", this.handleRegistration);
+        }
+
+
+        $(".authbox").empty().append(authBox);
     }
+
 
     /**
      * Async function that does a login request via repository
@@ -29,13 +65,16 @@ class AuthController {
      */
     async handleLogin(event) {
         try {
+
             //prevent actual submit and page refresh
             event.preventDefault();
 
-            //Find the username and password
-            const email    = this.authView.find("[name='login-email']").val();
-            const password = this.authView.find("[name='login-password']").val();
+            const userRepository = new UserRepository();
 
+
+            //Find the username and password
+            const email    = $(this).find("[name='login-email']").val();
+            const password = $(this).find("[name='login-password']").val();
 
             // Check if value exists
             if (!email || !password) {
@@ -56,11 +95,11 @@ class AuthController {
             }
 
             //await keyword 'stops' code until data is returned - can only be used in async function
-            const user = await this.userRepository.login(email, password);
+            const user = await userRepository.login(email, password);
 
             sessionManager.set("userID", user.userID);
             notificationManager.alert("success", "U wordt ingelogd!");
-
+            location.reload();
         } catch (e) {
             if (e.code === 401) {
                 notificationManager.alert("error", e.reason);
@@ -80,12 +119,13 @@ class AuthController {
             //prevent actual submit and page refresh
             event.preventDefault();
 
+            const userRepository = new UserRepository();
 
-            const firstName      = this.authView.find("[name='register-firstname']").val().toLowerCase();
-            const lastName       = this.authView.find("[name='register-lastname']").val().toLowerCase();
-            const email          = this.authView.find("[name='register-email']").val().toLowerCase();
-            const password       = this.authView.find("[name='register-password']").val();
-            const passwordRepeat = this.authView.find("[name='register-passwordrepeat']").val();
+            const firstName      = $(this).find("[name='register-firstname']").val();
+            const lastName       = $(this).find("[name='register-lastname']").val();
+            const email          = $(this).find("[name='register-email']").val();
+            const password       = $(this).find("[name='register-password']").val();
+            const passwordRepeat = $(this).find("[name='register-passwordrepeat']").val();
 
 
             // Check if value exists
@@ -113,11 +153,11 @@ class AuthController {
 
 
             //await keyword 'stops' code until data is returned - can only be used in async function
-            const user = await this.userRepository.register(firstName, lastName, email, password);
+            const user = await userRepository.register(firstName.toLowerCase(), lastName.toLowerCase(), email.toLowerCase(), password);
 
             notificationManager.alert("success", "U bent geregistreerd!");
             sessionManager.set("userID", user.userID);
-
+            location.reload();
         } catch (e) {
             if (e.code === 401) {
                 notificationManager.alert("error", e.reason);
@@ -127,6 +167,21 @@ class AuthController {
         }
     }
 
+    async handleLogout() {
+        const userRepository = new UserRepository();
+        userRepository.logout();
+        location.reload();
+    }
+
+
+    async fetchUser(id) {
+        try {
+            const userRepository = new UserRepository();
+            return await userRepository.get(id);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     //Called when the login.html failed to load
     error() {

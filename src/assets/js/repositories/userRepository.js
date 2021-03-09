@@ -10,8 +10,15 @@ class UserRepository {
         this.route = "/user"
     }
 
-    async getAll() {
 
+    async get(id) {
+        return await networkManager
+            .doRequest(`${this.route}/${id}`, {}, "GET");
+    }
+
+    async getAll() {
+        return await networkManager
+            .doRequest(`${this.route}/`, {}, "GET");
     }
 
     /**
@@ -46,5 +53,9 @@ class UserRepository {
 
     async update(id, values = {}) {
 
+    }
+
+    async logout() {
+        sessionManager.clear();
     }
 }

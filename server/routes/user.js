@@ -8,6 +8,49 @@ const httpOkCode           = 200;
 const badRequestCode       = 400;
 const authorizationErrCode = 401;
 
+
+/**
+ * Get single user
+ */
+router.route('/:id').get(async (req, res) => {
+
+    // get user and associated favorites
+    db.handleQuery(connectionPool, {
+        query:  "SELECT * FROM user WHERE userID = ?",
+        values: [req.params.id]
+    }, (user) => {
+
+        // get favorites associated with user
+        db.handleQuery(connectionPool, {
+            query:  "SELECT title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID FROM user NATURAL JOIN user_favorites NATURAL JOIN games WHERE userID = ?",
+            values: [req.params.id]
+        }, (data) => {
+
+            // check if user has favorites
+            if (data.length) {
+                user[0].favorites = data;
+                res.status(httpOkCode).json(user[0]);
+            } else {
+                res.status(httpOkCode).json(user[0]);
+            }
+        }, (err) => res.status(httpOkCode).json(user[0]));
+
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+
+/**
+ * Get all users
+ */
+router.route('/').get(async (req, res) => {
+
+    db.handleQuery(connectionPool, {
+        query: "SELECT * FROM user",
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 /**
  * Users login
  */
@@ -55,6 +98,13 @@ router.route('/register').post(async (req, res) => {
                 query:  "INSERT INTO user (firstname, lastname, email, password) VALUES (?,?,?,?)",
                 values: [firstname, lastname, email, encryptedPassword]
             }, (data) => {
+
+                db.handleQuery(connectionPool, {
+                    query:  "SELECT userID, email, password FROM user WHERE userID = ?",
+                    values: [data.insertId]
+                }, (newUser) => {
+                    res.status(httpOkCode).json({"userID": newUser[0].userID});
+                });
 
             }, (err) => res.status(badRequestCode).json({reason: err}));
         }

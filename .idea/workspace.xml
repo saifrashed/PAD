@@ -111,21 +111,6 @@
       <recent name="$PROJECT_DIR$/src/js" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -142,7 +127,8 @@
       <workItem from="1613740914471" duration="294000" />
       <workItem from="1614863175106" duration="9677000" />
       <workItem from="1614895044337" duration="2764000" />
-      <workItem from="1615061942902" duration="3137000" />
+      <workItem from="1615061942902" duration="3899000" />
+      <workItem from="1615288292673" duration="726000" />
     </task>
     <servers />
   </component>

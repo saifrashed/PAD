@@ -16,11 +16,11 @@ class GamesController {
     }
 
     //Called when the welcome.html has been loaded
-    setup(data) {
+    async setup(data) {
         //Load the welcome-content into memory
         this.gamesView = $(data);
 
-        this.renderGames();
+        await this.renderGames();
 
         //Empty the content-div and add the resulting view to the page
         $(".content").empty().append(this.gamesView);

@@ -39,7 +39,7 @@ class AuthController {
             authBox.find("#user-email").html(user.email);
 
 
-            if(user.favorites) {
+            if (user.favorites) {
                 authBox.find('.masonry').html(user.favorites.map(FavoriteBrick).join(''));
             } else {
                 authBox.find('.masonry').html("U hebt geen favorieten spellen.");
@@ -172,7 +172,6 @@ class AuthController {
         userRepository.logout();
         location.reload();
     }
-
 
     async fetchUser(id) {
         try {

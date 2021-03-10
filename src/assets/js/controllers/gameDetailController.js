@@ -7,28 +7,32 @@
 class GameDetailController {
     constructor(gameID) {
         this.gameRepository = new GameRepository();
-        this.gameID = gameID;
+        this.gameID         = gameID;
         $.get("views/gameDetail.html")
-            .done((data) => this.setup(data))
-            .fail(() => this.error());
+         .done((data) => this.setup(data))
+         .fail(() => this.error());
     }
 
     //Called when the welcome.html has been loaded
     async setup(data) {
         //Load the welcome-content into memory
-        this.welcomeView = $(data);
-        const game = await this.gameRepository.get(this.gameID);
+        this.gameDetailView = $(data);
+        const game       = await this.gameRepository.get(this.gameID);
 
-        $("#gamedetail-title").html(game.title);
+        this.gameDetailView.find("#gamedetail-title").text(game.title);
+        this.gameDetailView.find("#gamedetail-type").text(game.type);
+        this.gameDetailView.find("#gamedetail-image").css({backgroundImage: "url(" + game.imageUrl + ")"});
+        this.gameDetailView.find("#gamedetail-breadcrumb").text(game.title);
+        this.gameDetailView.find("#gamedetail-desc").text(game.description);
+        this.gameDetailView.find("#gamedetail-floorplan").attr('src', game.floorplanUrl);
 
-        console.log(game);
         //Set the name in the view from the session
-        this.welcomeView.find(".name").html(sessionManager.get("username"));
-        this.welcomeView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
-        this.welcomeView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
+        this.gameDetailView.find(".name").html(sessionManager.get("username"));
+        this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
+        this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
 
         //Empty the content-div and add the resulting view to the page
-        $(".content").empty().append(this.welcomeView);
+        $(".content").empty().append(this.gameDetailView);
 
     }
 

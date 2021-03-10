@@ -21,6 +21,7 @@ class GamesController {
         //Load the welcome-content into memory
         this.gamesView = $(data);
 
+        // fetch games
         const games = await this.gameRepository.getAll();
 
         let randomNumber = Math.floor(Math.random() * 3);

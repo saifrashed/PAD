@@ -30,7 +30,7 @@ const Highlighted = ({title, imageUrl, description}) => `
  */
 const Brick = ({gameID, title, imageUrl, type}) => `
                                             <div class="brick">
-                                                <a data-controller="gamedetail" data-id="${gameID}">
+                                                <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
                                                          <h1>${title}</h1>
@@ -57,9 +57,9 @@ const Brick = ({gameID, title, imageUrl, type}) => `
  * @returns {string}
  * @constructor
  */
-const FavoriteBrick = ({title, imageUrl, type}) => `
+const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                                   <div class="brick">
-                                                <a data-controller="gamedetail">
+                                                <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
                                                          <h1>${title}</h1>

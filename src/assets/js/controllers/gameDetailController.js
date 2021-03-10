@@ -18,6 +18,9 @@ class GameDetailController {
         //Load the welcome-content into memory
         this.welcomeView = $(data);
         const game = await this.gameRepository.get(this.gameID);
+
+        $("#gamedetail-title").html(game.title);
+
         console.log(game);
         //Set the name in the view from the session
         this.welcomeView.find(".name").html(sessionManager.get("username"));

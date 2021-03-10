@@ -63,10 +63,11 @@ class GamesController {
 
     handleClickGameItem() {
         //Get the data-controller from the clicked element (this)
-        const controller = $(this).attr("data-controller");
+        const gameID = $(this).attr("data-id");
+        new GameDetailController(gameID);
 
         //Pass the action to a new function for further processing
-        app.loadController(controller);
+        //app.loadController(controller);
 
         //Return false to prevent reloading the page
         return false;

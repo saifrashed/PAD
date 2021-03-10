@@ -28,9 +28,9 @@ const Highlighted = ({title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({title, imageUrl, type}) => `
+const Brick = ({gameID, title, imageUrl, type}) => `
                                             <div class="brick">
-                                                <a data-controller="gamedetail">
+                                                <a data-controller="gamedetail" data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
                                                          <h1>${title}</h1>

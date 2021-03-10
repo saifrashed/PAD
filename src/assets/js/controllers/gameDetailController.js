@@ -5,17 +5,20 @@
  * @author Lennard Fonteijn & Pim Meijer
  */
 class GameDetailController {
-    constructor() {
+    constructor(gameID) {
+        this.gameRepository = new GameRepository();
+        this.gameID = gameID;
         $.get("views/gameDetail.html")
             .done((data) => this.setup(data))
             .fail(() => this.error());
     }
 
     //Called when the welcome.html has been loaded
-    setup(data) {
+    async setup(data) {
         //Load the welcome-content into memory
         this.welcomeView = $(data);
-
+        const game = await this.gameRepository.get(this.gameID);
+        console.log(game);
         //Set the name in the view from the session
         this.welcomeView.find(".name").html(sessionManager.get("username"));
         this.welcomeView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);

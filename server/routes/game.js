@@ -24,7 +24,7 @@ router.route('/:id').get(async (req, res) => {
         query: "SELECT * FROM games WHERE gameID = ?",
         values: [req.params.id]
     }, (data) => {
-        res.status(httpOkCode).json(data);
+        res.status(httpOkCode).json(data[0]);
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 

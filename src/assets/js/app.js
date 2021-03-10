@@ -74,7 +74,7 @@ class App {
 
             case CONTROLLER_GAMEDETAIL:
                 this.setCurrentController(name);
-                new GameDetailController;
+                new GameDetailController();
                 break;
 
             case CONTROLLER_UPLOAD:

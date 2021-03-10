@@ -8,7 +8,7 @@
 class GameRepository {
 
     constructor() {
-        this.route = "/game/"
+        this.route = "/game"
     }
 
     async getAll() {
@@ -22,9 +22,9 @@ class GameRepository {
      * @param roomId
      * @returns {Promise<room>}
      */
-    async get(roomId) {
+    async get(id) {
         return await networkManager
-            .doRequest(this.route,{id: roomId});
+            .doRequest(`${this.route}/${id}`, {}, "GET");
     }
 
     async create() {

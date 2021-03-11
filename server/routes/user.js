@@ -10,46 +10,14 @@ const authorizationErrCode = 401;
 
 
 /**
- * Get single user
+ * add to favorite
  */
-router.route('/:id').get(async (req, res) => {
+router.route('/insert').get(async (req, res) => {
 
-    // get user and associated favorites
-    db.handleQuery(connectionPool, {
-        query:  "SELECT * FROM user WHERE userID = ?",
-        values: [req.params.id]
-    }, (user) => {
+    res.json({hello: "marvin"})
 
-        // get favorites associated with user
-        db.handleQuery(connectionPool, {
-            query:  "SELECT title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID FROM user NATURAL JOIN user_favorites NATURAL JOIN games WHERE userID = ?",
-            values: [req.params.id]
-        }, (data) => {
-
-            // check if user has favorites
-            if (data.length) {
-                user[0].favorites = data;
-                res.status(httpOkCode).json(user[0]);
-            } else {
-                res.status(httpOkCode).json(user[0]);
-            }
-        }, (err) => res.status(httpOkCode).json(user[0]));
-
-    }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
-
-/**
- * Get all users
- */
-router.route('/').get(async (req, res) => {
-
-    db.handleQuery(connectionPool, {
-        query: "SELECT * FROM user",
-    }, (data) => {
-        res.status(httpOkCode).json(data);
-    }, (err) => res.status(badRequestCode).json({reason: err}));
-});
 
 /**
  * Users login
@@ -112,19 +80,47 @@ router.route('/register').post(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
+
 /**
- * add to favorite
+ * Get single user
  */
-router.route('/insert').get(async (req, res) => {
+router.route('/:id').get(async (req, res) => {
+
+    // get user and associated favorites
+    db.handleQuery(connectionPool, {
+        query:  "SELECT * FROM user WHERE userID = ?",
+        values: [req.params.id]
+    }, (user) => {
+
+        // get favorites associated with user
+        db.handleQuery(connectionPool, {
+            query:  "SELECT title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID FROM user NATURAL JOIN user_favorites NATURAL JOIN games WHERE userID = ?",
+            values: [req.params.id]
+        }, (data) => {
+
+            // check if user has favorites
+            if (data.length) {
+                user[0].favorites = data;
+                res.status(httpOkCode).json(user[0]);
+            } else {
+                res.status(httpOkCode).json(user[0]);
+            }
+        }, (err) => res.status(httpOkCode).json(user[0]));
+
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+
+/**
+ * Get all users
+ */
+router.route('/').get(async (req, res) => {
     db.handleQuery(connectionPool, {
         query: "SELECT * FROM user",
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
-
-
-
-})
+});
 
 
 

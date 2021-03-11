@@ -114,7 +114,7 @@ router.route('/:id').get(async (req, res) => {
 
         // get favorites associated with user
         db.handleQuery(connectionPool, {
-            query:  "SELECT title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID FROM user NATURAL JOIN user_favorites NATURAL JOIN games WHERE userID = ?",
+            query:  "SELECT gameID, title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID FROM user NATURAL JOIN user_favorites NATURAL JOIN games WHERE userID = ?",
             values: [req.params.id]
         }, (data) => {
 

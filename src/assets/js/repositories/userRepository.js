@@ -30,7 +30,7 @@ class UserRepository {
     async login(email, password) {
         return await networkManager
             .doRequest(`${this.route}/login`, {
-                "email": email,
+                "email":    email,
                 "password": password
             }, "POST");
     }
@@ -61,9 +61,9 @@ class UserRepository {
         return await networkManager
             .doRequest(`${this.route}/register`, {
                 "firstname": firstName,
-                "lastname": lastName,
-                "email": email,
-                "password": password
+                "lastname":  lastName,
+                "email":     email,
+                "password":  password
             }, "POST");
     }
 

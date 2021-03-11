@@ -39,8 +39,6 @@ class App {
     loadController(name, controllerData) {
         console.log("loadController: " + name);
 
-        $('html,body').scrollTop(0); // scroll to top of page on click
-
         if (controllerData) {
             console.log(controllerData);
         } else {

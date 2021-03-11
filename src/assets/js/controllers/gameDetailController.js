@@ -17,7 +17,7 @@ class GameDetailController {
     async setup(data) {
         //Load the welcome-content into memory
         this.gameDetailView = $(data);
-        const game       = await this.gameRepository.get(this.gameID);
+        const game          = await this.gameRepository.get(this.gameID);
 
         this.gameDetailView.find("#gamedetail-title").text(game.title);
         this.gameDetailView.find("#gamedetail-type").text(game.type);

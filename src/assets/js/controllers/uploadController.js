@@ -6,8 +6,8 @@
 class UploadController {
     constructor() {
         $.get("views/upload.html")
-            .done((data) => this.setup(data))
-            .fail(() => this.error());
+         .done((data) => this.setup(data))
+         .fail(() => this.error());
     }
 
     //Called when the upload.html has been loaded
@@ -19,7 +19,7 @@ class UploadController {
         $(".content").empty().append(this.welcomeView);
 
         //File upload
-        this.welcomeView.find("#upload").on("click", function() {
+        this.welcomeView.find("#upload").on("click", function () {
             //Set the proper action url
             $(this).closest("form").attr("action", `${baseUrl}/upload`);
 

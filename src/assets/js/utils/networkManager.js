@@ -1,4 +1,3 @@
-
 /**
  * Implementation of a network manager that does an Ajax request to specified rout
  *
@@ -22,13 +21,13 @@ class NetworkManager {
         return new Promise((resolve, reject) => {
 
             $.ajax({
-                url: url,
-                type: method,
-                dataType: 'json',
+                url:         url,
+                type:        method,
+                dataType:    'json',
                 contentType: 'application/json; charset=UTF-8',
-                data: json,
-                success: resolve,
-                error: (xhr, ajaxOptions, thrownError) => this.__onFail(xhr, reject)
+                data:        json,
+                success:     resolve,
+                error:       (xhr, ajaxOptions, thrownError) => this.__onFail(xhr, reject)
             });
         });
     }
@@ -41,7 +40,7 @@ class NetworkManager {
      */
     __onFail(xhr, reject) {
         //400 is bad request, request has been arrived at server but server cant process it into a response
-        if(!this.canParseJson(xhr.responseText)) {
+        if (!this.canParseJson(xhr.responseText)) {
             reject({code: 1000, reason: "Unknown server error, no valid json response"});
             return;
         }
@@ -49,7 +48,7 @@ class NetworkManager {
         //ideally use the json from canParseJson
         const data = JSON.parse(xhr.responseText);
 
-        if(xhr.status === 400) {
+        if (xhr.status === 400) {
             console.log(`bad request error 400 ${data.reason}`);
         }
 

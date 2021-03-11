@@ -7,8 +7,8 @@
 class LandingController {
     constructor() {
         $.get("views/landing.html")
-            .done((data) => this.setup(data))
-            .fail(() => this.error());
+         .done((data) => this.setup(data))
+         .fail(() => this.error());
     }
 
     //Called when the welcome.html has been loaded

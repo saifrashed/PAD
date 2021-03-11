@@ -41,6 +41,9 @@ class AuthController {
 
             if (user.favorites) {
                 authBox.find('.masonry').html(user.favorites.map(FavoriteBrick).join(''));
+
+                authBox.find(".remove-favorite").on("click", this.handleDeleteFav);
+
             } else {
                 authBox.find('.masonry').html("U hebt geen favorieten spellen.");
             }
@@ -99,8 +102,7 @@ class AuthController {
 
             sessionManager.set("userID", user.userID);
             notificationManager.alert("success", "U wordt ingelogd!");
-            app.loadController("auth");
-            app.loadController("games");
+            location.reload();
         } catch (e) {
             if (e.code === 401) {
                 notificationManager.alert("error", e.reason);
@@ -178,6 +180,26 @@ class AuthController {
         try {
             const userRepository = new UserRepository();
             return await userRepository.get(id);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async handleDeleteFav() {
+        try {
+
+            const userRepository = new UserRepository();
+
+
+            const userID = sessionManager.get("userID");
+            const gameID = $(this).parent().siblings().attr("data-id");
+
+            const deletedFav = await userRepository.deleteFavorite(userID, gameID);
+
+
+            notificationManager.alert("success", 'Verwijderd van favorieten');
+            location.reload();
+
         } catch (e) {
             console.log(e);
         }

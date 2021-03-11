@@ -7,7 +7,7 @@
 class GamesController {
     constructor(isLogged) {
         this.gameRepository = new GameRepository();
-        this.isLogged = isLogged;
+        this.isLogged       = isLogged;
 
         $.get("views/games.html")
          .done((data) => {
@@ -40,7 +40,7 @@ class GamesController {
         this.gamesView.find(".highlighted-game a").on("click", this.handleClickGameItem);
 
 
-        if(this.isLogged) {
+        if (this.isLogged) {
 
             this.gamesView.find(".favorite-btn").removeAttr("data-target");
             this.gamesView.find(".favorite-btn").removeData("data-toggle");
@@ -52,7 +52,6 @@ class GamesController {
             this.gamesView.find(".favorite-btn").on("click", this.handleClickFavorites);
             this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
         }
-
 
 
         this.gamesView.find(".share-btn").on("click", () => this.handleClickShare());
@@ -121,13 +120,13 @@ class GamesController {
     async handleClickFavorites() {
         try {
             const userRepository = new UserRepository();
-            const userID = sessionManager.get("userID")
-            const gameID = $(this).parent().siblings().attr("data-id");
-            const newfav = await userRepository.createFavorite(userID, gameID)
+            const userID         = sessionManager.get("userID");
+            const gameID         = $(this).parent().siblings().attr("data-id");
+            const newfav         = await userRepository.createFavorite(userID, gameID);
             notificationManager.alert("success", 'Toegevoegd aan favorieten');
             app.loadController("auth");
-        } catch(e){
-            console.log(e)
+        } catch (e) {
+            console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
         }
 

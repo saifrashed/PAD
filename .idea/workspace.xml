@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/authbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authbox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/gameDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/gameDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +238,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../xampp/htdocs/projecten/team-7" />
@@ -251,10 +248,6 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/img/banners" />
-      <recent name="$PROJECT_DIR$/src/js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/img/games" />
       <recent name="$PROJECT_DIR$/src/views" />
@@ -262,18 +255,10 @@
       <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/src/assets/img/games/floorplan" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/img/banners" />
+      <recent name="$PROJECT_DIR$/src/js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -288,7 +273,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -309,6 +294,7 @@
       <workItem from="1615289915289" duration="16000" />
       <workItem from="1615380360279" duration="427000" />
       <workItem from="1615380816249" duration="4879000" />
+      <workItem from="1615462552917" duration="6293000" />
     </task>
     <servers />
   </component>

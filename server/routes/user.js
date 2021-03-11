@@ -63,7 +63,7 @@ router.route('/login').post(async (req, res) => {
     }, (data) => {
 
         const correctPassword = bcrypt.compare(password, data[0].password); // updated
-
+        console.log(data);
         if (data.length === 1 && correctPassword) {
             //return just the username for now, never send password back!
             res.status(httpOkCode).json({"userID": data[0].userID});
@@ -111,6 +111,21 @@ router.route('/register').post(async (req, res) => {
 
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
+
+/**
+ * add to favorite
+ */
+router.route('/insert').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query: "SELECT * FROM user",
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+
+
+})
+
 
 
 module.exports = router;

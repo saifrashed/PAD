@@ -118,10 +118,11 @@ class GamesController {
         notificationManager.select('Toevoegen aan spellenlijst', choices);
     }
 
-    handleClickFavorites() {
-        console.log(this);
-
+    async handleClickFavorites() {
+        const userId = sessionManager.get("userID")
+        const gameId = $(this).parent().siblings().attr("data-id");
         notificationManager.alert("success", 'Toegevoegd aan favorieten');
+
     }
 
 

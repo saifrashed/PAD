@@ -12,12 +12,32 @@ const authorizationErrCode = 401;
 /**
  * add to favorite
  */
-router.route('/insert').get(async (req, res) => {
+router.route('/favorite').post(async (req, res) => {
+    const {gameID, userID} = req.body;
 
-    res.json({hello: "marvin"})
+    db.handleQuery(connectionPool, {
+        query: "INSERT INTO user_favorites (userID, gameID) VALUES (?,?) ",
+        values: [userID,gameID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
 
 });
 
+/**
+ * delete favorite
+ */
+router.route('/favorite').delete(async (req, res) => {
+    const {gameID, userID} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query: "DELETE FROM user_favorites WHERE userID=? AND gameID=? ",
+        values: [userID,gameID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
 
 /**
  * Users login

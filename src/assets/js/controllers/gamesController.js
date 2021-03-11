@@ -119,9 +119,18 @@ class GamesController {
     }
 
     async handleClickFavorites() {
-        const userId = sessionManager.get("userID")
-        const gameId = $(this).parent().siblings().attr("data-id");
-        notificationManager.alert("success", 'Toegevoegd aan favorieten');
+        try {
+            const userRepository = new UserRepository();
+            const userID = sessionManager.get("userID")
+            const gameID = $(this).parent().siblings().attr("data-id");
+            const newfav = await userRepository.createFavorite(userID, gameID)
+            notificationManager.alert("success", 'Toegevoegd aan favorieten');
+            app.loadController("auth");
+        } catch(e){
+            console.log(e)
+            notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
+        }
+
 
     }
 

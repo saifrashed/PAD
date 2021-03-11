@@ -99,7 +99,7 @@ class AuthController {
 
             sessionManager.set("userID", user.userID);
             notificationManager.alert("success", "U wordt ingelogd!");
-            location.reload();
+            app.loadController("auth");
         } catch (e) {
             if (e.code === 401) {
                 notificationManager.alert("error", e.reason);

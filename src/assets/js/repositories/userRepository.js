@@ -30,9 +30,25 @@ class UserRepository {
     async login(email, password) {
         return await networkManager
             .doRequest(`${this.route}/login`, {
-                "email":    email,
+                "email": email,
                 "password": password
             }, "POST");
+    }
+
+    async createFavorite(userID, gameID) {
+        return await networkManager
+            .doRequest(`${this.route}/favorite`, {
+                "userID": userID,
+                "gameID": gameID,
+            }, "POST");
+    }
+
+    async deleteFavorite(userID, gameID) {
+        return await networkManager
+            .doRequest(`${this.route}/favorite`, {
+                "userID": userID,
+                "gameID": gameID,
+            }, "DELETE");
     }
 
     async delete() {
@@ -45,9 +61,9 @@ class UserRepository {
         return await networkManager
             .doRequest(`${this.route}/register`, {
                 "firstname": firstName,
-                "lastname":  lastName,
-                "email":     email,
-                "password":  password
+                "lastname": lastName,
+                "email": email,
+                "password": password
             }, "POST");
     }
 

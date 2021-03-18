@@ -33,7 +33,9 @@ class GameDetailController {
 
 
         //rating
-        this.gameDetailView.find(".stars i").on("click", this.handleClickRating);
+        this.gameDetailView.find(".stars i").on("click", (e) => {
+            this.handleClickRating(e)
+        });
 
         //Empty the content-div and add the resulting view to the page
         $(".content").empty().append(this.gameDetailView);
@@ -53,11 +55,31 @@ class GameDetailController {
     }
 
 
-    handleClickRating() {
+    handleClickRating(e) {
+        try {
 
-        let ratingVal = $(this).attr("data-value");
+
+            let body = {
+                userID: sessionManager.get("userID"),
+                gameID: this.gameID,
+                rating: $(e.target).attr("data-value")
+            };
+
+            const setRating = this.gameRepository.setRating(body);
+
+
+            console.log(setRating);
+
+            notificationManager.alert("success", 'Bedankt voor de beoordeling!');
+
+        } catch (e) {
+            console.log(e);
+            notificationManager.alert("error", 'Er is wat misgegaan...');
+        }
+
 
     }
+
 
     //Called when the login.html fails to load
     error() {

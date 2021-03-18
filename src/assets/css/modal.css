@@ -254,22 +254,6 @@ Authentication modal
 Filter modal
  */
 
-.filter-button {
-    color: #20bf6b !important;
-    font-size: 25px;
-    padding: 10px;
-    border-radius: 25px;
-    transition: all 0.3s ease 0s;
-}
-
-.filter-button:hover {
-    color: #494949 !important;
-    border-color: #494949 !important;
-    transition: all 0.3s ease 0s;
-    cursor: pointer
-}
-
-
 .discover__section__title {
     display: block;
     font-size: 18px;

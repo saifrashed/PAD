@@ -11,9 +11,9 @@ class GameRepository {
         this.route = "/game"
     }
 
-    async getAll() {
+    async getAll(options) {
         return await networkManager
-            .doRequest(this.route, {}, "GET");
+            .doRequest(this.route, {options}, "GET");
     }
 
     /**
@@ -37,5 +37,10 @@ class GameRepository {
 
     async update(id, values = {}) {
 
+    }
+
+    async getGrades() {
+        return await networkManager
+            .doRequest(this.route + "/grades/", {}, "GET");
     }
 }

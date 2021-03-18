@@ -7,12 +7,24 @@ const httpOkCode           = 200;
 const badRequestCode       = 400;
 const authorizationErrCode = 401;
 
+
+/**
+ * Get all grades
+ */
+router.route('/grades/').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query: "SELECT * FROM grades"
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 /**
  * Get all games
  */
 router.route('/').get(async (req, res) => {
     db.handleQuery(connectionPool, {
-        query: "SELECT * FROM games"
+        query: "SELECT * FROM games;"
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
@@ -21,7 +33,7 @@ router.route('/').get(async (req, res) => {
 router.route('/:id').get(async (req, res) => {
     console.log(req.params.id)
     db.handleQuery(connectionPool, {
-        query: "SELECT * FROM games WHERE gameID = ?",
+        query:  "SELECT * FROM games WHERE gameID = ?",
         values: [req.params.id]
     }, (data) => {
         res.status(httpOkCode).json(data[0]);

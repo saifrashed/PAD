@@ -31,6 +31,10 @@ class GameDetailController {
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
 
+
+        //rating
+        this.gameDetailView.find(".stars i").on("click", this.handleClickRating);
+
         //Empty the content-div and add the resulting view to the page
         $(".content").empty().append(this.gameDetailView);
 
@@ -46,6 +50,13 @@ class GameDetailController {
 
         //Return false to prevent reloading the page
         return false;
+    }
+
+
+    handleClickRating() {
+
+        let ratingVal = $(this).attr("data-value");
+
     }
 
     //Called when the login.html fails to load

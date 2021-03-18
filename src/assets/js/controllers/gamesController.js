@@ -22,23 +22,40 @@ class GamesController {
         this.gamesView = $(data);
 
         // fetch games
-        const games = await this.gameRepository.getAll();
+        const games     = await this.gameRepository.getAll();
+        const grades    = await this.gameRepository.getGrades();
 
         let randomNumber = Math.floor(Math.random() * 3);
 
         // game highlighted
         this.gamesView.find('.highlighted-game').html(Highlighted({
+            id:       games[randomNumber].gameID,
             title:       games[randomNumber].title,
             imageUrl:    games[randomNumber].imageUrl,
             description: games[randomNumber].description
         }));
 
+
+        this.gamesView.find('#gradeFilter').html(grades.map((value) => {
+            return FilterButton({
+                materialID:  value.gradeID,
+                description: value.description,
+                variant:     "grades"
+            })
+        }));
+
+
         // game bricks
-        this.gamesView.find('.games .masonry').html(games.map(Brick).join(''));
+        this.gamesView.find('.games .masonry').html(games.map(Brick));
+        this.gamesView.find('input.search').on("input", this.handleSearchFilter);
+
 
         this.gamesView.find(".brick a").on("click", this.handleClickGameItem);
         this.gamesView.find(".highlighted-game a").on("click", this.handleClickGameItem);
 
+        // filter clicks
+
+        this.gamesView.find(".js-collection-section-tag").on("click", this.handleClickFilter);
 
         if (this.isLogged) {
 
@@ -87,12 +104,63 @@ class GamesController {
         });
     }
 
+
+    handleSearchFilter() {
+        let searchQuery = $(this).val();
+
+        $(".games .masonry .brick .brick__top .brick__title").each(function (index) {
+
+            if (!searchQuery) {
+                $(this).parent().parent().parent().css({display: "inline-block"});
+            } else {
+                if (!$(this).text().trim().toLowerCase().includes(searchQuery.toLowerCase())) {
+                    $(this).parent().parent().parent().css({display: "none"})
+                }
+            }
+        });
+
+
+    }
+
+    async handleClickFilter(e) {
+        console.log(this);
+
+        e.preventDefault();
+
+        // let optionDesc    = $(this).text();
+        // let optionVariant = $(this).attr("data-variant");
+        // let optionID      = $(this).attr("data-id");
+        //
+        // let filterOptions = sessionManager.get("filter") || [];
+        // let optionObj     = {
+        //     description: optionDesc,
+        //     variant:     optionVariant,
+        //     id:          optionID
+        // };
+        //
+        //
+        // if ($(this).hasClass("filterbtn-active")) {
+        //     var filtered = filterOptions.filter(function (el) {
+        //         return el.id != optionID && el.variant != optionVariant;
+        //     });
+        //
+        //     sessionManager.set("filter", filtered);
+        //     $(this).removeClass("filterbtn-active");
+        //
+        // } else {
+        //     // hiJ wordt niet gefilterd en moet er dus bij
+        //
+        //     filterOptions.push(optionObj);
+        //     sessionManager.set("filter", filterOptions);
+        //
+        //     console.log(filterOptions);
+        //     $(this).addClass("filterbtn-active");
+        // }
+
+    };
+
+
     handleClickAddTo() {
-        console.log(this);
-
-
-        console.log(this);
-
         let choices = [
             {
                 text:    'Groep 6 lesrooster',
@@ -131,19 +199,6 @@ class GamesController {
         }
 
 
-    }
-
-
-    copyTextToClipboard(text) {
-        if (!navigator.clipboard) {
-            fallbackCopyTextToClipboard(text);
-            return;
-        }
-        navigator.clipboard.writeText(text).then(function () {
-            console.log('Async: Copying to clipboard was successful!');
-        }, function (err) {
-            console.error('Async: Could not copy text: ', err);
-        });
     }
 
     //Called when the login.html fails to load

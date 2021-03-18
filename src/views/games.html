@@ -24,7 +24,7 @@
                 <h1 class="display-4 font-italic">Voetbal met Groep 6 & 7</h1>
                 <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
                                      efficiently about what's most interesting in this post's contents.</p>
-                <p class="lead mb-0"><a class="text-white font-weight-bold" data-controller="gamedetail">Meer informatie
+                <p class="lead mb-0"><a class="text-white font-weight-bold">Meer informatie
                     <i
                             class="fas fa-arrow-right"></i></a></p>
             </div>
@@ -32,10 +32,11 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col-12 text-right">
-            <a class="filter-button" data-target="#filterBox" data-toggle="modal"> Filter <i
-                    class="fas fa-filter"></i>
-            </a>
+        <div class="col-12">
+
+            <input class="search" placeholder="Zoek naar spellen..." />
+
+            <a class="filter-button" data-target="#filterBox" data-toggle="modal"><i class="fas fa-filter"></i></a>
         </div>
 
         <div class="modal fade" id="filterBox" role="dialog">
@@ -45,93 +46,9 @@
                         <h4 class="modal-title">Filteren</h4>
                     </div>
                     <div class="modal-body">
-                        <span class="discover__section__title">Materiaal</span>
-                        <ul class="discover__tags">
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Springtouw</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="oude mensen"
-                                   href="#">Lintjes</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="leger"
-                                   href="#">Pionnen</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="meer"
-                                   href="#">Matjes</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="advocaat"
-                                   href="#">Ballen</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="bedrijf"
-                                   href="#">Korf</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="hoop"
-                                   href="#">Basket</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="vraagteken"
-                                   href="#">Fluit</a>
-                            </li>
-                        </ul>
-
-
-                        <span class="discover__section__title">Leeftijd</span>
-                        <ul class="discover__tags">
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 1</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 2</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 3</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 4</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 5</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 6</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 7</a>
-                            </li>
-                            <li>
-                                <a class="js-collection-section-tag" data-track-action="discover-page"
-                                   data-track-label="collection-tags" data-track-value="denken"
-                                   href="#">Groep 8</a>
-                            </li>
+                        <span class="discover__section__title">Groep</span>
+                        <ul class="discover__tags" id="gradeFilter">
+                            <!-- Dynamic -->
                         </ul>
 
                     </div>

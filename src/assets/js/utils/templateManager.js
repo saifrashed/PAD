@@ -6,14 +6,14 @@
  * @returns {string}
  * @constructor
  */
-const Highlighted = ({title, imageUrl, description}) => `
+const Highlighted = ({id, title, imageUrl, description}) => `
                                                        <div class="jumbotron p-3 p-md-5 text-white w-100"
                                                              style="background-image: url(${imageUrl});background-size: cover;background-position: center;position: relative; border-radius: 25px;">
                                                             <div class="overlay"></div>
                                                             <div class="col-md-6 px-0">
                                                                 <h1 class="display-4 font-italic">${title}</h1>
                                                                 <p class="lead my-3">${description.substring(0, 200) + "..."}</p>
-                                                                <p class="lead mb-0"><a class="text-white font-weight-bold" data-controller="gamedetail">Meer informatie <i
+                                                                <p class="lead mb-0"><a class="text-white font-weight-bold highlighted" data-id="${id}">Meer informatie <i
                                                                         class="fas fa-arrow-right"></i></a></p>
                                                             </div>
                                                        </div>
@@ -43,7 +43,7 @@ const Brick = ({gameID, title, imageUrl, type}) => `
                                 
                                                 <div class="brick__bottom">
                                                     <i class="fas fa-heart favorite-btn" data-target="#authenticationBox" data-toggle="modal"></i>
-                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                    <!--<i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>-->
                                                     <i class="fas fa-external-link-alt share-btn"></i>
                                                 </div>
                                             </div>
@@ -75,3 +75,19 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                 </div>
                                             </div>
                                             `;
+
+
+
+/**
+ * Game Brick Template
+ * @param title
+ * @param imageUrl
+ * @param type
+ * @returns {string}
+ * @constructor
+ */
+const FilterButton = ({description, variant, gradeID, materialID}) => `
+                            <li>
+                                <a class="js-collection-section-tag" data-variant="${variant}" data-id="${gradeID || materialID}" href="#">${description}</a>
+                            </li>
+                                 `;

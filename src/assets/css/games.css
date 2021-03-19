@@ -137,13 +137,9 @@
 
 
 
-
-
-
 .filterbtn-active {
-    background: #7a7e7e50;
-    color: #ffffff78;
-}
+     background: #7a7e7e50;
+ }
 
 .search {
     font-family: Poppins-Medium;
@@ -151,7 +147,7 @@
     line-height: 1.5;
     color: #666666;
     display: inline-block;
-    width: 80%;
+    width: 100%;
     background: #e6e6e6;
     height: 50px;
     border-radius: 25px;
@@ -163,15 +159,16 @@
 
 
 .filter-button {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
     color: #20bf6b !important;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
     display: inline-block;
     border-radius: 25px;
     transition: all 0.3s ease 0s;
     margin: 0;
-    float:right;
-
 }
 
 .filter-button:hover {

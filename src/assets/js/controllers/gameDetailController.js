@@ -19,23 +19,32 @@ class GameDetailController {
         this.gameDetailView = $(data);
         const game          = await this.gameRepository.get(this.gameID);
 
+        // filling of content
         this.gameDetailView.find("#gamedetail-title").text(game.title);
         this.gameDetailView.find("#gamedetail-type").text(game.type);
         this.gameDetailView.find("#gamedetail-image").css({backgroundImage: "url(" + game.imageUrl + ")"});
         this.gameDetailView.find("#gamedetail-breadcrumb").text(game.title);
         this.gameDetailView.find("#gamedetail-desc").text(game.description);
         this.gameDetailView.find("#gamedetail-floorplan").attr('src', game.floorplanUrl);
-
-        //Set the name in the view from the session
+        this.gameDetailView.find('#gameRules').html(game.rules.map(RuleListItem));
+        this.gameDetailView.find('#gameMaterial').html(game.materials.map(MaterialListItem));
+        this.gameDetailView.find('.product-rating').html(game.ratings[0].averageRating.toFixed(1));
+        this.gameDetailView.find('.rating-text').html(game.ratings[0].amountRatings + " keer beoordeeld.");
         this.gameDetailView.find(".name").html(sessionManager.get("username"));
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
 
+        if (sessionManager.get("userID")) {
+            this.gameDetailView.find(".stars i").each(function () {
+                $(this).removeAttr("data-target");
+                $(this).removeAttr("data-toggle");
 
-        //rating
-        this.gameDetailView.find(".stars i").on("click", (e) => {
-            this.handleClickRating(e)
-        });
+            });
+
+            this.gameDetailView.find(".stars i").on("click", (e) => {
+                this.handleClickRating(e)
+            });
+        }
 
         //Empty the content-div and add the resulting view to the page
         $(".content").empty().append(this.gameDetailView);
@@ -57,7 +66,7 @@ class GameDetailController {
 
     handleClickRating(e) {
         try {
-
+            e.preventDefault();
 
             let body = {
                 userID: sessionManager.get("userID"),
@@ -71,6 +80,8 @@ class GameDetailController {
             console.log(setRating);
 
             notificationManager.alert("success", 'Bedankt voor de beoordeling!');
+
+            new GameDetailController(this.gameID);
 
         } catch (e) {
             console.log(e);

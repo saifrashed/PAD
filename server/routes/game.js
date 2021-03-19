@@ -21,6 +21,43 @@ router.route('/grades/').get(async (req, res) => {
 
 
 /**
+ * Get a games material(s)
+ */
+router.route('/material/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT material.materialID, material.description FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+
+/**
+ * Get all materials
+ */
+router.route('/material/').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query: "SELECT * FROM material"
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * Get all difficulties
+ */
+router.route('/difficulty/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT difficulty.description AS 'moeilijkheidsgraad', game_difficulty.description AS 'beschrijving' FROM games INNER JOIN game_difficulty ON games.gameID = game_difficulty.gameID INNER JOIN difficulty ON game_difficulty.difficultyID = difficulty.difficultyID WHERE games.gameID = ?;",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+
+/**
  * Sets rating
  */
 router.route('/rating/').post(async (req, res) => {
@@ -63,13 +100,63 @@ router.route('/').get(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
+/**
+ * Get single game
+ */
 router.route('/:id').get(async (req, res) => {
-    console.log(req.params.id)
+    console.log(req.params.id);
+
+    /**
+     * Get games
+     */
     db.handleQuery(connectionPool, {
         query:  "SELECT * FROM games WHERE gameID = ?",
         values: [req.params.id]
     }, (data) => {
-        res.status(httpOkCode).json(data[0]);
+
+        /**
+         * Get materials
+         */
+        db.handleQuery(connectionPool, {
+            query:  "SELECT material.materialID, material.description FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
+            values: [req.params.id]
+        }, (materials) => {
+
+
+            data[0].materials = materials || [];
+
+            /**
+             * Get rules
+             */
+            db.handleQuery(connectionPool, {
+                query:  "SELECT game_rules.description FROM games INNER JOIN game_rules ON games.gameID = game_rules.gameID WHERE games.gameID = ?;",
+                values: [req.params.id]
+            }, (rules) => {
+
+                data[0].rules = rules || [];
+
+                /**
+                 * get ratings
+                 */
+                db.handleQuery(connectionPool, {
+                    query:  "SELECT AVG(rating) AS 'averageRating', COUNT(*) AS 'amountRatings' FROM games INNER JOIN rating ON games.gameID = rating.gameID WHERE games.gameID = ?;",
+                    values: [req.params.id]
+                }, (ratings) => {
+
+                    data[0].ratings = ratings || [];
+
+                    db.handleQuery(connectionPool, {
+                        query:  "SELECT difficulty.description AS 'difficulty', game_difficulty.description FROM games INNER JOIN game_difficulty ON games.gameID = game_difficulty.gameID INNER JOIN difficulty ON game_difficulty.difficultyID = difficulty.difficultyID WHERE games.gameID = ?;",
+                        values: [req.params.id]
+                    }, (difficulties) => {
+
+                        data[0].difficulties = difficulties || [];
+
+                        res.status(httpOkCode).json(data[0]);
+                    }, (err) => res.status(badRequestCode).json({reason: err}));
+                }, (err) => res.status(badRequestCode).json({reason: err}));
+            }, (err) => res.status(badRequestCode).json({reason: err}));
+        }, (err) => res.status(badRequestCode).json({reason: err}));
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 

@@ -8,6 +8,7 @@ class GamesController {
     constructor(isLogged) {
         this.gameRepository = new GameRepository();
         this.isLogged       = isLogged;
+        this.filterOptions  = [];
 
         $.get("views/games.html")
          .done((data) => {
@@ -22,31 +23,51 @@ class GamesController {
         this.gamesView = $(data);
 
         // fetch games
-        const games     = await this.gameRepository.getAll();
-        const grades    = await this.gameRepository.getGrades();
+        const games    = await this.gameRepository.getAll();
+        const grades   = await this.gameRepository.getGrades();
+        const material = await this.gameRepository.getMaterials();
 
         let randomNumber = Math.floor(Math.random() * 3);
 
         // game highlighted
         this.gamesView.find('.highlighted-game').html(Highlighted({
-            id:       games[randomNumber].gameID,
+            id:          games[randomNumber].gameID,
             title:       games[randomNumber].title,
             imageUrl:    games[randomNumber].imageUrl,
             description: games[randomNumber].description
         }));
 
-
         this.gamesView.find('#gradeFilter').html(grades.map((value) => {
-            return FilterButton({
-                materialID:  value.gradeID,
+            return GradeFilterButton({
+                gradeID:     value.gradeID,
                 description: value.description,
                 variant:     "grades"
             })
         }));
 
+        this.gamesView.find('#materialFilter').html(material.map((value) => {
+            return MaterialFilterButton({
+                materialID:  value.materialID,
+                description: value.description,
+                variant:     "material"
+            })
+        }));
+
+        this.gamesView.find('.games .masonry').html(games.map((value) => {
+
+            console.log(value);
+
+            return Brick({
+                gameID:   value.gradeID,
+                title:    value.title,
+                imageUrl: value.imageUrl,
+                type:     value.type,
+                gradeID:  value.gradeID,
+            })
+        }));
+
 
         // game bricks
-        this.gamesView.find('.games .masonry').html(games.map(Brick));
         this.gamesView.find('input.search').on("input", this.handleSearchFilter);
 
 
@@ -55,7 +76,7 @@ class GamesController {
 
         // filter clicks
 
-        this.gamesView.find(".js-collection-section-tag").on("click", this.handleClickFilter);
+        this.gamesView.find(".js-collection-section-tag").on("click", (e) => this.handleClickFilter(e));
 
         if (this.isLogged) {
 
@@ -79,6 +100,9 @@ class GamesController {
     }
 
     handleClickGameItem() {
+        window.scrollTo(0, 0);
+
+
         //Get the data-controller from the clicked element (this)
         const gameID = $(this).attr("data-id");
         new GameDetailController(gameID);
@@ -123,41 +147,88 @@ class GamesController {
     }
 
     async handleClickFilter(e) {
-        console.log(this);
-
         e.preventDefault();
 
-        // let optionDesc    = $(this).text();
-        // let optionVariant = $(this).attr("data-variant");
-        // let optionID      = $(this).attr("data-id");
-        //
-        // let filterOptions = sessionManager.get("filter") || [];
-        // let optionObj     = {
-        //     description: optionDesc,
-        //     variant:     optionVariant,
-        //     id:          optionID
-        // };
-        //
-        //
-        // if ($(this).hasClass("filterbtn-active")) {
-        //     var filtered = filterOptions.filter(function (el) {
-        //         return el.id != optionID && el.variant != optionVariant;
-        //     });
-        //
-        //     sessionManager.set("filter", filtered);
-        //     $(this).removeClass("filterbtn-active");
-        //
-        // } else {
-        //     // hiJ wordt niet gefilterd en moet er dus bij
-        //
-        //     filterOptions.push(optionObj);
-        //     sessionManager.set("filter", filterOptions);
-        //
-        //     console.log(filterOptions);
-        //     $(this).addClass("filterbtn-active");
-        // }
+        let optionObj = {
+            description: $(e.target).text(),
+            variant:     $(e.target).attr("data-variant"),
+            id:          $(e.target).attr("data-id")
+        };
 
+
+        if ($(e.target).hasClass("filterbtn-active")) {
+
+            this.filterOptions = this.filterOptions.filter(function (el) {
+                return el.id !== optionObj.id || el.variant !== optionObj.variant;
+            });
+
+            $(e.target).removeClass("filterbtn-active");
+
+        } else {
+            // hiJ wordt niet gefilterd en moet er dus bij
+
+            this.filterOptions.push(optionObj);
+            $(e.target).addClass("filterbtn-active");
+        }
+
+        this.handleFilterRender();
     };
+
+
+    async handleFilterRender() {
+
+        let selectedGrades    = [];
+        let selectedMaterials = [];
+
+        this.filterOptions.map((option) => {
+            if (option.variant === "grades") {
+                selectedGrades.push(option.id)
+            }
+
+            if (option.variant === "material") {
+                selectedMaterials.push(parseInt(option.id))
+            }
+        });
+
+
+        console.log(selectedMaterials);
+
+
+        this.gamesView.find(".brick").map(async (index, element) => {
+
+            $(element).css({
+                display: "inline-block"
+            });
+
+            if (selectedGrades.length) {
+                if (!selectedGrades.includes($(element).attr("data-grade"))) {
+                    $(element).css({
+                        display: "none"
+                    })
+                }
+            }
+
+            // // get materials for the check
+            // let gameMaterials = await this.gameRepository.getMaterial($(element).attr("data-id"));
+            //
+            //
+            // if (selectedMaterials.length && gameMaterials.length) {
+            //     $(element).css({
+            //         display: "none"
+            //     })
+            //     gameMaterials.map((value) => {
+            //
+            //         if (selectedMaterials.includes(value.materialID - 1)) {
+            //             $(element).css({
+            //                 display: "inline-block"
+            //             })
+            //         }
+            //     });
+            // }
+
+        });
+
+    }
 
 
     handleClickAddTo() {

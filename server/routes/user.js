@@ -105,7 +105,6 @@ router.route('/register').post(async (req, res) => {
  * Get single user
  */
 router.route('/:id').get(async (req, res) => {
-
     // get user and associated favorites
     db.handleQuery(connectionPool, {
         query:  "SELECT * FROM user WHERE userID = ?",

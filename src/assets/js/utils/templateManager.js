@@ -28,8 +28,8 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type}) => `
-                                            <div class="brick">
+const Brick = ({gameID, title, imageUrl, type, gradeID}) => `
+                                            <div class="brick" data-id="${gameID}" data-grade="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
@@ -77,6 +77,19 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                             `;
 
 
+/**
+ * Game Brick Template
+ * @param title
+ * @param imageUrl
+ * @param type
+ * @returns {string}
+ * @constructor
+ */
+const GradeFilterButton = ({description, variant, gradeID}) => `
+                            <li>
+                                <a class="js-collection-section-tag" data-variant="${variant}" data-id="${gradeID}" href="#">${description}</a>
+                            </li>
+                                 `;
 
 /**
  * Game Brick Template
@@ -86,8 +99,11 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
  * @returns {string}
  * @constructor
  */
-const FilterButton = ({description, variant, gradeID, materialID}) => `
+const MaterialFilterButton = ({description, variant, materialID}) => `
                             <li>
-                                <a class="js-collection-section-tag" data-variant="${variant}" data-id="${gradeID || materialID}" href="#">${description}</a>
+                                <a class="js-collection-section-tag" style="border-radius: 25px;" data-variant="${variant}" data-id="${materialID}" href="#">${description}</a>
                             </li>
                                  `;
+
+const RuleListItem     = ({description}) => `<li class="list-group-item">${description}</li>`;
+const MaterialListItem = ({description}) => `<span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description}</span>`;

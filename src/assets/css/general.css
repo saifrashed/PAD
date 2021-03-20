@@ -72,3 +72,7 @@ aside, main {
 .notie-alert {
     z-index: 1000000000000;
 }
+
+.goog-te-combo {
+    font-size: 8pt !important;
+}

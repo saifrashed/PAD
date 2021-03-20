@@ -14,9 +14,15 @@ Game Detail page styling
     background-color: #2e573d00;
 }
 
+.breadcrumb li:hover {
+    cursor: pointer;
+}
+
+
 .breadcrumb li a {
     color: #52565a;
 }
+
 
 .list-group-item {
     border-radius: 25px;
@@ -70,3 +76,16 @@ Reviews
     margin-top: 10px
 }
 
+
+#exportBtn {
+    position: absolute;
+    right: 15px;
+    font-size: 25px;
+    color: #212629;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+#exportBtn:hover {
+    cursor: pointer;
+    transform: scale(1.10);
+}

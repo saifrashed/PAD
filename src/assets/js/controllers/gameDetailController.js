@@ -33,6 +33,9 @@ class GameDetailController {
         this.gameDetailView.find(".name").html(sessionManager.get("username"));
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
+        this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
+        this.gameDetailView.find("#exportBtn").on("click", this.handleGeneratePDF);
+
 
         if (sessionManager.get("userID")) {
             this.gameDetailView.find(".stars i").each(function () {
@@ -87,7 +90,28 @@ class GameDetailController {
             console.log(e);
             notificationManager.alert("error", 'Er is wat misgegaan...');
         }
+    }
 
+    handleGeneratePDF() {
+        console.log("pdf")
+
+
+
+        // Choose the element that our invoice is rendered in.
+        const element = document.getElementById("exportBtn");
+        // Choose the element and save the PDF for our user.
+
+        $('.ignore').hide(); //before the addHTML()
+
+        var pdf = new jsPDF("a4");
+        pdf.addHTML($('html'), function() {
+            pdf.save('spel.pdf');
+        });
+
+        $('.ignore').show(); //and directly after its finished
+
+
+        notificationManager.alert("success", 'Uw spel wordt gedownload!');
 
     }
 

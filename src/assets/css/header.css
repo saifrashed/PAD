@@ -104,13 +104,13 @@ header.masthead .bg-circle-2 {
 }
 
 .masthead .btn-primary {
-    background-color: #a8e063;
-    border-color: #a8e063;
+    border-color: #ffffff00;
+    background: linear-gradient(351deg, #56ab2f -35%, #a8e063 100%);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 
 .masthead .btn-primary:active, .masthead .btn-primary:focus, .masthead .btn-primary:hover {
-    background-color: #56ab2f !important;
-    border-color: #56ab2f !important;
+    transform: scale(1.10);
 }
 
 .masthead .btn-primary:focus {

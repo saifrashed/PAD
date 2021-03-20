@@ -15,13 +15,13 @@ footer .bg-circle {
 footer .bg-circle-1 {
     height: 90rem;
     width: 75rem;
-    bottom: 5rem;
+    bottom: 0rem;
     left: -35rem;
 }
 
 footer .bg-circle-2 {
     height: 50rem;
-    width: 45rem;
-    top: 9rem;
+    width: 50rem;
+    top: 1rem;
     right: -25rem;
 }

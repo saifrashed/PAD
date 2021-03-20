@@ -44,7 +44,7 @@ const Brick = ({gameID, title, imageUrl, type, gradeID}) => `
                                                 <div class="brick__bottom">
                                                     <i class="fas fa-heart favorite-btn" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <!--<i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>-->
-                                                    <i class="fas fa-external-link-alt share-btn"></i>
+                                                    <!--<i class="fas fa-external-link-alt share-btn"></i>-->
                                                 </div>
                                             </div>
                                             `;

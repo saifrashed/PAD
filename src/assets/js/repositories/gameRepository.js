@@ -67,6 +67,12 @@ class GameRepository {
             .doRequest(this.route + `/material/${gameID}`, {}, "GET");
     }
 
+    async getDifficulty(gameID) {
+        return await networkManager
+            .doRequest(this.route + `/difficulty/${gameID}`, {}, "GET");
+    }
+
+
     /**
      * Sets user rating for a game
      * @param body

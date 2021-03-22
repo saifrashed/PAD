@@ -16,8 +16,14 @@ class GameDetailController {
     //Called when the welcome.html has been loaded
     async setup(data) {
         //Load the welcome-content into memory
-        this.gameDetailView = $(data);
-        const game          = await this.gameRepository.get(this.gameID);
+        this.gameDetailView    = $(data);
+        const game             = await this.gameRepository.get(this.gameID);
+        const gameDifficulties = await this.gameRepository.getDifficulty(this.gameID);
+
+        await this.handleRenderDifficulties(gameDifficulties);
+
+        console.log(this.gameDetailView.find("#v-pills-tab"));
+
 
         // filling of content
         this.gameDetailView.find("#gamedetail-title").text(game.title);
@@ -28,7 +34,14 @@ class GameDetailController {
         this.gameDetailView.find("#gamedetail-floorplan").attr('src', game.floorplanUrl);
         this.gameDetailView.find('#gameRules').html(game.rules.map(RuleListItem));
         this.gameDetailView.find('#gameMaterial').html(game.materials.map(MaterialListItem));
-        this.gameDetailView.find('.product-rating').html(game.ratings[0].averageRating.toFixed(1));
+
+
+        if(game.ratings[0].averageRating) {
+            this.gameDetailView.find('.product-rating').html(game.ratings[0].averageRating.toFixed(1));
+        } else {
+            this.gameDetailView.find('.product-rating').html("0.0");
+        }
+
         this.gameDetailView.find('.rating-text').html(game.ratings[0].amountRatings + " keer beoordeeld.");
         this.gameDetailView.find(".name").html(sessionManager.get("username"));
         this.gameDetailView.find(".breadcrumb-item a").on("click", this.handleClickBreadCrumb);
@@ -92,29 +105,38 @@ class GameDetailController {
         }
     }
 
+    handleRenderDifficulties(difficulties) {
+        let moeilijkheidsGraden = [];
+
+        difficulties.map((value) => {
+            const found = moeilijkheidsGraden.some(el => el.moeilijkheidsgraad === value.moeilijkheidsgraad);
+
+            if (!found) {
+                moeilijkheidsGraden.push(value);
+            } else {
+                let index = moeilijkheidsGraden.findIndex(el => el.moeilijkheidsgraad == value.moeilijkheidsgraad);
+
+                moeilijkheidsGraden[index].beschrijving = moeilijkheidsGraden[index].beschrijving + value.beschrijving
+            }
+        });
+
+        this.gameDetailView.find("#v-pills-tab").html(moeilijkheidsGraden.map(DifficulyListItem));
+        this.gameDetailView.find("#v-pills-tabContent").html(moeilijkheidsGraden.map(DifficulyDesc));
+    }
+
     handleGeneratePDF() {
-        console.log("pdf")
-
-
-
-        // Choose the element that our invoice is rendered in.
-        const element = document.getElementById("exportBtn");
-        // Choose the element and save the PDF for our user.
-
         $('.ignore').hide(); //before the addHTML()
 
         var pdf = new jsPDF("a4");
-        pdf.addHTML($('html'), function() {
+        pdf.addHTML($('html'), function () {
             pdf.save('spel.pdf');
         });
 
         $('.ignore').show(); //and directly after its finished
 
-
         notificationManager.alert("success", 'Uw spel wordt gedownload!');
 
     }
-
 
     //Called when the login.html fails to load
     error() {

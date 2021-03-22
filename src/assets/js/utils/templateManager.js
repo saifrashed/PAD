@@ -105,5 +105,23 @@ const MaterialFilterButton = ({description, variant, materialID}) => `
                             </li>
                                  `;
 
-const RuleListItem     = ({description}) => `<li class="list-group-item">${description}</li>`;
-const MaterialListItem = ({description}) => `<span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description}</span>`;
+const RuleListItem = ({description}) => `
+                        <li class="list-group-item">${description}</li>
+                        `;
+
+const MaterialListItem = ({description}) => `
+                        <span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description}</span>
+                        `;
+
+const DifficulyListItem = ({moeilijkheidsgraad}) => `
+                           <a aria-controls="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}" aria-selected="true" class="nav-link" data-toggle="pill"
+                       href="#v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}"
+                       id="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}-tab" role="tab">${moeilijkheidsgraad}</a>
+                        `;
+
+const DifficulyDesc = ({moeilijkheidsgraad, beschrijving}) => `
+                        <div aria-labelledby="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}-tab" class="tab-pane fade show" id="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}"
+                         role="tabpanel">
+                         ${beschrijving}
+                        </div>
+                        `;

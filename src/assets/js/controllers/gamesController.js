@@ -27,7 +27,7 @@ class GamesController {
         const grades   = await this.gameRepository.getGrades();
         const material = await this.gameRepository.getMaterials();
 
-        let randomNumber = Math.floor(Math.random() * 3);
+        let randomNumber = Math.floor(Math.random() * 12);
 
         // game highlighted
         this.gamesView.find('.highlighted-game').html(Highlighted({

@@ -34,7 +34,7 @@ class GameDetailController {
         this.gameDetailView.find('#gameMaterial').html(game.materials.map(MaterialListItem));
 
 
-        if(game.ratings[0].averageRating) {
+        if (game.ratings[0].averageRating) {
             this.gameDetailView.find('.product-rating').html(game.ratings[0].averageRating.toFixed(1));
         } else {
             this.gameDetailView.find('.product-rating').html("0.0");

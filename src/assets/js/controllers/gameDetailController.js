@@ -22,8 +22,6 @@ class GameDetailController {
 
         await this.handleRenderDifficulties(gameDifficulties);
 
-        console.log(this.gameDetailView.find("#v-pills-tab"));
-
 
         // filling of content
         this.gameDetailView.find("#gamedetail-title").text(game.title);
@@ -116,7 +114,7 @@ class GameDetailController {
             } else {
                 let index = moeilijkheidsGraden.findIndex(el => el.moeilijkheidsgraad == value.moeilijkheidsgraad);
 
-                moeilijkheidsGraden[index].beschrijving = moeilijkheidsGraden[index].beschrijving + value.beschrijving
+                moeilijkheidsGraden[index].beschrijving = moeilijkheidsGraden[index].beschrijving + "<br><br>" + value.beschrijving
             }
         });
 

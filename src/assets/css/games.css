@@ -58,7 +58,7 @@
 }
 
 .brick__top h1 {
-    font-size: 25px;
+    font-size: 20px;
     display: inline;
 }
 
@@ -136,10 +136,9 @@
 }
 
 
-
 .filterbtn-active {
-     background: #7a7e7e50;
- }
+    background: #7a7e7e50;
+}
 
 .search {
     font-family: Poppins-Medium;
@@ -176,4 +175,10 @@
     border-color: #494949 !important;
     transition: all 0.3s ease 0s;
     cursor: pointer
+}
+
+
+.favoriteBtnActive {
+    background: linear-gradient(
+            0deg, #56ab2f 0%, #a8e063 100%);
 }

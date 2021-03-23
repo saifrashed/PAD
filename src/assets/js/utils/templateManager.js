@@ -28,7 +28,7 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, gradeID}) => `
+const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
                                             <div class="brick" data-id="${gameID}" data-grade="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
@@ -42,7 +42,7 @@ const Brick = ({gameID, title, imageUrl, type, gradeID}) => `
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-heart favorite-btn" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                    <i class="fas fa-heart favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <!--<i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>-->
                                                     <!--<i class="fas fa-external-link-alt share-btn"></i>-->
                                                 </div>

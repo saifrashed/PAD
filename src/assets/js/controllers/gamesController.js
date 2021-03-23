@@ -7,8 +7,10 @@
 class GamesController {
     constructor(isLogged) {
         this.gameRepository = new GameRepository();
-        this.isLogged       = isLogged;
-        this.filterOptions  = [];
+        this.userRepository = new UserRepository();
+
+        this.isLogged      = isLogged;
+        this.filterOptions = [];
 
         $.get("views/games.html")
          .done((data) => {
@@ -21,13 +23,17 @@ class GamesController {
     async setup(data) {
         //Load the welcome-content into memory
         this.gamesView = $(data);
-
+        let user       = null;
         // fetch games
+        if (sessionManager.get("userID")) {
+            user = await this.userRepository.get(sessionManager.get("userID"));
+        }
+
         const games    = await this.gameRepository.getAll();
         const grades   = await this.gameRepository.getGrades();
         const material = await this.gameRepository.getMaterials();
 
-        let randomNumber = Math.floor(Math.random() * 12);
+        let randomNumber = Math.floor(Math.random() * games.length);
 
         // game highlighted
         this.gamesView.find('.highlighted-game').html(Highlighted({
@@ -55,14 +61,18 @@ class GamesController {
 
         this.gamesView.find('.games .masonry').html(games.map((value) => {
 
-            console.log(value);
+            let found = false;
 
+            if (sessionManager.get("userID") && user.favorites != null) {
+                found = user.favorites.some(el => el.gameID === value.gameID);
+            }
             return Brick({
-                gameID:   value.gradeID,
-                title:    value.title,
-                imageUrl: value.imageUrl,
-                type:     value.type,
-                gradeID:  value.gradeID,
+                gameID:     value.gameID,
+                title:      value.title,
+                imageUrl:   value.imageUrl,
+                type:       value.type,
+                gradeID:    value.gradeID,
+                isFavorite: found
             })
         }));
 
@@ -264,6 +274,8 @@ class GamesController {
             const newfav         = await userRepository.createFavorite(userID, gameID);
             notificationManager.alert("success", 'Toegevoegd aan favorieten');
             app.loadController("auth");
+            app.loadController("games");
+
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');

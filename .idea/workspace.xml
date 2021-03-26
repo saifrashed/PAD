@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/leeuwenkooi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/games/leeuwenkooi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/games/commando.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/games/estafette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/games/fopbal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/games/kat-en-muis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/games/stresstikkertje.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/node_modules/" />
@@ -100,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="705">
-              <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+              <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -207,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -218,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,7 +292,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -388,18 +392,18 @@
       <workItem from="1615985688966" duration="40888000" />
       <workItem from="1616412045442" duration="8423000" />
       <workItem from="1616433901437" duration="1116000" />
-      <workItem from="1616461300952" duration="177000" />
+      <workItem from="1616461300952" duration="223000" />
+      <workItem from="1616628646802" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56157000" />
+    <option name="totallyTimeSpent" value="56235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33394384" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33821735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -641,7 +645,7 @@
     <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
-          <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
         </state>
       </provider>
     </entry>

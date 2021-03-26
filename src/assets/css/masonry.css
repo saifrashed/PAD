@@ -1,0 +1,136 @@
+/* Masonry grid */
+.masonry {
+    transition: all .5s ease-in-out;
+    column-gap: 30px;
+    column-fill: initial;
+}
+
+/* Masonry item */
+.masonry .brick {
+    position: relative;
+    margin-bottom: 30px;
+    display: inline-block; /* Fix the misalignment of items */
+    vertical-align: top; /* Keep the item on the very top */
+    width: 100%;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    cursor: pointer;
+}
+
+
+.masonry .brick:hover {
+    transform: scale(1.05);
+}
+
+
+/* Masonry image effects */
+.masonry .brick img {
+    transition: all .5s ease-in-out;
+    backface-visibility: hidden; /* Remove Image flickering on hover */
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+/* Bordered masonry */
+.masonry.bordered {
+    column-rule: 1px solid #eee;
+    column-gap: 50px;
+}
+
+.masonry.bordered .brick {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.brick__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+}
+
+.brick__title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.brick__top h1 {
+    font-size: 25px;
+    display: inline;
+}
+
+.brick
+.brick__top h1, .brick__top p {
+    color: #ffffff;
+    display: inline;
+
+    padding: 5px 10px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.brick__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 30px;
+    color: #fff;
+    text-align: right;
+}
+
+.brick__bottom i {
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Gutterless masonry */
+.masonry.gutterless {
+    column-gap: 0;
+}
+
+.masonry.gutterless .brick {
+    margin-bottom: 0;
+}
+
+/* Masonry on tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+/* Masonry on big screens */
+@media only screen and (min-width: 1024px) {
+    .desc {
+        font-size: 1.25em;
+    }
+
+    .intro {
+        letter-spacing: 1px;
+    }
+
+    .masonry {
+        column-count: 3;
+    }
+}
+
+
+.authentication .masonry {
+    column-gap: 10px;
+    column-count: 2;
+}
+
+.authentication .masonry .brick {
+    margin-bottom: 10px;
+}
+
+.authentication .masonry .brick img {
+    border-radius: 10px;
+}

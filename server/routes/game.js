@@ -92,9 +92,13 @@ router.route('/rating/').post(async (req, res) => {
 /**
  * Get all games
  */
-router.route('/').get(async (req, res) => {
+router.route('/').post(async (req, res) => {
+
+    let {gradeID} = req.body;
+
     db.handleQuery(connectionPool, {
-        query: "SELECT * FROM games;"
+        query: "SELECT * FROM games INNER JOIN grades on games.gradeID = grades.gradeID WHERE games.gradeID <= ?;",
+        values: [gradeID]
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
@@ -102,7 +106,7 @@ router.route('/').get(async (req, res) => {
 
 /**
  * Get single game
- */
+*/
 router.route('/:id').get(async (req, res) => {
     console.log(req.params.id);
 
@@ -121,7 +125,6 @@ router.route('/:id').get(async (req, res) => {
             query:  "SELECT material.materialID, material.description FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
             values: [req.params.id]
         }, (materials) => {
-
 
             data[0].materials = materials || [];
 

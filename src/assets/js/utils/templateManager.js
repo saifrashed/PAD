@@ -28,8 +28,8 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
-                                            <div class="brick" data-id="${gameID}" data-grade="${gradeID}">
+const Brick = ({gameID, title, imageUrl, type, isFavorite = false}) => `
+                                            <div class="brick" data-id="${gameID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
@@ -105,20 +105,45 @@ const MaterialFilterButton = ({description, variant, materialID}) => `
                             </li>
                                  `;
 
+/**
+ * Gamedetail rule list item
+ * @param description
+ * @returns {string}
+ * @constructor
+ */
 const RuleListItem = ({description}) => `
                         <li class="list-group-item">${description}</li>
                         `;
 
+/**
+ * Gamedetail material list item
+ * @param description
+ * @returns {string}
+ * @constructor
+ */
 const MaterialListItem = ({description}) => `
                         <span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description}</span>
                         `;
 
+/**
+ * Gamedetail difficulty list item
+ * @param moeilijkheidsgraad
+ * @returns {string}
+ * @constructor
+ */
 const DifficulyListItem = ({moeilijkheidsgraad}) => `
                            <a aria-controls="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}" aria-selected="true" class="nav-link" data-toggle="pill"
                        href="#v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}"
                        id="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}-tab" role="tab">${moeilijkheidsgraad}</a>
                         `;
 
+/**
+ * Gamedetail difficulty description
+ * @param moeilijkheidsgraad
+ * @param beschrijving
+ * @returns {string}
+ * @constructor
+ */
 const DifficulyDesc = ({moeilijkheidsgraad, beschrijving}) => `
                         <div aria-labelledby="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}-tab" class="tab-pane fade show" id="v-pills-${moeilijkheidsgraad.replace(/[^A-Z0-9]/ig, "_")}"
                          role="tabpanel">

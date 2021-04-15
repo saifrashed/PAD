@@ -62,26 +62,85 @@ header.masthead .masthead-content .masthead-subheading {
     font-size: 2rem;
 }
 
-header.masthead .bg-circle {
+
+/*
+Green circles
+ */
+header.masthead .bg-green-circle {
     z-index: 0;
     position: absolute;
     border-radius: 100%;
-    background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
+    background: linear-gradient(0deg, #2fdc7f 0%, #05a54f 100%);
+    border: 8px solid white;
 }
 
 header.masthead .bg-circle-1 {
     height: 61rem;
     width: 45rem;
-    left: -35rem;
+    left: -40rem;
     top: -28rem;
 }
 
 header.masthead .bg-circle-2 {
     height: 61rem;
     width: 45rem;
-    top: -15rem;
-    right: -37rem;
+    top: -28rem;
+    right: -40rem;
 }
+
+
+/*
+Yellow circles
+ */
+
+header.masthead .bg-yellow-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #f3e500 0%, #f7ee54 100%);
+    border: 8px solid white;
+}
+
+header.masthead .bg-circle-3 {
+    height: 61rem;
+    width: 45rem;
+    left: -40rem;
+    top: 10rem;
+}
+
+header.masthead .bg-circle-4 {
+    width: 45rem;
+    right: -40rem;
+    height: 61rem;
+    top: 10rem;
+}
+
+
+/*
+Red circles
+ */
+
+header.masthead .bg-red-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ED1D24 0%, #ED1D24 100%);
+}
+
+header.masthead .bg-circle-5 {
+    height: 61rem;
+    width: 45rem;
+    left: -40rem;
+    top: -10rem;
+}
+
+header.masthead .bg-circle-6 {
+    height: 61rem;
+    width: 45rem;
+    right: -40rem;
+    top: -10rem;
+}
+
 
 
 @media (min-width: 992px) {
@@ -105,7 +164,7 @@ header.masthead .bg-circle-2 {
 
 .masthead .btn-primary {
     border-color: #ffffff00;
-    background: linear-gradient(351deg, #56ab2f -35%, #a8e063 100%);
+    background: linear-gradient(351deg, #2fdc7f -35%, #05a54f 100%);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 

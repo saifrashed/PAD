@@ -8,9 +8,7 @@ class GamesController {
     constructor(isLogged) {
         this.gameRepository = new GameRepository();
         this.userRepository = new UserRepository();
-
-        this.isLogged      = isLogged;
-        this.filterOptions = [];
+        this.isLogged       = isLogged;
 
         $.get("views/games.html")
          .done((data) => {
@@ -19,19 +17,19 @@ class GamesController {
          .fail(() => this.error());
     }
 
-    //Called when the welcome.html has been loaded
     async setup(data) {
-        //Load the welcome-content into memory
         this.gamesView = $(data);
         let user       = null;
-        // fetch games
+
         if (sessionManager.get("userID")) {
             user = await this.userRepository.get(sessionManager.get("userID"));
         }
 
-        const games    = await this.gameRepository.getAll();
+        const games    = await this.gameRepository.getAll(9);
         const grades   = await this.gameRepository.getGrades();
         const material = await this.gameRepository.getMaterials();
+
+        console.log(games);
 
         let randomNumber = Math.floor(Math.random() * games.length);
 
@@ -71,7 +69,6 @@ class GamesController {
                 title:      value.title,
                 imageUrl:   value.imageUrl,
                 type:       value.type,
-                gradeID:    value.gradeID,
                 isFavorite: found
             })
         }));
@@ -98,7 +95,7 @@ class GamesController {
 
             // action handlers
             this.gamesView.find(".favorite-btn").on("click", this.handleClickFavorites);
-            this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
+            this.gamesView.find(".add-btn").on("click", this.handleClickAddToLesson);
         }
 
 
@@ -109,18 +106,15 @@ class GamesController {
         $(".content").empty().append(this.gamesView);
     }
 
+
+
+
     handleClickGameItem() {
         window.scrollTo(0, 0);
 
-
         //Get the data-controller from the clicked element (this)
-        const gameID = $(this).attr("data-id");
-        new GameDetailController(gameID);
+        new GameDetailController($(this).attr("data-id"));
 
-        //Pass the action to a new function for further processing
-        //app.loadController(controller);
-
-        //Return false to prevent reloading the page
         return false;
     }
 
@@ -159,89 +153,24 @@ class GamesController {
     async handleClickFilter(e) {
         e.preventDefault();
 
-        let optionObj = {
-            description: $(e.target).text(),
-            variant:     $(e.target).attr("data-variant"),
-            id:          $(e.target).attr("data-id")
-        };
-
-
         if ($(e.target).hasClass("filterbtn-active")) {
 
-            this.filterOptions = this.filterOptions.filter(function (el) {
-                return el.id !== optionObj.id || el.variant !== optionObj.variant;
-            });
+            console.log($(e.target).attr("data-id"));
 
             $(e.target).removeClass("filterbtn-active");
 
         } else {
-            // hiJ wordt niet gefilterd en moet er dus bij
+            console.log($(e.target).attr("data-id"));
 
-            this.filterOptions.push(optionObj);
+
+            // hiJ wordt niet gefilterd en moet er dus bij
             $(e.target).addClass("filterbtn-active");
         }
 
-        this.handleFilterRender();
     };
 
 
-    async handleFilterRender() {
-
-        let selectedGrades    = [];
-        let selectedMaterials = [];
-
-        this.filterOptions.map((option) => {
-            if (option.variant === "grades") {
-                selectedGrades.push(option.id)
-            }
-
-            if (option.variant === "material") {
-                selectedMaterials.push(parseInt(option.id))
-            }
-        });
-
-
-        console.log(selectedMaterials);
-
-
-        this.gamesView.find(".brick").map(async (index, element) => {
-
-            $(element).css({
-                display: "inline-block"
-            });
-
-            if (selectedGrades.length) {
-                if (!selectedGrades.includes($(element).attr("data-grade"))) {
-                    $(element).css({
-                        display: "none"
-                    })
-                }
-            }
-
-            // // get materials for the check
-            // let gameMaterials = await this.gameRepository.getMaterial($(element).attr("data-id"));
-            //
-            //
-            // if (selectedMaterials.length && gameMaterials.length) {
-            //     $(element).css({
-            //         display: "none"
-            //     })
-            //     gameMaterials.map((value) => {
-            //
-            //         if (selectedMaterials.includes(value.materialID - 1)) {
-            //             $(element).css({
-            //                 display: "inline-block"
-            //             })
-            //         }
-            //     });
-            // }
-
-        });
-
-    }
-
-
-    handleClickAddTo() {
+    handleClickAddToLesson() {
         let choices = [
             {
                 text:    'Groep 6 lesrooster',
@@ -252,13 +181,13 @@ class GamesController {
             {
                 text:    'Groep 3 spellenuur',
                 handler: function () {
-                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom',  type: "success"})
+                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
                 }
             },
             {
                 text:    'Kleuter fun lijst',
                 handler: function () {
-                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom',  type: "success"})
+                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
                 }
             },
         ];

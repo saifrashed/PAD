@@ -9,7 +9,7 @@ footer .bg-circle {
     z-index: -1;
     position: absolute;
     border-radius: 100%;
-    background: linear-gradient(0deg, #56ab2f 0%, #a8e063 100%);
+    background: linear-gradient(90deg, #2fdc7f 0%, #05a54f 100%);
 }
 
 footer .bg-circle-1 {

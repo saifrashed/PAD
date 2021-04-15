@@ -11,9 +11,9 @@ class GameRepository {
         this.route = "/game"
     }
 
-    async getAll() {
+    async getAll(gradeID) {
         return await networkManager
-            .doRequest(this.route, {}, "GET");
+            .doRequest(this.route, {gradeID: gradeID}, "POST");
     }
 
     /**
@@ -27,14 +27,28 @@ class GameRepository {
             .doRequest(`${this.route}/${gameID}`, {}, "GET");
     }
 
+    /**
+     * Create a game
+     * @returns {Promise<void>}
+     */
     async create() {
 
     }
 
+    /**
+     * Delete a game
+     * @returns {Promise<void>}
+     */
     async delete() {
 
     }
 
+    /**
+     * Update a game
+     * @param id
+     * @param values
+     * @returns {Promise<void>}
+     */
     async update(id, values = {}) {
 
     }

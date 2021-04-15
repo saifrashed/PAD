@@ -40,11 +40,11 @@ Game Detail page styling
 
 .nav-pills .nav-link {
     border-radius: 25px;
-    color: #57b846;
+    color: #05a54f;
 }
 
 .nav-pills .nav-link.active {
-    background-color: #57b846;
+    background-color: #05a54f;
 }
 
 

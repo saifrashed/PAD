@@ -246,24 +246,24 @@ class GamesController {
             {
                 text:    'Groep 6 lesrooster',
                 handler: function () {
-                    notie.alert({text: 'Toegevoegd aan spellenlijst', position: 'bottom'})
+                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
                 }
             },
             {
                 text:    'Groep 3 spellenuur',
                 handler: function () {
-                    notie.alert({text: 'Toegevoegd aan spellenlijst', position: 'bottom'})
+                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom',  type: "success"})
                 }
             },
             {
                 text:    'Kleuter fun lijst',
                 handler: function () {
-                    notie.alert({text: 'Toegevoegd aan spellenlijst', position: 'bottom'})
+                    notie.alert({text: 'Toegevoegd aan les!', position: 'bottom',  type: "success"})
                 }
             },
         ];
 
-        notificationManager.select('Toevoegen aan spellenlijst', choices);
+        notificationManager.select('Toevoegen aan een les!', choices);
     }
 
     async handleClickFavorites() {

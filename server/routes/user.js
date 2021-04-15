@@ -43,15 +43,16 @@ router.route('/favorite').delete(async (req, res) => {
  * Users login
  */
 router.route('/login').post(async (req, res) => {
-    const {email, password} = req.body;
+    const {username, password} = req.body;
 
     db.handleQuery(connectionPool, {
-        query:  "SELECT userID, email, password FROM user WHERE email = ?",
-        values: [email]
+        query:  "SELECT userID, username, password FROM user WHERE username = ?",
+        values: [username]
     }, (data) => {
 
-        const correctPassword = bcrypt.compare(password, data[0].password); // updated
         console.log(data);
+
+        const correctPassword = bcrypt.compare(password, data[0].password); // updated
         if (data.length === 1 && correctPassword) {
             //return just the username for now, never send password back!
             res.status(httpOkCode).json({"userID": data[0].userID});
@@ -68,27 +69,29 @@ router.route('/login').post(async (req, res) => {
  * Users Register
  */
 router.route('/register').post(async (req, res) => {
-    const {firstname, lastname, email, password} = req.body;
+    const {firstname, lastname, username, password} = req.body;
+
+    console.log(username);
 
     // encrypt password
     const salt              = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
 
     db.handleQuery(connectionPool, {
-        query:  "SELECT userID, email, password FROM user WHERE email = ?",
-        values: [email]
+        query:  "SELECT userID, username, password FROM user WHERE username = ?",
+        values: [username]
     }, (data) => {
 
         if (data.length) {
             res.status(authorizationErrCode).json({reason: "User already exists"});
         } else {
             db.handleQuery(connectionPool, {
-                query:  "INSERT INTO user (firstname, lastname, email, password) VALUES (?,?,?,?)",
-                values: [firstname, lastname, email, encryptedPassword]
+                query:  "INSERT INTO user (firstname, lastname, username, password) VALUES (?,?,?,?)",
+                values: [firstname, lastname, username, encryptedPassword]
             }, (data) => {
 
                 db.handleQuery(connectionPool, {
-                    query:  "SELECT userID, email, password FROM user WHERE userID = ?",
+                    query:  "SELECT userID, username, password FROM user WHERE userID = ?",
                     values: [data.insertId]
                 }, (newUser) => {
                     res.status(httpOkCode).json({"userID": newUser[0].userID});

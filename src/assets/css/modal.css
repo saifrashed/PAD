@@ -20,6 +20,10 @@ Default Modal styling
     border-top: 1px solid #b7b7b7;
 }
 
+.modal.show .modal-dialog {
+    max-width: 550px;
+}
+
 .modal-content ul {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -301,4 +305,20 @@ ul.discover__tags li a:hover {
 
 
 .fade {
+}
+
+
+.lessons .brick {
+    position: relative;
+    margin-bottom: 30px;
+    display: inline-block; /* Fix the misalignment of items */
+    vertical-align: top; /* Keep the item on the very top */
+    width: 100%;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    cursor: pointer;
+
+}
+
+.lessons .brick:hover {
+    transform: scale(1.05);
 }

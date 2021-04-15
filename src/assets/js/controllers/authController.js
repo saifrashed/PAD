@@ -36,7 +36,7 @@ class AuthController {
             authBox.find("#logout-btn").on("click", this.handleLogout);
 
             authBox.find("#user-name").html(user.firstname + " " + user.lastname);
-            authBox.find("#user-email").html(user.email);
+            authBox.find("#user-username").html( "@" + user.username);
 
 
             if (user.favorites) {
@@ -76,21 +76,15 @@ class AuthController {
 
 
             //Find the username and password
-            const email    = $(this).find("[name='login-email']").val();
+            const username    = $(this).find("[name='login-username']").val();
             const password = $(this).find("[name='login-password']").val();
 
             // Check if value exists
-            if (!email || !password) {
+            if (!username || !password) {
                 notificationManager.alert("warning", "Vul alle velden in!");
                 return false;
             }
 
-            // Check email
-            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            if (!email.match(mailformat)) {
-                notificationManager.alert("warning", "Email is niet correct!");
-                return false;
-            }
 
             if (password.length < 6) {
                 notificationManager.alert("warning", "Wachtwoord is te kort!");
@@ -98,7 +92,7 @@ class AuthController {
             }
 
             //await keyword 'stops' code until data is returned - can only be used in async function
-            const user = await userRepository.login(email, password);
+            const user = await userRepository.login(username, password);
 
             sessionManager.set("userID", user.userID);
             notificationManager.alert("success", "U wordt ingelogd!");
@@ -126,21 +120,13 @@ class AuthController {
 
             const firstName      = $(this).find("[name='register-firstname']").val();
             const lastName       = $(this).find("[name='register-lastname']").val();
-            const email          = $(this).find("[name='register-email']").val();
+            const username       = $(this).find("[name='register-username']").val();
             const password       = $(this).find("[name='register-password']").val();
             const passwordRepeat = $(this).find("[name='register-passwordrepeat']").val();
 
-
             // Check if value exists
-            if (!firstName || !lastName || !email || !password) {
+            if (!firstName || !lastName || !username || !password) {
                 notificationManager.alert("warning", "Vul alle velden in!");
-                return false;
-            }
-
-            // Check email
-            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            if (!email.match(mailformat)) {
-                notificationManager.alert("warning", "Email is niet correct!");
                 return false;
             }
 
@@ -156,7 +142,7 @@ class AuthController {
 
 
             //await keyword 'stops' code until data is returned - can only be used in async function
-            const user = await userRepository.register(firstName.toLowerCase(), lastName.toLowerCase(), email.toLowerCase(), password);
+            const user = await userRepository.register(firstName.toLowerCase(), lastName.toLowerCase(), username.toLowerCase(), password);
 
             notificationManager.alert("success", "U bent geregistreerd!");
             sessionManager.set("userID", user.userID);

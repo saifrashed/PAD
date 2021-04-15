@@ -43,7 +43,7 @@ const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => 
                                 
                                                 <div class="brick__bottom">
                                                     <i class="fas fa-heart favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
-                                                    <!--<i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>-->
+                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <!--<i class="fas fa-external-link-alt share-btn"></i>-->
                                                 </div>
                                             </div>

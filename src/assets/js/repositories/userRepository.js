@@ -27,10 +27,10 @@ class UserRepository {
      * @param password
      * @returns {Promise<user>}
      */
-    async login(email, password) {
+    async login(username, password) {
         return await networkManager
             .doRequest(`${this.route}/login`, {
-                "email":    email,
+                "username":    username,
                 "password": password
             }, "POST");
     }
@@ -56,13 +56,13 @@ class UserRepository {
     }
 
 
-    async register(firstName, lastName, email, password) {
+    async register(firstName, lastName, username, password) {
 
         return await networkManager
             .doRequest(`${this.route}/register`, {
                 "firstname": firstName,
                 "lastname":  lastName,
-                "email":     email,
+                "username":  username,
                 "password":  password
             }, "POST");
     }

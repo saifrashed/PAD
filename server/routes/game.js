@@ -92,13 +92,10 @@ router.route('/rating/').post(async (req, res) => {
 /**
  * Get all games
  */
-router.route('/').post(async (req, res) => {
-
-    let {gradeID} = req.body;
+router.route('/').get(async (req, res) => {
 
     db.handleQuery(connectionPool, {
-        query: "SELECT * FROM games INNER JOIN grades on games.gradeID = grades.gradeID WHERE games.gradeID <= ?;",
-        values: [gradeID]
+        query:  "SELECT * FROM games;"
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
@@ -106,7 +103,7 @@ router.route('/').post(async (req, res) => {
 
 /**
  * Get single game
-*/
+ */
 router.route('/:id').get(async (req, res) => {
     console.log(req.params.id);
 

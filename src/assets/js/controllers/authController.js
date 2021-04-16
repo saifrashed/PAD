@@ -36,7 +36,7 @@ class AuthController {
             authBox.find("#logout-btn").on("click", this.handleLogout);
 
             authBox.find("#user-name").html(user.firstname + " " + user.lastname);
-            authBox.find("#user-username").html( "@" + user.username);
+            authBox.find("#user-username").html("@" + user.username);
 
 
             if (user.favorites) {
@@ -52,6 +52,7 @@ class AuthController {
 
             authBox.find("#pills-profile-tab").remove();
             authBox.find("#pills-favorites-tab").remove();
+            authBox.find("#pills-lessons-tab").remove();
 
             authBox.find(".login-form").on("submit", this.handleLogin);
             authBox.find(".register-form").on("submit", this.handleRegistration);
@@ -76,7 +77,7 @@ class AuthController {
 
 
             //Find the username and password
-            const username    = $(this).find("[name='login-username']").val();
+            const username = $(this).find("[name='login-username']").val();
             const password = $(this).find("[name='login-password']").val();
 
             // Check if value exists

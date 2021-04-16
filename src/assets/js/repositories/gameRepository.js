@@ -13,7 +13,7 @@ class GameRepository {
 
     async getAll(gradeID) {
         return await networkManager
-            .doRequest(this.route, {gradeID: gradeID}, "POST");
+            .doRequest(this.route, {}, "GET");
     }
 
     /**

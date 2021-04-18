@@ -18,48 +18,41 @@ class AuthController {
     //Called when the login.html has been loaded
     async setup(data) {
         //Load the login-content into memory
-        const authBox = $(data);
+        this.authBox = $(data);
 
         if (this.isLogged) {
 
-            const user = await this.fetchUser(sessionManager.get("userID"));
+            this.user = await this.fetchUser(sessionManager.get("userID"));
 
-            console.log(user);
+            console.log(this.user);
 
-            authBox.find("#pills-profile-tab").addClass("active");
-            authBox.find("#pills-login").removeClass("active show");
-            authBox.find("#pills-profile").addClass("active show");
+            this.authBox.find("#pills-profile-tab").addClass("active");
+            this.authBox.find("#pills-login").removeClass("active show");
+            this.authBox.find("#pills-profile").addClass("active show");
 
-            authBox.find("#pills-login-tab").remove();
-            authBox.find("#pills-registration-tab").remove();
+            this.authBox.find("#pills-login-tab").remove();
+            this.authBox.find("#pills-registration-tab").remove();
 
-            authBox.find("#logout-btn").on("click", this.handleLogout);
+            this.authBox.find("#logout-btn").on("click", this.handleLogout);
 
-            authBox.find("#user-name").html(user.firstname + " " + user.lastname);
-            authBox.find("#user-username").html("@" + user.username);
+            this.authBox.find("#user-name").html(this.user.firstname + " " + this.user.lastname);
+            this.authBox.find("#user-username").html("@" + this.user.username);
 
 
-            if (user.favorites) {
-                authBox.find('.masonry').html(user.favorites.map(FavoriteBrick).join(''));
-
-                authBox.find(".remove-favorite").on("click", this.handleDeleteFav);
-
-            } else {
-                authBox.find('.masonry').html("U hebt geen favorieten spellen.");
-            }
+            await this.handleRenderFav();
 
         } else {
 
-            authBox.find("#pills-profile-tab").remove();
-            authBox.find("#pills-favorites-tab").remove();
-            authBox.find("#pills-lessons-tab").remove();
+            this.authBox.find("#pills-profile-tab").remove();
+            this.authBox.find("#pills-favorites-tab").remove();
+            this.authBox.find("#pills-lessons-tab").remove();
 
-            authBox.find(".login-form").on("submit", this.handleLogin);
-            authBox.find(".register-form").on("submit", this.handleRegistration);
+            this.authBox.find(".login-form").on("submit", this.handleLogin);
+            this.authBox.find(".register-form").on("submit", this.handleRegistration);
         }
 
 
-        $(".authbox").empty().append(authBox);
+        $(".authbox").empty().append(this.authBox);
     }
 
 
@@ -172,21 +165,31 @@ class AuthController {
         }
     }
 
-    async handleDeleteFav() {
+    async handleRenderFav() {
         try {
+            this.user = await this.fetchUser(sessionManager.get("userID"));
 
+            if (this.user.favorites) {
+                this.authBox.find('.masonry').html(this.user.favorites.map(FavoriteBrick).join(''));
+                this.authBox.find(".remove-favorite").on("click", (e) => this.handleDeleteFav(e));
+            } else {
+                this.authBox.find('.masonry').html("<div style='margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);'>U hebt nog geen favorieten </div>");
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async handleDeleteFav(e) {
+        try {
             const userRepository = new UserRepository();
+            const userID         = sessionManager.get("userID");
+            const gameID         = $(e.target).parent().siblings().attr("data-id");
 
-
-            const userID = sessionManager.get("userID");
-            const gameID = $(this).parent().siblings().attr("data-id");
-
-            const deletedFav = await userRepository.deleteFavorite(userID, gameID);
-
+            await userRepository.deleteFavorite(userID, gameID);
+            await this.handleRenderFav();
 
             notificationManager.alert("success", 'Verwijderd van favorieten');
-            location.reload();
-
         } catch (e) {
             console.log(e);
         }

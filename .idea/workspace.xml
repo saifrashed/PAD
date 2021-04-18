@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/authbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/gameDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/gameDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +20,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="160" column="25" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="25" />
+            <state relative-caret-position="476">
+              <caret line="167" column="68" selection-start-line="167" selection-start-column="64" selection-end-line="167" selection-end-column="68" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,7 +36,39 @@
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
-              <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-end-line="77" />
+              <caret line="76" column="21" selection-start-line="76" selection-end-line="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1288">
+              <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/authbox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="160" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#a#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +76,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1532">
-              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+            <state relative-caret-position="162">
+              <caret line="174" column="13" lean-forward="true" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,11 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bg-cir</find>
-      <find>user-symbol</find>
-      <find>welcomeView</find>
-      <find>authBox</find>
-      <find>cherry-plant.jpg</find>
       <find>auth</find>
       <find>wish</find>
       <find>wink</find>
@@ -89,7 +122,12 @@
       <find>regis</find>
       <find>handleClickShare</find>
       <find>varia</find>
+      <find>authBox</find>
+      <find>lottie</find>
       <find>user</find>
+      <find>asse</find>
+      <find>handleDele</find>
+      <find>favoriteBtnActive</find>
     </findStrings>
     <replaceStrings>
       <replace>./assets/img/</replace>
@@ -118,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/assets/css/main.css" />
         <option value="$PROJECT_DIR$/src/views/navbar.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/views/gameDetail.html" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" />
         <option value="$PROJECT_DIR$/server/cypress/plugins/index.js" />
         <option value="$PROJECT_DIR$/server/cypress/integration/pad/login.js" />
@@ -126,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/assets/css/modal.css" />
         <option value="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" />
         <option value="$PROJECT_DIR$/server/routes/user.js" />
-        <option value="$PROJECT_DIR$/src/views/authbox.html" />
         <option value="$PROJECT_DIR$/src/assets/css/footer.css" />
         <option value="$PROJECT_DIR$/src/assets/css/sidebar.css" />
         <option value="$PROJECT_DIR$/src/assets/css/general.css" />
@@ -134,12 +170,14 @@
         <option value="$PROJECT_DIR$/src/assets/css/gameDetail.css" />
         <option value="$PROJECT_DIR$/src/views/landing.html" />
         <option value="$PROJECT_DIR$/src/views/games.html" />
-        <option value="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" />
         <option value="$PROJECT_DIR$/src/assets/css/header.css" />
         <option value="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" />
         <option value="$PROJECT_DIR$/server/utils/databaseHelper.js" />
         <option value="$PROJECT_DIR$/server/routes/game.js" />
+        <option value="$PROJECT_DIR$/src/views/gameDetail.html" />
+        <option value="$PROJECT_DIR$/src/views/authbox.html" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/authController.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" />
       </list>
     </option>
@@ -166,12 +204,6 @@
               <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAD" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PAD" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
@@ -203,7 +235,9 @@
               <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -235,11 +269,11 @@
       <recent name="$PROJECT_DIR$/src/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/animations" />
       <recent name="C:\Users\sihem\team-7\src\assets\img\games" />
       <recent name="C:\Users\sihem\team-7\src\assets\img\games\floorplan" />
       <recent name="C:\Users\sihem\team-7\src\assets\img" />
       <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/assets/img/games" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -324,12 +358,12 @@
       <workItem from="1616461300952" duration="223000" />
       <workItem from="1616628646802" duration="32000" />
       <workItem from="1618300348739" duration="1278000" />
-      <workItem from="1618403459226" duration="18876000" />
+      <workItem from="1618403459226" duration="24407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76389000" />
+    <option name="totallyTimeSpent" value="81920000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,7 +378,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25946277" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25946277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Command Line Tools Console" weight="0.32959184" />
@@ -358,7 +392,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28469387" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28469387" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -392,10 +426,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js</url>
+          <line>17</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -485,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="15" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/cypress/plugins/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -513,16 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="813">
           <caret line="322" column="25" lean-forward="true" selection-start-line="322" selection-start-column="25" selection-end-line="322" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2180">
-          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -585,27 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/games.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/authbox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="138" column="63" selection-start-line="138" selection-start-column="55" selection-end-line="138" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#a#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -620,24 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="36" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1015">
           <caret line="105" column="3" selection-start-line="105" selection-start-column="3" selection-end-line="105" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1532">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -648,17 +639,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/games.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="167" column="68" selection-start-line="167" selection-start-column="64" selection-end-line="167" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/animations/favorites.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/authbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="160" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#a#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
-          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-end-line="77" />
+          <caret line="76" column="21" selection-start-line="76" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="174" column="13" lean-forward="true" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="160" column="25" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="25" />
+        <state relative-caret-position="1288">
+          <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
         </state>
       </provider>
     </entry>

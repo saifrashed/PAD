@@ -28,8 +28,8 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, isFavorite = false}) => `
-                                            <div class="brick" data-id="${gameID}">
+const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
+                                            <div class="brick" data-id="${gameID}" data-grade-id="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
@@ -42,7 +42,7 @@ const Brick = ({gameID, title, imageUrl, type, isFavorite = false}) => `
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-heart favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                    <i class="fas fa-star favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>
                                                     <!--<i class="fas fa-external-link-alt share-btn"></i>-->
                                                 </div>
@@ -70,9 +70,9 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                     <img alt="${title}" src="${imageUrl}" title="${title}">
                                                 </a>
                                 
-                                                <div class="brick__bottom">
-                                                    <i class="fas fa-times remove-favorite"></i>                                                
-                                                </div>
+                                                <!--<div class="brick__bottom">-->
+                                                    <!--<i class="fas fa-times remove-favorite"></i>                                                -->
+                                                <!--</div>-->
                                             </div>
                                             `;
 

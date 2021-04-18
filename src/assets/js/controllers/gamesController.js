@@ -76,10 +76,9 @@ class GamesController {
     async handleRenderMasonry(games) {
         try {
             this.gamesView.find('.games .masonry').html(games.map((value) => {
-
                 let found = false;
 
-                if (sessionManager.get("userID") && this.user.favorites != null) {
+                if (sessionManager.get("userID") && this.user.favorites !== undefined) {
                     found = this.user.favorites.some(el => el.gameID === value.gameID);
                 }
                 return Brick({
@@ -100,7 +99,7 @@ class GamesController {
                 this.gamesView.find(".add-btn").removeData("data-toggle");
 
                 // action handlers
-                this.gamesView.find(".favorite-btn").on("click", this.handleClickFavorites);
+                this.gamesView.find(".favorite-btn").on("click", (e) => this.handleClickFavorites(e));
                 this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
             }
 
@@ -188,7 +187,11 @@ class GamesController {
         try {
             e.preventDefault();
 
-            this.handleRenderMasonry(this.games.filter(d => d.gradeID < $(e.target).attr("data-id")));
+            if ($(e.target).attr("data-id") == 1) {
+                this.handleRenderMasonry(this.games);
+            } else {
+                this.handleRenderMasonry(this.games.filter(d => d.gradeID <= $(e.target).attr("data-id")));
+            }
 
             $(".filterbtn-active").each(function () {
                 $(this).removeClass("filterbtn-active");
@@ -239,17 +242,33 @@ class GamesController {
      * Handles favorites clicks
      * @returns {Promise<void>}
      */
-    async handleClickFavorites() {
+    async handleClickFavorites(e) {
         try {
-            await new UserRepository().createFavorite(sessionManager.get("userID"), $(this).parent().siblings().attr("data-id"));
-            notificationManager.alert("success", 'Toegevoegd aan favorieten');
-            app.loadController("auth");
-            app.loadController("games");
+            if (!$(e.target).hasClass("favoriteBtnActive")) {
+                await new UserRepository().createFavorite(sessionManager.get("userID"), $(e.target).parent().siblings().attr("data-id"));
+                notificationManager.alert("success", 'Toegevoegd aan favorieten');
+            } else {
+                await new UserRepository().deleteFavorite(sessionManager.get("userID"), $(e.target).parent().siblings().attr("data-id"));
+                notificationManager.alert("success", 'verwijderd van favorieten');
+            }
 
+            await this.handlePageRefresh();
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
         }
+    }
+
+    /**
+     * Handles page refresh
+     */
+    handlePageRefresh() {
+        $.get("views/games.html")
+         .done((data) => {
+             app.loadController('auth');
+             this.setup(data)
+         })
+         .fail(() => this.error());
     }
 
     //Called when the login.html fails to load

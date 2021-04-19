@@ -51,7 +51,7 @@ class App {
                 break;
 
             case CONTROLLER_AUTH:
-                this.isLoggedIn(() => new AuthController(true), () => new AuthController(false));
+                new AuthController();
                 break;
 
             case CONTROLLER_LOGOUT:
@@ -66,8 +66,7 @@ class App {
 
             case CONTROLLER_GAMES:
                 this.setCurrentController(name);
-
-                this.isLoggedIn(() => new GamesController(true), () => new GamesController(false));
+                new GamesController();
                 break;
 
             case CONTROLLER_GAMEDETAIL:

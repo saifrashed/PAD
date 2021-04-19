@@ -11,16 +11,12 @@ class LandingController {
          .fail(() => this.error());
     }
 
-    //Called when the welcome.html has been loaded
     setup(data) {
-        //Load the welcome-content into memory
-        this.welcomeView = $(data);
+        this.landingView = $(data);
 
-        //Set the name in the view from the session
-        this.welcomeView.find(".name").html(sessionManager.get("username"));
+        // code
 
-        //Empty the content-div and add the resulting view to the page
-        $(".content").empty().append(this.welcomeView);
+        $(".content").empty().append(this.landingView);
     }
 
 

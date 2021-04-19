@@ -1,13 +1,10 @@
 /**
  * Controller responsible for all events in view and setting data
  *
- * @author Pim Meijer
  */
 class AuthController {
 
-    constructor(isLogged) {
-        this.isLogged = isLogged;
-
+    constructor() {
         $.get("views/authbox.html")
          .done((data) => {
              this.setup(data)
@@ -20,7 +17,7 @@ class AuthController {
         //Load the login-content into memory
         this.authBox = $(data);
 
-        if (this.isLogged) {
+        if (sessionManager.get("userID")) {
 
             this.user = await this.fetchUser(sessionManager.get("userID"));
 

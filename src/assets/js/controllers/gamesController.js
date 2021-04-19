@@ -2,19 +2,41 @@
  * Responsible for handling the actions happening on welcome view
  * For now it uses the roomExampleRepository to get some example data from server
  *
- * @author Lennard Fonteijn & Pim Meijer
  */
 class GamesController {
-    constructor(isLogged) {
+
+    constructor() {
         this.gameRepository = new GameRepository();
         this.userRepository = new UserRepository();
-        this.isLogged       = isLogged;
+
+        // all events to listen
+        this.events = [
+            {
+                selector:  "input.search",
+                eventType: "input",
+                cb:        (e) => this.handleSearchFilter(e)
+            },
+            {
+                selector:  ".brick a",
+                eventType: "click",
+                cb:        this.handleClickGame
+            },
+            {
+                selector:  ".highlighted-game a",
+                eventType: "click",
+                cb:        this.handleClickGame
+            },
+            {
+                selector:  ".js-collection-section-tag",
+                eventType: "click",
+                cb:        (e) => this.handleClickFilter(e)
+            },
+        ];
 
         $.get("views/games.html")
          .done((data) => {
              this.setup(data)
-         })
-         .fail(() => this.error());
+         }).fail(() => this.error());
     }
 
     /**
@@ -24,26 +46,36 @@ class GamesController {
      */
     async setup(data) {
         this.gamesView = $(data);
-
-        if (sessionManager.get("userID")) {
-            this.user = await this.userRepository.get(sessionManager.get("userID"));
-        }
-
         this.games     = await this.gameRepository.getAll();
         this.grades    = await this.gameRepository.getGrades();
         this.materials = await this.gameRepository.getMaterials();
+
+        if (sessionManager.get("userID")) this.user = await this.userRepository.get(sessionManager.get("userID"));
 
         this.handleRenderHighlighted(this.games);
         this.handleRenderMasonry(this.games);
         this.handleRenderGradeFilter(this.grades);
         this.handleRenderMaterialFilter(this.materials);
 
-        this.gamesView.find('input.search').on("input", (e) => this.handleSearchFilter(e));
-        this.gamesView.find(".brick a").on("click", this.handleClickGame);
-        this.gamesView.find(".highlighted-game a").on("click", this.handleClickGame);
-        this.gamesView.find(".js-collection-section-tag").on("click", (e) => this.handleClickFilter(e));
+        // set event listeners
+        this.setEventListeners();
 
+        // reset and append content
         $(".content").empty().append(this.gamesView);
+    }
+
+    /**
+     * Sets all registered events
+     * @returns {Promise<void>}
+     */
+    async setEventListeners() {
+        try {
+            this.events.map((value => {
+                this.gamesView.find(value.selector).on(value.eventType, value.cb);
+            }));
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     /**
@@ -91,7 +123,7 @@ class GamesController {
                 })
             }));
 
-            if (this.isLogged) {
+            if (sessionManager.get("userID")) {
                 this.gamesView.find(".favorite-btn").removeAttr("data-target");
                 this.gamesView.find(".favorite-btn").removeData("data-toggle");
 
@@ -153,8 +185,10 @@ class GamesController {
      * Handles game click
      * @returns {Promise<void>}
      */
-    async handleClickGame() {
+    async handleClickGame(e) {
         try {
+            console.log($(this).attr("data-id"));
+
             window.scrollTo(0, 0);
             new GameDetailController($(this).attr("data-id"));
             return false;

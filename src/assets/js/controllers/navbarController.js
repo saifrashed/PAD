@@ -1,7 +1,6 @@
 /**
  * Responsible for handling the actions happening on sidebar view
  *
- * @author Lennard Fonteijn, Pim Meijer
  */
 class NavbarController {
     constructor() {
@@ -21,18 +20,16 @@ class NavbarController {
         $(document).mouseup(this.handleOffCanvas);
 
 
-        //TODO: Add logic here to determine which menu items should be visible or not
-
         //Empty the sidebar-div and add the resulting view to the page
         $(".sidebar").empty().append(sidebarView);
     }
 
+    /**
+     * Menu item click handler
+     * @returns {boolean}
+     */
     handleClickMenuItem() {
-        //Get the data-controller from the clicked element (this)
-        const controller = $(this).attr("data-controller");
-
-        //Pass the action to a new function for further processing
-        app.loadController(controller);
+        app.loadController($(this).attr("data-controller"));
 
         $('body').removeClass('show-sidebar');
         $("button.burger").removeClass('active');
@@ -41,21 +38,26 @@ class NavbarController {
         return false;
     }
 
-
+    /**
+     * Sidebar toggle logic
+     * @param e
+     */
     handleMenuToggle(e) {
-        var $this = $(this);
-
         if ($('body').hasClass('show-sidebar')) {
             $('body').removeClass('show-sidebar');
-            $this.removeClass('active');
+            $(this).removeClass('active');
         } else {
             $('body').addClass('show-sidebar');
-            $this.addClass('active');
+            $(this).addClass('active');
         }
 
         e.preventDefault();
     }
 
+    /**
+     * Sidebar display logic
+     * @param e
+     */
     handleOffCanvas(e) {
         var container = $(".sidebar");
         if (!container.is(e.target) && container.has(e.target).length === 0) {

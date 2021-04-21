@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PAD.iml" filepath="$PROJECT_DIR$/.idea/PAD.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PAD-CLIENT/.idea/PAD-CLIENT.iml" filepath="$PROJECT_DIR$/../PAD-CLIENT/.idea/PAD-CLIENT.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Saif Rashed Software/TickIT/.idea/TickIt.iml" filepath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/.idea/TickIt.iml" />
     </modules>
   </component>
 </project>

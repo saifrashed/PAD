@@ -89,13 +89,56 @@ router.route('/rating/').post(async (req, res) => {
     });
 });
 
+
+/**
+ * Get lessons
+ */
+router.route('/lesson/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT currentLesson.*, (SELECT Count(*) FROM lessons JOIN lesson_games ON lessons.lessonID = lesson_games.lessonID WHERE lessons.lessonID = currentLesson.lessonID) AS amountGames FROM lessons currentLesson WHERE currentLesson.userID = ?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * Create lesson
+ */
+router.route('/lesson/').post(async (req, res) => {
+    const {userID, title, description} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "INSERT INTO lessons (title, description, userID) VALUES (?, ?, ?)",
+        values: [title, description, userID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * delete lesson
+ */
+router.route('/lesson/').delete(async (req, res) => {
+    const {userID, lessonID} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query: "DELETE FROM lessons WHERE userID=? AND lessonID=? ",
+        values: [userID,lessonID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
+
+
 /**
  * Get all games
  */
 router.route('/').get(async (req, res) => {
 
     db.handleQuery(connectionPool, {
-        query:  "SELECT * FROM games;"
+        query: "SELECT * FROM games;"
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));

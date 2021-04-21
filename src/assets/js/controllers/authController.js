@@ -3,8 +3,9 @@
  *
  */
 class AuthController {
-
     constructor() {
+        this.gameRepository = new GameRepository();
+
         $.get("views/authbox.html")
          .done((data) => {
              this.setup(data)
@@ -21,8 +22,6 @@ class AuthController {
 
             this.user = await this.fetchUser(sessionManager.get("userID"));
 
-            console.log(this.user);
-
             this.authBox.find("#pills-profile-tab").addClass("active");
             this.authBox.find("#pills-login").removeClass("active show");
             this.authBox.find("#pills-profile").addClass("active show");
@@ -35,8 +34,11 @@ class AuthController {
             this.authBox.find("#user-name").html(this.user.firstname + " " + this.user.lastname);
             this.authBox.find("#user-username").html("@" + this.user.username);
 
+            this.authBox.find(".actions-lesson .return-lesson").on("click", (e) => this.handleRenderLessons(e));
+            this.authBox.find(".actions-lesson .add-lesson").on("click", (e) => this.handleRenderCreateLesson(e));
 
             await this.handleRenderFav();
+            await this.handleRenderLessons();
 
         } else {
 
@@ -191,6 +193,77 @@ class AuthController {
             console.log(e);
         }
     }
+
+
+    /**
+     * Lesson functionality
+     */
+    async handleRenderLessons() {
+        try {
+            const lessons = await this.gameRepository.getLessons(sessionManager.get("userID"));
+
+            if(lessons.length) {
+                this.authBox.find(".lessons").html(lessons.map(LessonsLayout));
+            } else {
+                this.handleRenderCreateLesson();
+            }
+
+            // lessons
+            this.authBox.find(".lessons .brick").on("click", (e) => this.handleRenderLessonDetail(e));
+            this.authBox.find(".lessons .brick .remove-lesson").on("click", (e) => this.handleDeleteLesson(e));
+
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    async handleRenderLessonDetail() {
+        try {
+            this.authBox.find(".lessons").html(LessonsDetailLayout);
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    async handleRenderCreateLesson() {
+        this.authBox.find(".lessons").html(LessonsCreateLayout);
+
+        this.authBox.find(".auth-button-container").on("click", (e) => this.handleCreateLesson(this.authBox.find(".lesson-title").val(), this.authBox.find(".lesson-description").val()));
+    }
+
+    async handleCreateLesson(title, description) {
+        try {
+            console.log(title);
+            console.log(description);
+
+            if (!title || !description) {
+                notificationManager.alert("warning", "Vul alle velden in!");
+                return false;
+            }
+
+            await this.gameRepository.addLesson({
+                userID: sessionManager.get("userID"),
+                title: title,
+                description: description,
+            });
+
+            await this.handleRenderLessons();
+            notificationManager.alert("success", 'Les aangemaakt! Ga naar spellen pagina voor toevoegen.');
+
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    async handleDeleteLesson() {
+        try {
+            notificationManager.alert("success", 'Verwijderd!');
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+
 
     //Called when the login.html failed to load
     error() {

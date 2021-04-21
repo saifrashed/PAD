@@ -70,12 +70,68 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                     <img alt="${title}" src="${imageUrl}" title="${title}">
                                                 </a>
                                 
-                                                <!--<div class="brick__bottom">-->
-                                                    <!--<i class="fas fa-times remove-favorite"></i>                                                -->
-                                                <!--</div>-->
+                                                <div class="brick__bottom">
+                                                    <i class="fas fa-times remove-favorite"></i>                                                
+                                                </div>
                                             </div>
                                             `;
 
+const LessonsLayout = ({title, amountGames, lessonID, imageUrl = "./assets/img/placeholder-lesson.jpg"}) => `                                                                
+                                <div class="brick" data-id="${lessonID}">
+                                        <a>
+                                            <div class="brick__top">
+                                                <div class="brick__title">
+                                                    <h1>${title}</h1>
+                                                </div>
+                                                <p class="brick__author">aantal spellen: ${amountGames}</p>
+                                            </div>
+
+
+                                            <div class="w-100"
+                                                 style="background-image: url(${imageUrl}); background-position: center; height: 150px; border-radius: 25px;">
+                                            </div>
+                                        </a>                           
+                                </div>                                                               
+`;
+
+const LessonsDetailLayout = ({}) => `                                                                
+                                <div>
+                                   <div class="masonry p-3">
+                                         <div class="brick">
+                                                <a data-id="sads">
+                                                    <div class="brick__top">
+                                                        <div class="brick__title">
+                                                         <h1>asdas</h1>
+                                                        </div>
+                                                        <p class="brick__author">asdasa</p>
+                                                    </div>
+                                
+                                                    <img src="./assets/img/games/katenmuis.png">
+                                                </a>
+                                
+                                                <div class="brick__bottom">
+                                                    <i class="fas fa-times remove-favorite"></i>                                                
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>                                                               
+                                            `;
+
+const LessonsCreateLayout = ({}) => `      
+                                <div class="form-group text-center">
+                                    <label >Titel</label>
+                                    <input type="text" class="form-control mb-3 lesson-title">
+                                </div>                                                             
+                                <div class="form-group text-center">
+                                    <label >Beschrijving</label>
+                                    <textarea class="form-control lesson-description"></textarea>
+                                </div>   
+                                <div class="auth-button-container">
+                                    <button class="auth-button lessons-create" >
+                                        Maak aan
+                                    </button>
+                                </div>                                                          
+                                            `;
 
 /**
  * Game Brick Template

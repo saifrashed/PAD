@@ -55,6 +55,14 @@ class UserRepository {
 
     }
 
+    async getRating(userID, gameID) {
+        return await networkManager
+            .doRequest(`${this.route}/rating`, {
+                "userID": userID,
+                "gameID": gameID,
+            }, "POST");
+    }
+
 
     async register(firstName, lastName, username, password) {
 

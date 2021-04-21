@@ -5,6 +5,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PAD-CLIENT" />
-    <orderEntry type="module" module-name="TickIt" />
   </component>
 </module>

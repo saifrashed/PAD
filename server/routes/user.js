@@ -40,6 +40,21 @@ router.route('/favorite').delete(async (req, res) => {
 });
 
 /**
+ * get rating
+ */
+router.route('/rating').post(async (req, res) => {
+    const {gameID, userID} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query: "SELECT rating FROM rating WHERE userID=? AND gameID=? ",
+        values: [userID,gameID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
+
+/**
  * Users login
  */
 router.route('/login').post(async (req, res) => {

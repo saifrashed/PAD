@@ -75,9 +75,9 @@ class GameDetailController {
                 this.gameDetailView.find('.product-rating').html("0.0");
             }
 
-            var userRating = await this.userRepository.getRating(sessionManager.get("userID"), this.gameID);
+            const userRating = await this.userRepository.getRating(sessionManager.get("userID"), this.gameID);
 
-            console.log(userRating[0].rating);
+            console.log(userRating.length > 0);
 
             this.gameDetailView.find("#gamedetail-title").text(this.game.title);
             this.gameDetailView.find("#gamedetail-type").text(this.game.type);
@@ -87,7 +87,7 @@ class GameDetailController {
             this.gameDetailView.find("#gamedetail-floorplan").attr('src', this.game.floorplanUrl);
             this.gameDetailView.find('#gameRules').html(this.game.rules.map(RuleListItem));
             this.gameDetailView.find('#gameMaterial').html(this.game.materials.map(MaterialListItem));
-            this.gameDetailView.find('.rating-text').html(this.game.ratings[0].amountRatings + " keer beoordeeld. </br>" + (userRating[0].rating ? "Uw beoordeling: "+ userRating[0].rating+ " sterren" : "" ));
+            this.gameDetailView.find('.rating-text').html(this.game.ratings[0].amountRatings + " keer beoordeeld. </br>" + (userRating.length > 0 ? "Uw beoordeling: "+ userRating[0].rating+ " sterren" : "" ));
             this.gameDetailView.find(".name").html(sessionManager.get("username"));
         } catch (e) {
             console.log(e);

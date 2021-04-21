@@ -82,15 +82,6 @@ class GameRepository {
     }
 
     /**
-     * Get all materialID
-     * @returns {Promise<unknown>}
-     */
-    async getMaterialID() {
-        return await networkManager
-            .doRequest(this.route + `/materialID/`, {}, "GET");
-    }
-
-    /**
      * Get materialID associated with game
      * @param gameID
      * @returns {Promise<unknown>}

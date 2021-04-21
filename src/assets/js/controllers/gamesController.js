@@ -56,6 +56,7 @@ class GamesController {
         this.handleRenderMasonry(this.games);
         this.handleRenderGradeFilter(this.grades);
         this.handleRenderMaterialFilter(this.materials);
+        this.handleMaterialID();
 
         // set event listeners
         this.setEventListeners();
@@ -178,6 +179,15 @@ class GamesController {
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
+        }
+    }
+
+    async handleMaterialID() {
+        try {
+            const materialID = await this.gameRepository.getMaterialID(2);
+            console.log(materialID);
+        } catch (e) {
+          console.log(e);
         }
     }
 

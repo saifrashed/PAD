@@ -32,6 +32,18 @@ router.route('/material/:id').get(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
+/**
+ * Get a games materialID
+ */
+router.route('/materialID/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT game_materials.materialID FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON game_materials.materialID = material.materialID WHERE games.gameID = ?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 
 /**
  * Get all materials

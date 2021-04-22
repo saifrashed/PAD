@@ -77,8 +77,6 @@ class GameDetailController {
 
             const userRating = await this.userRepository.getRating(sessionManager.get("userID"), this.gameID);
 
-            console.log(userRating.length > 0);
-
             this.gameDetailView.find("#gamedetail-title").text(this.game.title);
             this.gameDetailView.find("#gamedetail-type").text(this.game.type);
             this.gameDetailView.find("#gamedetail-image").css({backgroundImage: "url(" + this.game.imageUrl + ")"});

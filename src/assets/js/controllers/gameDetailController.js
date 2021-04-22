@@ -137,7 +137,6 @@ class GameDetailController {
                     $(this).removeAttr("data-toggle");
 
                 });
-                e.preventDefault();
 
                 await this.gameRepository.setRating({
                     userID: sessionManager.get("userID"),
@@ -149,6 +148,8 @@ class GameDetailController {
 
                 notificationManager.alert("success", 'Bedankt voor de beoordeling!');
             }
+
+            e.preventDefault();
         } catch (e) {
             console.log(e);
             notificationManager.alert("error", 'Er is wat misgegaan...');
@@ -162,6 +163,7 @@ class GameDetailController {
         $('.ignore').hide();
 
         var pdf = new jsPDF("a4");
+
         new jsPDF("a4").addHTML($('html'), function () {
             pdf.save('spel.pdf');
             notificationManager.alert("success", 'Uw spel wordt gedownload!');

@@ -179,6 +179,7 @@
 
 
 .favoriteBtnActive {
-    background: linear-gradient(
-            0deg, #05a54f 0%, #2fdc7f 100%);
+    background-image: linear-gradient(
+            315deg
+            , #fbb034 0%, #ffdd00 74%);
 }

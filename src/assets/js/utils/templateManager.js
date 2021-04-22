@@ -28,7 +28,7 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
+const Brick = ({gameID, title, imageUrl, type, gradeID,  isFavorite = false}) => `
                                             <div class="brick" data-id="${gameID}" data-grade-id="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
@@ -77,7 +77,7 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                             `;
 
 const LessonsLayout = ({title, amountGames, lessonID, imageUrl = "./assets/img/placeholder-lesson.jpg"}) => `                                                                
-                                <div class="brick" data-id="${lessonID}">
+                                <div class="brick item"  data-id="${lessonID}">
                                         <a>
                                             <div class="brick__top">
                                                 <div class="brick__title">

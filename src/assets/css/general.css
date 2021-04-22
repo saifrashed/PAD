@@ -88,7 +88,7 @@ google translate
     position: absolute;
     bottom: 10px;
     font-family: arial;
-    font-size: 10pt;
+    font-size: 7pt !important;
     font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;

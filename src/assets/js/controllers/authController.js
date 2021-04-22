@@ -52,6 +52,7 @@ class AuthController {
 
 
         $(".authbox").empty().append(this.authBox);
+
     }
 
 
@@ -204,13 +205,16 @@ class AuthController {
 
             if(lessons.length) {
                 this.authBox.find(".lessons").html(lessons.map(LessonsLayout));
+                new Muuri('.grid', {
+                    dragEnabled: true,
+                });
             } else {
                 this.handleRenderCreateLesson();
             }
 
             // lessons
-            this.authBox.find(".lessons .brick").on("click", (e) => this.handleRenderLessonDetail(e));
-            this.authBox.find(".lessons .brick .remove-lesson").on("click", (e) => this.handleDeleteLesson(e));
+            // this.authBox.find(".lessons .brick").on("click", (e) => this.handleRenderLessonDetail(e));
+            // this.authBox.find(".lessons .brick .remove-lesson").on("click", (e) => this.handleDeleteLesson(e));
 
         } catch(e) {
             console.log(e)

@@ -56,7 +56,6 @@ class GamesController {
         this.handleRenderMasonry(this.games);
         this.handleRenderGradeFilter(this.grades);
         this.handleRenderMaterialFilter(this.materials);
-        this.handleMaterialID();
 
         // set event listeners
         this.setEventListeners();
@@ -109,18 +108,19 @@ class GamesController {
     async handleRenderMasonry(games) {
         try {
             this.gamesView.find('.games .masonry').html(games.map((value) => {
-                let found = false;
+                let isFavorite = false;
 
                 if (sessionManager.get("userID") && this.user.favorites !== undefined) {
-                    found = this.user.favorites.some(el => el.gameID === value.gameID);
+                    isFavorite = this.user.favorites.some(el => el.gameID === value.gameID);
                 }
+
                 return Brick({
                     gameID:     value.gameID,
                     title:      value.title,
                     imageUrl:   value.imageUrl,
                     type:       value.type,
                     gradeID:    value.gradeID,
-                    isFavorite: found
+                    isFavorite: isFavorite
                 })
             }));
 
@@ -135,6 +135,8 @@ class GamesController {
                 this.gamesView.find(".favorite-btn").on("click", (e) => this.handleClickFavorites(e));
                 this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
             }
+
+            this.setEventListeners();
 
         } catch (e) {
             console.log(e);
@@ -182,15 +184,6 @@ class GamesController {
         }
     }
 
-    async handleMaterialID() {
-        try {
-            const materialID = await this.gameRepository.getMaterialID(2);
-            console.log(materialID);
-        } catch (e) {
-          console.log(e);
-        }
-    }
-
     /**
      * Handles game click
      * @returns {Promise<void>}
@@ -231,17 +224,22 @@ class GamesController {
         try {
             e.preventDefault();
 
-            if ($(e.target).attr("data-id") == 1) {
-                this.handleRenderMasonry(this.games);
-            } else {
-                this.handleRenderMasonry(this.games.filter(d => d.gradeID <= $(e.target).attr("data-id")));
+            let games = this.games;
+
+            if ($(e.target).attr("data-variant") === "grades") {
+                console.log("grades filter click");
+                games = this.games.filter(d => d.gradeID <= $(e.target).attr("data-id"));
+                notificationManager.alert("success", 'Filteren op ' + $(e.target).attr("data-variant"));
             }
 
-            $(".filterbtn-active").each(function () {
-                $(this).removeClass("filterbtn-active");
-            });
+            if ($(e.target).attr("data-variant") === "material") {
+                console.log("material filter click");
+                games = await this.gameRepository.getMaterialGames($(e.target).attr("data-id"));
+                notificationManager.alert("success", 'Filteren op ' + $(e.target).attr("data-variant"));
+            }
 
-            $(e.target).addClass("filterbtn-active");
+
+            await this.handleRenderMasonry(games);
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');

@@ -69,7 +69,7 @@ aside, main {
     display: none;
 }
 
-.notie-alert {
+.notie-container {
     z-index: 1000000000000;
 }
 

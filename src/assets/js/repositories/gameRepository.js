@@ -113,11 +113,26 @@ class GameRepository {
 
     async getLessons(userID) {
         return await networkManager
-            .doRequest(this.route + `/lesson/${userID}`, {}, "GET");
+            .doRequest(this.route + `/lessons/${userID}`, {}, "GET");
+    }
+
+    async getLesson(lessonID) {
+        return await networkManager
+            .doRequest(this.route + `/lesson/${lessonID}`, {}, "GET");
+    }
+
+    async getLessonGames(lessonID) {
+        return await networkManager
+            .doRequest(this.route + `/lesson/game/${lessonID}`, {}, "GET");
     }
 
     async addLesson(body) {
         return await networkManager
             .doRequest(`${this.route}/lesson/`, body, "POST");
+    }
+
+    async addLessonGame(body) {
+        return await networkManager
+            .doRequest(`${this.route}/lesson/game/`, body, "POST");
     }
 }

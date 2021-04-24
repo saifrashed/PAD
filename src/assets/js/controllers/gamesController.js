@@ -133,7 +133,7 @@ class GamesController {
 
                 // action handlers
                 this.gamesView.find(".favorite-btn").on("click", (e) => this.handleClickFavorites(e));
-                this.gamesView.find(".add-btn").on("click", this.handleClickAddTo);
+                this.gamesView.find(".add-btn").on("click", (e) => this.handleClickAddTo(e));
             }
 
             this.setEventListeners();
@@ -250,30 +250,29 @@ class GamesController {
      * Handles add to lesson clicks
      * @returns {Promise<void>}
      */
-    async handleClickAddTo() {
+    async handleClickAddTo(e) {
         try {
-            let choices = [
-                {
-                    text:    'Groep 6 lesrooster',
-                    handler: function () {
-                        notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
-                    }
-                },
-                {
-                    text:    'Groep 3 spellenuur',
-                    handler: function () {
-                        notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
-                    }
-                },
-                {
-                    text:    'Kleuter fun lijst',
-                    handler: function () {
-                        notie.alert({text: 'Toegevoegd aan les!', position: 'bottom', type: "success"})
-                    }
-                },
-            ];
+            if (sessionManager.get("userID")) {
+                const lessons = await this.gameRepository.getLessons(sessionManager.get("userID"));
 
-            notificationManager.select('Toevoegen aan een les!', choices);
+                const lessonSelection = lessons.map((value) => {
+                    return {
+                        text:    value.title,
+                        handler: async function () {
+                            const gameRepository = new GameRepository();
+
+                            await gameRepository.addLessonGame({
+                                lessonID: value.lessonID,
+                                gameID:   $(e.target).attr("data-id")
+                            });
+
+                            notificationManager.alert("success", "Toegevoegd aan: " + value.title);
+                        }
+                    }
+                });
+
+                notificationManager.select('Toevoegen aan een les!', lessonSelection);
+            }
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');

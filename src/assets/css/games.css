@@ -62,11 +62,9 @@
     display: inline;
 }
 
-.brick
-.brick__top h1, .brick__top p {
+.brick .brick__top h1, .brick__top p {
     color: #ffffff;
     display: inline;
-
     padding: 5px 10px;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.4);

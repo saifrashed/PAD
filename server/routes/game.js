@@ -105,7 +105,7 @@ router.route('/rating/').post(async (req, res) => {
 /**
  * Get lessons
  */
-router.route('/lesson/:id').get(async (req, res) => {
+router.route('/lessons/:id').get(async (req, res) => {
     db.handleQuery(connectionPool, {
         query:  "SELECT currentLesson.*, (SELECT Count(*) FROM lessons JOIN lesson_games ON lessons.lessonID = lesson_games.lessonID WHERE lessons.lessonID = currentLesson.lessonID) AS amountGames FROM lessons currentLesson WHERE currentLesson.userID = ?",
         values: [req.params.id]
@@ -113,6 +113,19 @@ router.route('/lesson/:id').get(async (req, res) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
+
+/**
+ * Get single lesson
+ */
+router.route('/lesson/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT * FROM lessons WHERE lessonID=?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 
 /**
  * Create lesson
@@ -141,6 +154,34 @@ router.route('/lesson/').delete(async (req, res) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
 
+});
+
+
+/**
+ * Get lessons games
+ */
+router.route('/lesson/game/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT * FROM lessons INNER JOIN lesson_games ON lessons.lessonID = lesson_games.lessonID INNER JOIN games ON lesson_games.gameID = games.gameID WHERE lessons.lessonID = ?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+
+/**
+ * Create lesson game
+ */
+router.route('/lesson/game/').post(async (req, res) => {
+    const {lessonID, gameID} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "INSERT INTO lesson_games (lessonID, gameID) VALUES (?, ?)",
+        values: [lessonID, gameID]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
 

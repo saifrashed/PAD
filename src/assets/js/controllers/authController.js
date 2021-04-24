@@ -39,7 +39,6 @@ class AuthController {
 
             await this.handleRenderFav();
             await this.handleRenderLessons();
-
         } else {
 
             this.authBox.find("#pills-profile-tab").remove();
@@ -118,7 +117,6 @@ class AuthController {
             const password       = $(this).find("[name='register-password']").val();
             const passwordRepeat = $(this).find("[name='register-passwordrepeat']").val();
 
-            // Check if value exists
             if (!firstName || !lastName || !username || !password) {
                 notificationManager.alert("warning", "Vul alle velden in!");
                 return false;
@@ -134,8 +132,6 @@ class AuthController {
                 return false;
             }
 
-
-            //await keyword 'stops' code until data is returned - can only be used in async function
             const user = await userRepository.register(firstName.toLowerCase(), lastName.toLowerCase(), username.toLowerCase(), password);
 
             notificationManager.alert("success", "U bent geregistreerd!");
@@ -202,34 +198,49 @@ class AuthController {
     async handleRenderLessons() {
         try {
             const lessons = await this.gameRepository.getLessons(sessionManager.get("userID"));
+            this.authBox.find(".lesson-screen-title").html("Uw lessen");
 
-            if(lessons.length) {
+
+            if (lessons.length) {
                 this.authBox.find(".lessons").html(lessons.map(LessonsLayout));
-                new Muuri('.grid', {
-                    dragEnabled: true,
-                });
             } else {
                 this.handleRenderCreateLesson();
             }
 
             // lessons
-            // this.authBox.find(".lessons .brick").on("click", (e) => this.handleRenderLessonDetail(e));
-            // this.authBox.find(".lessons .brick .remove-lesson").on("click", (e) => this.handleDeleteLesson(e));
-
-        } catch(e) {
+            this.authBox.find(".lessons .brick").on("click", (e) => this.handleRenderLessonDetail(e));
+        } catch (e) {
             console.log(e)
         }
     }
 
-    async handleRenderLessonDetail() {
+    async handleRenderLessonDetail(e) {
         try {
-            this.authBox.find(".lessons").html(LessonsDetailLayout);
-        } catch(e) {
+
+            const lessonGames = await this.gameRepository.getLessonGames($(e.target).closest(".brick").attr("data-id"));
+            const selectedLesson = await this.gameRepository.getLesson($(e.target).closest(".brick").attr("data-id"));
+
+            this.authBox.find(".lesson-screen-title").html(selectedLesson[0].title);
+
+            if(lessonGames.length > 0) {
+                this.authBox.find(".lessons").html(LessonsDetailLayout({
+                    lessonID:        $(e.target).closest(".brick").attr("data-id"),
+                    title:           selectedLesson[0].title,
+                    description:     selectedLesson[0].description,
+                    lessonGamesHTML: lessonGames.map(LessonGames).join('')
+                }));
+            } else {
+                this.authBox.find(".lessons").html("<div class='lesson-alert'>Voeg spellen toe vanuit de spellen pagina.</div>")
+            }
+
+            this.authBox.find(".lessons .lesson-delete").on("click", this.handleDeleteLesson);
+        } catch (e) {
             console.log(e)
         }
     }
 
     async handleRenderCreateLesson() {
+        this.authBox.find(".lesson-screen-title").html("Maak een les aan");
         this.authBox.find(".lessons").html(LessonsCreateLayout);
 
         this.authBox.find(".auth-button-container").on("click", (e) => this.handleCreateLesson(this.authBox.find(".lesson-title").val(), this.authBox.find(".lesson-description").val()));
@@ -246,27 +257,27 @@ class AuthController {
             }
 
             await this.gameRepository.addLesson({
-                userID: sessionManager.get("userID"),
-                title: title,
+                userID:      sessionManager.get("userID"),
+                title:       title,
                 description: description,
             });
 
-            await this.handleRenderLessons();
+            this.handleRenderLessons();
             notificationManager.alert("success", 'Les aangemaakt! Ga naar spellen pagina voor toevoegen.');
 
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
     }
 
     async handleDeleteLesson() {
         try {
+            console.log($(this).attr("data-id"))
             notificationManager.alert("success", 'Verwijderd!');
-        } catch(e) {
+        } catch (e) {
             console.log(e)
         }
     }
-
 
 
     //Called when the login.html failed to load

@@ -28,7 +28,7 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, gradeID,  isFavorite = false}) => `
+const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
                                             <div class="brick" data-id="${gameID}" data-grade-id="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
@@ -43,7 +43,7 @@ const Brick = ({gameID, title, imageUrl, type, gradeID,  isFavorite = false}) =>
                                 
                                                 <div class="brick__bottom">
                                                     <i class="fas fa-star favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
-                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal" data-id="${gameID}"></i>
                                                     <!--<i class="fas fa-external-link-alt share-btn"></i>-->
                                                 </div>
                                             </div>
@@ -76,8 +76,17 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                             </div>
                                             `;
 
-const LessonsLayout = ({title, amountGames, lessonID, imageUrl = "./assets/img/placeholder-lesson.jpg"}) => `                                                                
-                                <div class="brick item"  data-id="${lessonID}">
+/**
+ * Lesson layout screen
+ * @param title
+ * @param amountGames
+ * @param lessonID
+ * @param imageUrl
+ * @returns {string}
+ * @constructor
+ */
+const LessonsLayout = ({title, amountGames, lessonID, imageUrl = ""}) => `                                                                
+                                <div class="brick" data-id="${lessonID}" style="background-image: url(${imageUrl}); background-position: center; background-color: #25CE73; background-size: cover; border-radius: 25px;">
                                         <a>
                                             <div class="brick__top">
                                                 <div class="brick__title">
@@ -85,38 +94,58 @@ const LessonsLayout = ({title, amountGames, lessonID, imageUrl = "./assets/img/p
                                                 </div>
                                                 <p class="brick__author">aantal spellen: ${amountGames}</p>
                                             </div>
-
-
-                                            <div class="w-100"
-                                                 style="background-image: url(${imageUrl}); background-position: center; height: 150px; border-radius: 25px;">
-                                            </div>
                                         </a>                           
                                 </div>                                                               
 `;
 
-const LessonsDetailLayout = ({}) => `                                                                
+/**
+ * Lesson detail screen
+ * @param lessonID
+ * @param title
+ * @param description
+ * @param lessonGamesHTML
+ * @returns {string}
+ * @constructor
+ */
+const LessonsDetailLayout = ({lessonID, title, description, lessonGamesHTML}) => `                                                                
                                 <div>
                                    <div class="masonry p-3">
-                                         <div class="brick">
-                                                <a data-id="sads">
+                                    ${lessonGamesHTML}
+                                    </div>
+                                    <div class="auth-button-container">
+                                        <button class="auth-button lesson-delete" data-id="${lessonID}" style="background-color: #DC1C13;">
+                                            Verwijder les
+                                        </button>
+                                    </div>       
+                                </div>                                                               
+                                           `;
+
+/**
+ * Lesson games bricks
+ * @param gameID
+ * @param title
+ * @param imageUrl
+ * @param type
+ * @returns {string}
+ * @constructor
+ */
+const LessonGames = ({gameID, title, imageUrl, type}) => `<div class="brick">
+                                                <a data-id="${gameID}">
                                                     <div class="brick__top">
                                                         <div class="brick__title">
-                                                         <h1>asdas</h1>
+                                                         <h1>${title}</h1>
                                                         </div>
-                                                        <p class="brick__author">asdasa</p>
+                                                        <p class="brick__author">${type}</p>
                                                     </div>
-                                
-                                                    <img src="./assets/img/games/katenmuis.png">
+                                                    <img alt="${title}" src="${imageUrl}" title="${title}">
                                                 </a>
-                                
-                                                <div class="brick__bottom">
-                                                    <i class="fas fa-times remove-favorite"></i>                                                
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>                                                               
-                                            `;
+                                            </div>`;
 
+/**
+ * Lesson create screen
+ * @returns {string}
+ * @constructor
+ */
 const LessonsCreateLayout = ({}) => `      
                                 <div class="form-group text-center">
                                     <label >Titel</label>

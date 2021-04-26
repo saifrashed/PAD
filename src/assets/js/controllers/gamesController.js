@@ -229,13 +229,11 @@ class GamesController {
             if ($(e.target).attr("data-variant") === "grades") {
                 console.log("grades filter click");
                 games = this.games.filter(d => d.gradeID <= $(e.target).attr("data-id"));
-                notificationManager.alert("success", 'Filteren op ' + $(e.target).attr("data-variant"));
             }
 
             if ($(e.target).attr("data-variant") === "material") {
                 console.log("material filter click");
                 games = await this.gameRepository.getMaterialGames($(e.target).attr("data-id"));
-                notificationManager.alert("success", 'Filteren op ' + $(e.target).attr("data-variant"));
             }
 
 

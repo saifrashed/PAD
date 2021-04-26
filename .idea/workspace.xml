@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/gameDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/gameDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/node_modules/" />
@@ -23,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
+            <state relative-caret-position="455">
               <caret line="280" column="39" selection-start-line="280" selection-start-column="39" selection-end-line="280" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-end-line="163" />
+            <state relative-caret-position="620">
+              <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-437">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="390">
+              <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -74,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4095">
-              <caret line="273" column="28" lean-forward="true" selection-start-line="273" selection-start-column="28" selection-end-line="273" selection-end-column="28" />
+            <state relative-caret-position="391">
+              <caret line="236" selection-start-line="236" selection-end-line="236" />
             </state>
           </provider>
         </entry>
@@ -134,8 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user-em</find>
-      <find>brick__top</find>
       <find>modal-dialog</find>
       <find>regist</find>
       <find>masthead</find>
@@ -162,6 +160,8 @@
       <find>voet</find>
       <find>handleClick</find>
       <find>pdf</find>
+      <find>filter</find>
+      <find>egener</find>
       <find>jspd</find>
       <find>user</find>
     </findStrings>
@@ -186,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/assets/css/general.css" />
         <option value="$PROJECT_DIR$/src/assets/js/utils/notificationManager.js" />
         <option value="$PROJECT_DIR$/src/assets/css/games.css" />
-        <option value="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" />
         <option value="$PROJECT_DIR$/src/views/authbox.html" />
         <option value="$PROJECT_DIR$/src/assets/css/lessons.css" />
         <option value="$USER_HOME$/Downloads/topography 2.svg" />
@@ -196,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/authController.js" />
         <option value="$PROJECT_DIR$/src/views/gameDetail.html" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" />
       </list>
@@ -418,7 +418,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19880000" />
+    <option name="totallyTimeSpent" value="20698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4095">
-          <caret line="273" column="28" lean-forward="true" selection-start-line="273" selection-start-column="28" selection-end-line="273" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/authbox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2760">
@@ -619,16 +612,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-437">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="390">
+          <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
+        <state relative-caret-position="455">
           <caret line="280" column="39" selection-start-line="280" selection-start-column="39" selection-end-line="280" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -638,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-end-line="163" />
+        <state relative-caret-position="620">
+          <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
         </state>
       </provider>
     </entry>

@@ -233,7 +233,7 @@ class AuthController {
                 this.authBox.find(".lessons").html("<div class='lesson-alert'>Voeg spellen toe vanuit de spellen pagina.</div>")
             }
 
-            this.authBox.find(".lessons .lesson-delete").on("click", this.handleDeleteLesson);
+            this.authBox.find(".lessons .lesson-delete").on("click", (e) => this.handleDeleteLesson(e));
         } catch (e) {
             console.log(e)
         }
@@ -270,9 +270,15 @@ class AuthController {
         }
     }
 
-    async handleDeleteLesson() {
+    async handleDeleteLesson(e) {
         try {
-            console.log($(this).attr("data-id"))
+
+            const deletedLesson = await this.gameRepository.deleteLesson({
+                lessonID: $(e.target).attr("data-id"),
+                userID: sessionManager.get("userID")
+            });
+
+            this.handleRenderLessons();
             notificationManager.alert("success", 'Verwijderd!');
         } catch (e) {
             console.log(e)

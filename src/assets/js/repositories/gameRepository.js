@@ -131,6 +131,11 @@ class GameRepository {
             .doRequest(`${this.route}/lesson/`, body, "POST");
     }
 
+    async deleteLesson(body) {
+        return await networkManager
+            .doRequest(`${this.route}/lesson/`, body, "DELETE");
+    }
+
     async addLessonGame(body) {
         return await networkManager
             .doRequest(`${this.route}/lesson/game/`, body, "POST");

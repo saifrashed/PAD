@@ -5,51 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PAD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PAD.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cypress/fixtures/example.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cypress/integration/pad/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/cypress/integration/pad/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cypress/support/commands.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cypress/support/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/gameDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/gameDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/games.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/games.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/lessons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/masonry.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/masonry.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/fopbal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/games/commando.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/games/estafette.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/games/floorplan/estafette2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/games/floorplan/stresstikkertje2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/games/stresstikkertje.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/kat-en-muis.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/logo-white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/logo-white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/placeholder-game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/placeholder-lesson.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/LandingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/LandingController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/navbarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/navbarController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/authbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authbox.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/gameDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/gameDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/node_modules/" />
@@ -64,26 +23,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3120">
-              <caret line="208" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="470">
+              <caret line="280" column="39" selection-start-line="280" selection-start-column="39" selection-end-line="280" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="79" column="16" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-end-line="163" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/js/utils/notificationManager.js">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="-437">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="618">
+              <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="79" column="16" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -100,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routes/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
+            <state relative-caret-position="271">
+              <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -109,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="545">
+              <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -151,10 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>expor</find>
-      <find>exportBtn</find>
-      <find>brea</find>
-      <find>footer</find>
       <find>user-em</find>
       <find>brick__top</find>
       <find>modal-dialog</find>
@@ -166,7 +145,6 @@
       <find>varia</find>
       <find>authBox</find>
       <find>lottie</find>
-      <find>user</find>
       <find>handleDele</find>
       <find>favoriteBtnActive</find>
       <find>islo</find>
@@ -181,6 +159,11 @@
       <find>notie</find>
       <find>addTO</find>
       <find>dele</find>
+      <find>voet</find>
+      <find>handleClick</find>
+      <find>pdf</find>
+      <find>jspd</find>
+      <find>user</find>
     </findStrings>
     <replaceStrings>
       <replace>./assets/img/</replace>
@@ -197,24 +180,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/views/games.html" />
-        <option value="$PROJECT_DIR$/src/views/gameDetail.html" />
-        <option value="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" />
         <option value="$PROJECT_DIR$/src/views/landing.html" />
         <option value="$PROJECT_DIR$/src/assets/css/main.css" />
         <option value="$PROJECT_DIR$/src/assets/css/modal.css" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/assets/css/general.css" />
         <option value="$PROJECT_DIR$/src/assets/js/utils/notificationManager.js" />
         <option value="$PROJECT_DIR$/src/assets/css/games.css" />
         <option value="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" />
-        <option value="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" />
-        <option value="$PROJECT_DIR$/server/routes/game.js" />
         <option value="$PROJECT_DIR$/src/views/authbox.html" />
         <option value="$PROJECT_DIR$/src/assets/css/lessons.css" />
-        <option value="$PROJECT_DIR$/src/assets/js/controllers/authController.js" />
         <option value="$USER_HOME$/Downloads/topography 2.svg" />
         <option value="$PROJECT_DIR$/src/assets/img/placeholder-lesson.svg" />
         <option value="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" />
+        <option value="$PROJECT_DIR$/server/routes/game.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/authController.js" />
+        <option value="$PROJECT_DIR$/src/views/gameDetail.html" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" />
       </list>
     </option>
   </component>
@@ -241,12 +224,6 @@
               <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAD" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PAD" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
@@ -441,7 +418,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19282000" />
+    <option name="totallyTimeSpent" value="19880000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,23 +497,6 @@
     <entry file="file://$PROJECT_DIR$/src/assets/css/gameDetail.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="97" column="18" lean-forward="true" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1762">
-          <caret line="144" column="19" lean-forward="true" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/games.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -569,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/general.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -602,13 +555,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/img/placeholder-lesson.svg" />
     <entry file="file://$PROJECT_DIR$/src/assets/img/placeholder-lesson-example.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/utils/notificationManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -620,20 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4095">
           <caret line="273" column="28" lean-forward="true" selection-start-line="273" selection-start-column="28" selection-end-line="273" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
@@ -660,6 +592,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="79" column="16" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/gameDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="280" column="39" selection-start-line="280" selection-start-column="39" selection-end-line="280" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="162" column="28" lean-forward="true" selection-start-line="162" selection-end-line="163" />
         </state>
       </provider>
     </entry>

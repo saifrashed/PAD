@@ -84,6 +84,8 @@ class GameDetailController {
             this.gameDetailView.find("#gamedetail-desc").text(this.game.description);
             this.gameDetailView.find("#gamedetail-floorplan").attr('src', this.game.floorplanUrl);
             this.gameDetailView.find('#gameRules').html(this.game.rules.map(RuleListItem));
+
+            console.log(this.game.materials);
             this.gameDetailView.find('#gameMaterial').html(this.game.materials.map(MaterialListItem));
             this.gameDetailView.find('.rating-text').html(this.game.ratings[0].amountRatings + " keer beoordeeld. </br>" + (userRating.length > 0 ? "Uw beoordeling: "+ userRating[0].rating+ " sterren" : "" ));
             this.gameDetailView.find(".name").html(sessionManager.get("username"));

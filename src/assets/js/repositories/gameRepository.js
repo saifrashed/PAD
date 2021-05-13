@@ -111,6 +111,16 @@ class GameRepository {
             .doRequest(this.route + `/rating/`, {body}, "POST");
     }
 
+    /**
+     * Sets user rating for a game
+     * @param body
+     * @returns {Promise<unknown>}
+     */
+    async getRating(gameID) {
+        return await networkManager
+            .doRequest(this.route + `/rating/${gameID}`,{},"GET");
+    }
+
     async getLessons(userID) {
         return await networkManager
             .doRequest(this.route + `/lessons/${userID}`, {}, "GET");

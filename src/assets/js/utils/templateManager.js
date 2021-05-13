@@ -28,7 +28,7 @@ const Highlighted = ({id, title, imageUrl, description}) => `
  * @returns {string}
  * @constructor
  */
-const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
+const Brick = ({gameID, title, imageUrl, type, gradeID, ratingStarsHTML, isFavorite = false}) => `
                                             <div class="brick" data-id="${gameID}" data-grade-id="${gradeID}">
                                                 <a data-id="${gameID}">
                                                     <div class="brick__top">
@@ -42,11 +42,48 @@ const Brick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => 
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-star favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
-                                                    <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal" data-id="${gameID}"></i>
-                                                    <!--<i class="fas fa-external-link-alt share-btn"></i>-->
+                                                    <div class="stars">
+                                                        ${ratingStarsHTML}
+                                                    </div>
+                                                    
+                                                    
+                                                    <div class="controls">
+                                                        <i class="fas fa-star favorite-btn ${isFavorite ? "favoriteBtnActive" : ""}" data-target="#authenticationBox" data-toggle="modal"></i>
+                                                        <i class="fas fa-plus add-btn" data-target="#authenticationBox" data-toggle="modal" data-id="${gameID}"></i>
+                                                        <!--<i class="fas fa-external-link-alt share-btn"></i>-->
+                                                    </div>
                                                 </div>
                                             </div>
+                                            `;
+
+/**
+ * Slider Brick Template
+ * @param title
+ * @param imageUrl
+ * @param type
+ * @returns {string}
+ * @constructor
+ */
+const SliderBrick = ({gameID, title, imageUrl, type, gradeID, isFavorite = false}) => `
+                                      <div style="padding:10px;">
+                                            <div class="brickSlider" data-id="${gameID}" data-grade-id="${gradeID}" style="background-image: url('${imageUrl}'); background-size:cover;">
+                                                <a data-id="${gameID}">
+                                                    <div class="brick__top">
+                                                        <div class="brick__title">
+                                                            <h1>${title}</h1>
+                                                        </div>
+                                                        <p class="brick__author">${type}</p>
+                                                    </div>
+                                
+                                                </a>
+                                
+                                                <div class="brick__bottom">
+                                                     <div class="controls">
+                                                    <i class="fas fa-external-link-alt share-btn" data-id="${gameID}"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                             `;
 
 /**
@@ -75,6 +112,37 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                 </div>
                                             </div>
                                             `;
+
+
+/****
+ * Dashboard elements
+ ****/
+
+
+const DashboardBrick = ({gameID, title, imageUrl, type, gradeID}) => `
+                                            <div class="brick" data-id="${gameID}" data-grade-id="${gradeID}">
+                                                <a data-id="${gameID}">
+                                                    <div class="brick__top">
+                                                        <div class="brick__title">
+                                                         <h1>${title}</h1>
+                                                        </div>
+                                                        <p class="brick__author">${type}</p>
+                                                    </div>
+                                
+                                                    <img alt="${title}" src="${imageUrl}" title="${title}">
+                                                </a>
+                                
+                                                <div class="brick__bottom">
+                                                    <i class="fas fa-pen" data-id="${gameID}"></i>
+                                                    <i class="fas fa-times" data-id="${gameID}"></i>
+                                                </div>
+                                            </div>
+                                            `;
+
+/****
+ * Lessons elements
+ ****/
+
 
 /**
  * Lesson layout screen
@@ -162,6 +230,12 @@ const LessonsCreateLayout = ({}) => `
                                 </div>                                                          
                                             `;
 
+
+/****
+ * Filter elements
+ ****/
+
+
 /**
  * Game Brick Template
  * @param title
@@ -206,8 +280,8 @@ const RuleListItem = ({description}) => `
  * @returns {string}
  * @constructor
  */
-const MaterialListItem = ({description}) => `
-                        <span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description}</span>
+const MaterialListItem = ({description, amount}) => `
+                        <span class="badge badge-pill badge-secondary" style="font-size: 15px; margin: 5px 5px 0 0;">${description} x ${amount}</span>
                         `;
 
 /**

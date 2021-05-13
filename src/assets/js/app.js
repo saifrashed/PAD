@@ -14,6 +14,7 @@ const CONTROLLER_LANDING    = "landing";
 const CONTROLLER_GAMES      = "games";
 const CONTROLLER_GAMEDETAIL = "gamedetail";
 const CONTROLLER_UPLOAD     = "upload";
+const CONTROLLER_DASHBOARD     = "dashboard";
 
 const sessionManager      = new SessionManager();
 const networkManager      = new NetworkManager();
@@ -73,6 +74,12 @@ class App {
                 this.setCurrentController(name);
                 new GameDetailController();
                 break;
+
+            case CONTROLLER_DASHBOARD:
+                this.setCurrentController(name);
+                new DashboardController();
+                break;
+
 
             case CONTROLLER_UPLOAD:
                 new UploadController();

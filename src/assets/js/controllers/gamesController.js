@@ -114,13 +114,20 @@ class GamesController {
                     isFavorite = this.user.favorites.some(el => el.gameID === value.gameID);
                 }
 
+                var ratingHTML = "";
+
+                for (var i = 0; i < Math.round(value.averageRating); i++) {
+                    ratingHTML = '<i class="fa fa-star" data-value="1"></i>' + ratingHTML
+                }
+
                 return Brick({
-                    gameID:     value.gameID,
-                    title:      value.title,
-                    imageUrl:   value.imageUrl,
-                    type:       value.type,
-                    gradeID:    value.gradeID,
-                    isFavorite: isFavorite
+                    gameID:          value.gameID,
+                    title:           value.title,
+                    imageUrl:        value.imageUrl,
+                    type:            value.type,
+                    gradeID:         value.gradeID,
+                    ratingStarsHTML: ratingHTML,
+                    isFavorite:      isFavorite
                 })
             }));
 
@@ -284,10 +291,10 @@ class GamesController {
     async handleClickFavorites(e) {
         try {
             if (!$(e.target).hasClass("favoriteBtnActive")) {
-                await new UserRepository().createFavorite(sessionManager.get("userID"), $(e.target).parent().siblings().attr("data-id"));
+                await new UserRepository().createFavorite(sessionManager.get("userID"), $(e.target).parent().parent().siblings().attr("data-id"));
                 notificationManager.alert("success", 'Toegevoegd aan favorieten');
             } else {
-                await new UserRepository().deleteFavorite(sessionManager.get("userID"), $(e.target).parent().siblings().attr("data-id"));
+                await new UserRepository().deleteFavorite(sessionManager.get("userID"), $(e.target).parent().parent().siblings().attr("data-id"));
                 notificationManager.alert("success", 'verwijderd van favorieten');
             }
 

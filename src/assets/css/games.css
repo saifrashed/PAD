@@ -79,13 +79,32 @@
     font-size: 30px;
     color: #fff;
     text-align: right;
+    overflow: hidden;
 }
 
-.brick__bottom i {
+.brick__bottom .controls i {
     font-size: 20px;
     border-radius: 25px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.brick__bottom .stars {
+    float:left;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(100px);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.brick__bottom .stars i {
+    color: #FCC028;
+}
+
+.masonry .brick:hover .stars {
+    transform: translateY(0px);
 }
 
 /* Gutterless masonry */

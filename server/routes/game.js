@@ -25,7 +25,7 @@ router.route('/grades/').get(async (req, res) => {
  */
 router.route('/material/:id').get(async (req, res) => {
     db.handleQuery(connectionPool, {
-        query:  "SELECT material.materialID, material.description FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
+        query:  "SELECT material.materialID, material.description, material.amount FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
         values: [req.params.id]
     }, (data) => {
         res.status(httpOkCode).json(data);
@@ -126,7 +126,6 @@ router.route('/lesson/:id').get(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
-
 /**
  * Create lesson
  */
@@ -148,14 +147,13 @@ router.route('/lesson/').delete(async (req, res) => {
     const {userID, lessonID} = req.body;
 
     db.handleQuery(connectionPool, {
-        query: "DELETE FROM lessons WHERE userID=? AND lessonID=? ",
-        values: [userID,lessonID]
+        query:  "DELETE FROM lessons WHERE userID=? AND lessonID=? ",
+        values: [userID, lessonID]
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
 
 });
-
 
 /**
  * Get lessons games
@@ -168,7 +166,6 @@ router.route('/lesson/game/:id').get(async (req, res) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
-
 
 /**
  * Create lesson game
@@ -184,6 +181,19 @@ router.route('/lesson/game/').post(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 });
 
+/**
+ * get Rating
+ */
+router.route('/rating/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT AVG(rating) AS 'averageRating', COUNT(*) AS 'amountRatings' FROM games INNER JOIN rating ON games.gameID = rating.gameID WHERE games.gameID = ?;",
+        values: [req.params.id]
+    }, (ratings) => {
+        res.status(httpOkCode).json(ratings);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+
+});
 
 /**
  * Get all games
@@ -191,7 +201,7 @@ router.route('/lesson/game/').post(async (req, res) => {
 router.route('/').get(async (req, res) => {
 
     db.handleQuery(connectionPool, {
-        query: "SELECT * FROM games;"
+        query: "SELECT *, (SELECT AVG(rating) FROM rating WHERE rating.gameID = games.gameID) As 'averageRating' FROM games;"
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
@@ -215,7 +225,7 @@ router.route('/:id').get(async (req, res) => {
          * Get materials
          */
         db.handleQuery(connectionPool, {
-            query:  "SELECT material.materialID, material.description FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
+            query:  "SELECT material.materialID, material.description, game_materials.amount FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
             values: [req.params.id]
         }, (materials) => {
 

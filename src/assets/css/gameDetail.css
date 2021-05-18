@@ -11,7 +11,17 @@ Game Detail page styling
 }
 
 #gamedetail-desc {
-    color: #212529;
+    color: black;
+}
+
+.btn-pdf {
+    background-color: #6C757D;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 25px;
 }
 
 .breadcrumb {

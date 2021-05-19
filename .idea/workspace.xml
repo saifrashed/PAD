@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/css/slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/config.live.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/config.live.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +106,15 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,6 +192,7 @@
       <workItem from="1620764541299" duration="5936000" />
       <workItem from="1620859219256" duration="6394000" />
       <workItem from="1621370995063" duration="1410000" />
+      <workItem from="1621427071271" duration="5699000" />
     </task>
     <servers />
   </component>

@@ -21,6 +21,7 @@ class DashboardController {
         this.handleRenderMasonry(this.games);
         this.dashboardView.find('#uploadMainImg').on('change', (e) => {this.readMainURL(e)});
         this.dashboardView.find('#uploadFloorplanImg').on('change', (e) => {this.readFloorplanURL(e)});
+        this.dashboardView.find('#deleteGame').on('click', this.deleteGame)
 
 
         $(".content").empty().append(this.dashboardView);
@@ -86,8 +87,16 @@ class DashboardController {
         }
     }
 
+    deleteGame() {
+        console.log($(this).attr('data-id'));
+}
+
+
     //Called when the login.html fails to load
     error() {
         $(".content").html("Failed to load content!");
     }
 }
+
+
+

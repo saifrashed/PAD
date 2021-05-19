@@ -7,6 +7,14 @@ const httpOkCode           = 200;
 const badRequestCode       = 400;
 const authorizationErrCode = 401;
 
+var Client = require('ftp');
+
+
+
+
+
+
+
 
 /**
  * Get all grades
@@ -194,6 +202,22 @@ router.route('/rating/:id').get(async (req, res) => {
 
 
 });
+
+
+router.route('/delete/:id').delete(async (req, res) => {
+
+    db.handleQuery(connectionPool, {
+        query:  "DELETE FROM games WHERE gameID=?;",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
+
+/**
+INSERT INTO `games` (`gameID`, `title`, `description`, `imageUrl`, `floorplanUrl`, `minPlayers`, `type`, `gradeID`) VALUES (NULL, 'Test gamepie', 'Hele leuke bescrhijving waarom ook niet', 'asdfbsads', 'sdfbsdfbs', '5', 'sdfbsdfb', '0');
+*/
 
 /**
  * Get all games

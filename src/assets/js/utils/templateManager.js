@@ -108,7 +108,9 @@ const FavoriteBrick = ({gameID, title, imageUrl, type}) => `
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-times remove-favorite"></i>                                                
+                                                    <div class="controls">
+                                                        <i class="fas fa-times remove-favorite"></i>  
+                                                    </div>                                              
                                                 </div>
                                             </div>
                                             `;
@@ -133,8 +135,10 @@ const DashboardBrick = ({gameID, title, imageUrl, type, gradeID}) => `
                                                 </a>
                                 
                                                 <div class="brick__bottom">
-                                                    <i class="fas fa-pen" data-id="${gameID}"></i>
-                                                    <i class="fas fa-times" data-id="${gameID}"></i>
+                                                    <div class="controls">
+                                                        <a data-target="#updateBox" data-toggle="modal"><i class="fas fa-pen" data-id="${gameID}"></i></a>
+                                                        <i class="fas fa-times" data-id="${gameID}"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                             `;

@@ -19,6 +19,9 @@ class DashboardController {
         this.games     = await this.gameRepository.getAll();
 
         this.handleRenderMasonry(this.games);
+        this.dashboardView.find('#uploadMainImg').on('change', (e) => {this.readMainURL(e)});
+        this.dashboardView.find('#uploadFloorplanImg').on('change', (e) => {this.readFloorplanURL(e)});
+
 
         $(".content").empty().append(this.dashboardView);
     }
@@ -40,10 +43,46 @@ class DashboardController {
                     gradeID:    value.gradeID,
                 })
             }));
-
         } catch (e) {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
+        }
+    }
+
+    /**
+     * Read image URL
+     * @param input
+     */
+    readMainURL(e) {
+        console.log(e);
+
+        if (e.target.files && e.target.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#mainImageResult')
+                    .attr('src', e.target.result);
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    }
+
+
+    /**
+     * Read image URL
+     * @param input
+     */
+    readFloorplanURL(e) {
+        console.log(e);
+
+        if (e.target.files && e.target.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#floorplanImageResult')
+                    .attr('src', e.target.result);
+            };
+            reader.readAsDataURL(e.target.files[0]);
         }
     }
 

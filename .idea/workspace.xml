@@ -11,15 +11,9 @@
       <change afterPath="$PROJECT_DIR$/src/views/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/games.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/games.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/lessons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/lessons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/LandingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/LandingController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gameDetailController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/gamesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/config.live.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/config.live.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/games.html" afterDir="false" />
@@ -68,10 +62,10 @@
       <find>emai</find>
       <find>mater</find>
       <find>rating</find>
-      <find>RATING</find>
       <find>fav</find>
       <find>avorite</find>
       <find>favorit</find>
+      <find>RATING</find>
     </findStrings>
     <replaceStrings>
       <replace>./assets/img/</replace>

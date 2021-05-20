@@ -107,3 +107,27 @@ Reviews
     cursor: pointer;
     transform: scale(1.10);
 }
+
+#box-rating {
+    border: 2px solid red;
+}
+
+#box-description {
+    border: 2px solid red;
+}
+
+#box-materials {
+    border: 2px solid yellow;
+}
+
+#box-rules {
+    border: 2px solid yellow;
+}
+
+#box-difficulty {
+    border: 2px solid green;
+}
+
+#box-difficulty-description {
+    border: 2px solid green;
+}

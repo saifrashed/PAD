@@ -106,6 +106,17 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cy:open" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
@@ -182,7 +193,7 @@
       <workItem from="1621427071271" duration="5699000" />
       <workItem from="1621455513167" duration="174000" />
       <workItem from="1621507744590" duration="401000" />
-      <workItem from="1621509529474" duration="13000" />
+      <workItem from="1621509529474" duration="1235000" />
     </task>
     <servers />
   </component>

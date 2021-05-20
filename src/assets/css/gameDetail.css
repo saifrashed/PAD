@@ -95,8 +95,12 @@ Reviews
     position: absolute;
     right: 15px;
     font-size: 25px;
-    color: #212629;
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    background-color: transparent;
+    border: none;
+    color: #20bf6b;
+    padding: 5px 15px;
+    font-size: 20px;
 }
 
 #exportBtn:hover {

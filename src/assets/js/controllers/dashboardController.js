@@ -10,17 +10,21 @@ class DashboardController {
         this.userRepository = new UserRepository();
 
         $.get("views/dashboard.html")
-         .done((data) => this.setup(data))
-         .fail(() => this.error());
+            .done((data) => this.setup(data))
+            .fail(() => this.error());
     }
 
     async setup(data) {
         this.dashboardView = $(data);
-        this.games     = await this.gameRepository.getAll();
+        this.games = await this.gameRepository.getAll();
 
         this.handleRenderMasonry(this.games);
-        this.dashboardView.find('#uploadMainImg').on('change', (e) => {this.readMainURL(e)});
-        this.dashboardView.find('#uploadFloorplanImg').on('change', (e) => {this.readFloorplanURL(e)});
+        this.dashboardView.find('#uploadMainImg').on('change', (e) => {
+            this.readMainURL(e)
+        });
+        this.dashboardView.find('#uploadFloorplanImg').on('change', (e) => {
+            this.readFloorplanURL(e)
+        });
         this.dashboardView.find('#deleteGame').on('click', this.deleteGame)
 
 
@@ -37,11 +41,11 @@ class DashboardController {
         try {
             this.dashboardView.find('.masonry').html(games.map((value) => {
                 return DashboardBrick({
-                    gameID:     value.gameID,
-                    title:      value.title,
-                    imageUrl:   value.imageUrl,
-                    type:       value.type,
-                    gradeID:    value.gradeID,
+                    gameID: value.gameID,
+                    title: value.title,
+                    imageUrl: value.imageUrl,
+                    type: value.type,
+                    gradeID: value.gradeID,
                 })
             }));
         } catch (e) {
@@ -87,9 +91,15 @@ class DashboardController {
         }
     }
 
-    deleteGame() {
-        console.log($(this).attr('data-id'));
-}
+    async deleteGame(){
+        try {
+           await this.gameRepository.delete($(this).attr('data-id'));
+            notificationManager.alert("success", 'Verwijderen succesvol');
+        } catch (e) {
+            console.log(e);
+            notificationManager.alert("error", 'Er is wat misgegaan...');
+        }
+    }
 
 
     //Called when the login.html fails to load

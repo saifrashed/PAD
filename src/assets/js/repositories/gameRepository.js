@@ -39,8 +39,10 @@ class GameRepository {
      * Delete a game
      * @returns {Promise<void>}
      */
-    async delete() {
 
+    async delete(gameID) {
+        return await networkManager
+            .doRequest(`${this.route}/delete/${gameID}`, body, "DELETE");
     }
 
     /**

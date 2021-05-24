@@ -42,7 +42,7 @@ class GameRepository {
 
     async delete(gameID) {
         return await networkManager
-            .doRequest(`${this.route}/delete/${gameID}`, body, "DELETE");
+            .doRequest(`${this.route}/delete/${gameID}`, {}, "DELETE");
     }
 
     /**

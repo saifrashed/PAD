@@ -91,10 +91,17 @@ class DashboardController {
         }
     }
 
+    /**
+     * Delete game
+     * @returns {Promise<void>}
+     */
     async deleteGame(){
         try {
-           await this.gameRepository.delete($(this).attr('data-id'));
-            notificationManager.alert("success", 'Verwijderen succesvol');
+
+            const gameRepository = new GameRepository();
+            const deleteGame = await gameRepository.delete($(this).attr('data-id'));
+
+            new DashboardController()
         } catch (e) {
             console.log(e);
             notificationManager.alert("error", 'Er is wat misgegaan...');

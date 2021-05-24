@@ -36,7 +36,6 @@ router.route('/favorite').delete(async (req, res) => {
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
-
 });
 
 /**
@@ -53,6 +52,21 @@ router.route('/rating').post(async (req, res) => {
     }, (err) => res.status(badRequestCode).json({reason: err}));
 
 });
+
+
+
+/**
+ * Gets admin status
+ */
+router.route('/isAdmin/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query: "SELECT isAdmin FROM user WHERE userID = ?",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
 
 /**
  * Users login

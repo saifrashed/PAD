@@ -5,6 +5,7 @@
 class AuthController {
     constructor() {
         this.gameRepository = new GameRepository();
+        this.userRepository = new UserRepository();
 
         $.get("views/authbox.html")
          .done((data) => {
@@ -17,6 +18,19 @@ class AuthController {
     async setup(data) {
         //Load the login-content into memory
         this.authBox = $(data);
+
+
+        const isAdmin = await this.userRepository.isAdmin(sessionManager.get("userID"));
+
+        if(sessionManager.get("userID")) {
+            if(isAdmin[0].isAdmin) {
+                this.authBox.find(".admin-symbol a").on("click", (e) => this.handleDashbboardClick(e));
+            } else {
+                this.authBox.find(".admin-symbol").remove();
+            }
+        } else {
+            this.authBox.find(".admin-symbol").remove();
+        }
 
         if (sessionManager.get("userID")) {
 
@@ -36,6 +50,7 @@ class AuthController {
 
             this.authBox.find(".actions-lesson .return-lesson").on("click", (e) => this.handleRenderLessons(e));
             this.authBox.find(".actions-lesson .add-lesson").on("click", (e) => this.handleRenderCreateLesson(e));
+
 
             await this.handleRenderFav();
             await this.handleRenderLessons();
@@ -283,6 +298,12 @@ class AuthController {
         } catch (e) {
             console.log(e)
         }
+    }
+
+
+    async handleDashbboardClick(e) {
+        new DashboardController();
+        notificationManager.alert("success", 'Welkom Admin!');
     }
 
 

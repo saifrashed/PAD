@@ -79,6 +79,11 @@ class UserRepository {
 
     }
 
+    async isAdmin(userID) {
+        return await networkManager
+            .doRequest(`${this.route}/isAdmin/${userID}`, {}, "GET");
+    }
+
     async logout() {
         sessionManager.clear();
     }

@@ -136,7 +136,7 @@ const DashboardBrick = ({gameID, title, imageUrl, type, gradeID}) => `
                                 
                                                 <div class="brick__bottom">
                                                     <div class="controls">
-                                                        <a data-target="#updateBox" data-toggle="modal"><i class="fas fa-pen" data-id="${gameID}"></i></a>
+                                                        <a id="updateGame" data-target="#updateBox" data-toggle="modal"><i class="fas fa-pen" data-id="${gameID}"></i></a>
                                                         <i id="deleteGame" class="fas fa-times" data-id="${gameID}"></i>
                                                     </div>
                                                 </div>

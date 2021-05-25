@@ -10,12 +10,6 @@ const authorizationErrCode = 401;
 var Client = require('ftp');
 
 
-
-
-
-
-
-
 /**
  * Get all grades
  */
@@ -215,9 +209,65 @@ router.route('/delete/:id').delete(async (req, res) => {
 
 });
 
+
+router.route('/update/').post(async (req, res) => {
+    const {gameID, title, description, minPlayers, type, gradeID, materials} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "UPDATE games SET `title` = ?, `description` = ?, `minPlayers` = ?, `type` = ?, `gradeID` = ? WHERE gameID = ?",
+        values: [title, description, minPlayers, type, gradeID, gameID]
+    }, (data) => {
+
+        db.handleQuery(connectionPool, {
+            query:  "DELETE FROM game_materials WHERE gameID=?;",
+            values: [gameID]
+        }, (data) => {
+
+            for (var i = 0; i < materials.length; i++) {
+                db.handleQuery(connectionPool, {
+                    query:  "INSERT INTO game_materials (gameID, materialID, amount) VALUES (?, ?, ?);",
+                    values: [gameID, materials[i], 0]
+                }, (data) => {
+                    console.log(data);
+                });
+            }
+
+            res.status(httpOkCode).json(data);
+
+        }, (err) => res.status(badRequestCode).json({reason: err}));
+
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
+
+
+router.route('/create/').post(async (req, res) => {
+    const {title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID, materials} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "INSERT INTO games (`title`,`description`, `imageUrl`, `floorplanUrl`, `minPlayers`,`type`,`gradeID`) VALUES (?,?,?,?,?,?,?)",
+        values: [title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID]
+    }, (data) => {
+
+        for (var i = 0; i < materials.length; i++) {
+            db.handleQuery(connectionPool, {
+                query:  "INSERT INTO game_materials (gameID, materialID, amount) VALUES (?, ?, ?);",
+                values: [data.insertId, materials[i], 0]
+            }, (data) => {
+                console.log(data);
+            });
+        }
+
+        res.status(httpOkCode).json(data);
+
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+
+});
+
+
 /**
-INSERT INTO `games` (`gameID`, `title`, `description`, `imageUrl`, `floorplanUrl`, `minPlayers`, `type`, `gradeID`) VALUES (NULL, 'Test gamepie', 'Hele leuke bescrhijving waarom ook niet', 'asdfbsads', 'sdfbsdfbs', '5', 'sdfbsdfb', '0');
-*/
+ INSERT INTO `games` (`gameID`, `title`, `description`, `imageUrl`, `floorplanUrl`, `minPlayers`, `type`, `gradeID`) VALUES (NULL, 'Test gamepie', 'Hele leuke bescrhijving waarom ook niet', 'asdfbsads', 'sdfbsdfbs', '5', 'sdfbsdfb', '0');
+ */
 
 /**
  * Get all games

@@ -31,8 +31,9 @@ class GameRepository {
      * Create a game
      * @returns {Promise<void>}
      */
-    async create() {
-
+    async create(body) {
+        return await networkManager
+            .doRequest(this.route + `/create/`, body, "POST");
     }
 
     /**
@@ -42,7 +43,7 @@ class GameRepository {
 
     async delete(gameID) {
         return await networkManager
-            .doRequest(`${this.route}/delete/${gameID}`, body, "DELETE");
+            .doRequest(`${this.route}/delete/${gameID}`, {}, "DELETE");
     }
 
     /**
@@ -51,8 +52,9 @@ class GameRepository {
      * @param values
      * @returns {Promise<void>}
      */
-    async update(id, values = {}) {
-
+    async update(body) {
+        return await networkManager
+            .doRequest(this.route + `/update/`, body, "POST");
     }
 
     /**

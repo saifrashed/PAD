@@ -201,6 +201,7 @@ class DashboardController {
         } catch(e) {
             console.log(e);
             notificationManager.alert("error", 'Er is wat misgegaan...');
+
         }
     }
 

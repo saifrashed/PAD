@@ -39,7 +39,7 @@
                     <i class="fas fa-search"></i>
                 </span>
 
-                <a class="filter-button" data-target="#updateBox" data-toggle="modal"><i class="fas fa-plus"></i></a>
+                <a class="filter-button" data-target="#addBox" data-toggle="modal"><i class="fas fa-plus"></i></a>
             </div>
         </div>
 
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="updateBox" role="dialog">
+        <div class="modal fade" id="addBox" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -59,52 +59,121 @@
                     </div>
 
                     <div class="modal-body">
-                        <div class="main-image-area mb-4">
-                            <img id="mainImageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
-                            <input id="uploadMainImg" type="file" class="form-control border-0">
-                        </div>
+                        <form id="create-form">
+
+                            <div class="main-image-area mb-4">
+                                <img id="mainImageResult" src="#" alt=""
+                                     class="img-fluid rounded shadow-sm mx-auto d-block">
+                                <input id="uploadMainImg" type="file" class="form-control border-0">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Naam</label>
+                                <input type="text" name="create-name" class="form-control mb-3">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Omschrijving</label>
+                                <textarea name="create-description" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Minimale aantal spelers</label>
+                                <input type="text" name="create-minPlayers" class="form-control mb-3">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Type</label>
+                                <input type="text" name="create-type" class="form-control mb-3">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Groep</label>
+                                <select name="create-grade" class="form-control field-grades">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Materialen</label>
+                                <select multiple name="create-material" class="form-control field-materials">
+                                </select>
+                            </div>
+
+                            <div class="floorplan-image-area mb-4">
+                                <img id="floorplanImageResult" src="#" alt=""
+                                     class="img-fluid rounded shadow-sm mx-auto d-block">
+                                <input id="uploadFloorplanImg" type="file" class="form-control border-0">
+                            </div>
 
 
-                        <div class="form-group">
-                            <label >Naam</label>
-                            <input type="text" class="form-control mb-3">
-                        </div>
+                            <div class="auth-button-container">
+                                <button class="auth-button game-add" type="submit">
+                                    Bijwerken
+                                </button>
+                            </div>
 
-                        <div class="form-group">
-                            <label>Type</label>
-                            <input type="text" class="form-control mb-3">
-                        </div>
+                        </form>
 
-                        <div class="form-group">
-                            <label >Omschrijving</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Materialen</label>
-                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-
-
-                        <div class="floorplan-image-area mb-4">
-                            <img id="floorplanImageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
-                            <input id="uploadFloorplanImg" type="file" class="form-control border-0">
-                        </div>
-
-
-                        <div class="auth-button-container">
-                            <button class="auth-button game-update" >
-                                Bijwerken
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="updateBox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="auth-form-title p-0">
+                                    Spel bijwerken
+                        </span>
+                </div>
+
+                <div class="modal-body">
+                    <form id="update-form">
+                        <input type="hidden" name="update-id" class="form-control mb-3">
+
+                        <div class="form-group">
+                            <label>Naam</label>
+                            <input type="text" name="update-name" class="form-control mb-3">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Omschrijving</label>
+                            <textarea name="update-description" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Minimale aantal spelers</label>
+                            <input type="text" name="update-minPlayers" class="form-control mb-3">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" name="update-type" class="form-control mb-3">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Groep</label>
+                            <select name="update-grade" class="form-control field-grades">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Materialen</label>
+                            <select multiple name="update-material" class="form-control field-materials">
+                            </select>
+                        </div>
+
+                        <div class="auth-button-container">
+                            <button class="auth-button game-update" type="submit">
+                                Bijwerken
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,13 +10,15 @@ class DashboardController {
         this.userRepository = new UserRepository();
 
         $.get("views/dashboard.html")
-            .done((data) => this.setup(data))
-            .fail(() => this.error());
+         .done((data) => this.setup(data))
+         .fail(() => this.error());
     }
 
     async setup(data) {
         this.dashboardView = $(data);
-        this.games = await this.gameRepository.getAll();
+        this.games         = await this.gameRepository.getAll();
+        this.materials     = await this.gameRepository.getMaterials();
+        this.grades        = await this.gameRepository.getGrades();
 
         this.handleRenderMasonry(this.games);
         this.dashboardView.find('#uploadMainImg').on('change', (e) => {
@@ -25,7 +27,23 @@ class DashboardController {
         this.dashboardView.find('#uploadFloorplanImg').on('change', (e) => {
             this.readFloorplanURL(e)
         });
-        this.dashboardView.find('#deleteGame').on('click', this.deleteGame)
+
+        this.materials.map((value) => {
+            this.dashboardView.find(".field-materials").append("<option value='" + value.materialID + "'>" + value.description + "</option>")
+        });
+
+        this.grades.map((value) => {
+            this.dashboardView.find(".field-grades").append("<option value='" + value.gradeID + "'>" + value.description + "</option>")
+        });
+
+        this.dashboardView.find('#deleteGame').on('click', this.deleteGame);
+
+        this.dashboardView.find('#updateGame').on('click', (e) => {
+            this.handleUpdateGameClick(e)
+        });
+        this.dashboardView.find('#update-form').submit((e) => {
+            this.updateGame(e)
+        });
 
 
         $(".content").empty().append(this.dashboardView);
@@ -41,11 +59,11 @@ class DashboardController {
         try {
             this.dashboardView.find('.masonry').html(games.map((value) => {
                 return DashboardBrick({
-                    gameID: value.gameID,
-                    title: value.title,
+                    gameID:   value.gameID,
+                    title:    value.title,
                     imageUrl: value.imageUrl,
-                    type: value.type,
-                    gradeID: value.gradeID,
+                    type:     value.type,
+                    gradeID:  value.gradeID,
                 })
             }));
         } catch (e) {
@@ -91,13 +109,64 @@ class DashboardController {
         }
     }
 
-    async deleteGame(){
+    async deleteGame() {
         try {
-           await this.gameRepository.delete($(this).attr('data-id'));
-            notificationManager.alert("success", 'Verwijderen succesvol');
+
+            const gameRepository = new GameRepository();
+            const deleteGame     = await gameRepository.delete($(this).attr('data-id'));
+
+            new DashboardController()
         } catch (e) {
             console.log(e);
             notificationManager.alert("error", 'Er is wat misgegaan...');
+        }
+    }
+
+    async handleUpdateGameClick(e) {
+        try {
+            const gameRepository = new GameRepository();
+            const game           = await gameRepository.get($(e.target).attr('data-id'));
+            const gameMaterial   = await gameRepository.getMaterial($(e.target).attr('data-id'));
+
+            this.dashboardView.find("[name='update-id']").val(game.gameID);
+            this.dashboardView.find("[name='update-name']").val(game.title);
+            this.dashboardView.find("[name='update-description']").val(game.description);
+            this.dashboardView.find("[name='update-minPlayers']").val(game.minPlayers);
+            this.dashboardView.find("[name='update-type']").val(game.type);
+            this.dashboardView.find("[name='update-grade").val(game.gradeID);
+
+            for (var index = 0; index < gameMaterial.length; index++) {
+                this.dashboardView.find("option[value='" + gameMaterial[index].materialID + "'").attr("selected", "selected");
+            }
+
+
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
+
+    async updateGame(e) {
+        try {
+            e.preventDefault();
+
+            let body = {
+                gameID:      this.dashboardView.find("[name='update-id']").val(),
+                title:       this.dashboardView.find("[name='update-name']").val(),
+                description: this.dashboardView.find("[name='update-description']").val(),
+                minPlayers:  this.dashboardView.find("[name='update-minPlayers']").val(),
+                type:        this.dashboardView.find("[name='update-type']").val(),
+                gradeID:     this.dashboardView.find("[name='update-grade").val(),
+                materials:   this.dashboardView.find("[name='update-material").val()
+            };
+
+            console.log(body);
+            await this.gameRepository.update(body);
+            notificationManager.alert("success", this.dashboardView.find("[name='update-name']").val() + " is bijgewerkt!");
+        } catch(e) {
+            console.log(e);
+            notificationManager.alert("error", 'Er is wat misgegaan...');
+
         }
     }
 

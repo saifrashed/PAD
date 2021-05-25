@@ -6,16 +6,77 @@
   <component name="ChangeListManager">
     <list default="true" id="38f4a203-a002-4575-861a-b091bb75cefc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/authbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Saif Rashed Software/TickIT/README.md" beforeDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/server/node_modules/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="159" column="84" selection-start-line="159" selection-start-column="84" selection-end-line="159" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/routes/game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="231" column="19" lean-forward="true" selection-start-line="225" selection-start-column="18" selection-end-line="231" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="138" column="161" selection-start-line="138" selection-start-column="161" selection-end-line="138" selection-end-column="161" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3885">
+              <caret line="259" column="41" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,11 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>islo</find>
-      <find>isLo</find>
-      <find>asse</find>
-      <find>voetbalplatte.jpg</find>
-      <find>gamedetail-image</find>
       <find>140</find>
       <find>.goog-te-combo</find>
       <find>clickGam</find>
@@ -58,6 +114,11 @@
       <find>far fa-user</find>
       <find>user-symbo</find>
       <find>gameDeta</find>
+      <find>seri</find>
+      <find>delete</find>
+      <find>post</find>
+      <find>dashboard</find>
+      <find>updateBo</find>
     </findStrings>
     <replaceStrings>
       <replace>./assets/img/</replace>
@@ -70,8 +131,107 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/views/authbox.html" />
+        <option value="$PROJECT_DIR$/src/assets/css/header.css" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/navbarController.js" />
+        <option value="$PROJECT_DIR$/server/routes/user.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/repositories/userRepository.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/authController.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/utils/templateManager.js" />
+        <option value="$PROJECT_DIR$/src/views/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js" />
+        <option value="$PROJECT_DIR$/server/routes/game.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
   <component name="ProjectId" id="1pJJ1039dPZzuXLKe63P7DWfDmH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -101,6 +261,18 @@
       <recent name="$PROJECT_DIR$/src/assets/img" />
       <recent name="$PROJECT_DIR$/src/assets/animations" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -141,7 +313,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -191,9 +363,12 @@
       <workItem from="1621455513167" duration="174000" />
       <workItem from="1621507744590" duration="401000" />
       <workItem from="1621509529474" duration="1235000" />
-      <workItem from="1621893577893" duration="1047000" />
+      <workItem from="1621902417175" duration="477000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="9559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -204,14 +379,34 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4993895" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1621894627214">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621894627214" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -223,5 +418,109 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/navbarController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/userRepository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/authbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/authController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-447">
+          <caret line="96" column="16" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/gamesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3885">
+          <caret line="259" column="41" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/utils/templateManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="138" column="161" selection-start-line="138" selection-start-column="161" selection-end-line="138" selection-end-column="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/repositories/gameRepository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/controllers/dashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="159" column="84" selection-start-line="159" selection-start-column="84" selection-end-line="159" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="231" column="19" lean-forward="true" selection-start-line="225" selection-start-column="18" selection-end-line="231" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

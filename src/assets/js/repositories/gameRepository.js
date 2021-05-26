@@ -11,7 +11,7 @@ class GameRepository {
         this.route = "/game"
     }
 
-    async getAll(gradeID) {
+    async getAll() {
         return await networkManager
             .doRequest(this.route, {}, "GET");
     }

@@ -27,7 +27,7 @@ router.route('/grades/').get(async (req, res) => {
  */
 router.route('/material/:id').get(async (req, res) => {
     db.handleQuery(connectionPool, {
-        query:  "SELECT material.materialID, material.description, material.amount FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
+        query:  "SELECT material.materialID, material.description, game_materials.amount FROM games INNER JOIN game_materials ON games.gameID = game_materials.gameID INNER JOIN material ON material.materialID = game_materials.materialID WHERE games.gameID = ?;",
         values: [req.params.id]
     }, (data) => {
         res.status(httpOkCode).json(data);
@@ -264,10 +264,6 @@ router.route('/create/').post(async (req, res) => {
 
 });
 
-
-/**
- INSERT INTO `games` (`gameID`, `title`, `description`, `imageUrl`, `floorplanUrl`, `minPlayers`, `type`, `gradeID`) VALUES (NULL, 'Test gamepie', 'Hele leuke bescrhijving waarom ook niet', 'asdfbsads', 'sdfbsdfbs', '5', 'sdfbsdfb', '0');
- */
 
 /**
  * Get all games

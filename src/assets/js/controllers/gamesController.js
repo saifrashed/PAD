@@ -110,7 +110,7 @@ class GamesController {
             this.gamesView.find('.games .masonry').html(games.map((value) => {
                 let isFavorite = false;
 
-                if (sessionManager.get("userID") && this.user.favorites !== undefined) {
+                if (this.user && this.user.favorites !== undefined) {
                     isFavorite = this.user.favorites.some(el => el.gameID === value.gameID);
                 }
 

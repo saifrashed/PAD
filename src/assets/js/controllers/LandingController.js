@@ -26,6 +26,10 @@ class LandingController {
         this.landingView = $(data);
         this.games     = await this.gameRepository.getAll();
 
+        let sortedGamesRating = this.games.sort(LandingController.compare);
+
+        console.log(sortedGamesRating);
+
         console.log(this.games);
 
         await this.landingView.find('.gamesSlider').html(this.games.reverse().map(SliderBrick));
@@ -100,6 +104,16 @@ class LandingController {
             console.log(e);
             notificationManager.alert("warning", 'Oeps er gaat hier iets mis, fout in de server');
         }
+    }
+
+    static compare( a, b ) {
+        if ( a.averageRating < b.averageRating ){
+            return -1;
+        }
+        if ( a.averageRating > b.averageRating ){
+            return 1;
+        }
+        return 0;
     }
 
 

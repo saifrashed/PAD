@@ -46,4 +46,13 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.slider-container {
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    padding: 35px 0px;
+    border-radius: 25px;
+}
 
+.sliderHeading {
+    text-align: center;
+    font-size: 25px;
+}

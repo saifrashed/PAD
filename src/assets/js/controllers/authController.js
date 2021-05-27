@@ -106,7 +106,7 @@ class AuthController {
             notificationManager.alert("success", "U wordt ingelogd!");
             location.reload();
         } catch (e) {
-            console.log(e)
+            console.log(e);
             notificationManager.alert("error", "Account bestaat niet");
         }
     }
@@ -299,7 +299,7 @@ class AuthController {
 
 
     async handleDashbboardClick(e) {
-        new DashboardController();
+        await new DashboardController();
         notificationManager.alert("success", 'Welkom Admin!');
     }
 

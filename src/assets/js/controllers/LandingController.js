@@ -32,7 +32,8 @@ class LandingController {
 
         console.log(this.games);
 
-        await this.landingView.find('.gamesSlider').html(this.games.reverse().map(SliderBrick));
+        await this.landingView.find('.newGamesSlider').html(this.games.reverse().map(SliderBrick));
+        await this.landingView.find('.bestGamesSlider').html(sortedGamesRating.map(SliderBrick));
 
         // set event listeners
         this.setEventListeners();

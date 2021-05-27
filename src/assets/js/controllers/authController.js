@@ -106,11 +106,8 @@ class AuthController {
             notificationManager.alert("success", "U wordt ingelogd!");
             location.reload();
         } catch (e) {
-            if (e.code === 401) {
-                notificationManager.alert("error", e.reason);
-            } else {
-                console.log(e);
-            }
+            console.log(e)
+            notificationManager.alert("error", "Account bestaat niet");
         }
     }
 

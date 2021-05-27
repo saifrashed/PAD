@@ -7,7 +7,7 @@ describe("Login", function () {
     });
 
     //Test: Validate login form
-    it("Valid login form", function() {
+    it("Valid login form", function () {
         //Find the field for the username, check if it exists.
         cy.get("input[name=login-username]").should("exist");
 
@@ -68,12 +68,12 @@ describe("Login", function () {
         //Respond with a JSON-object when requested and set the status-code tot 401.
         //Give the stub the alias: @login
         cy.route({
-            method: "POST",
-            url: "/user/login",
+            method:   "POST",
+            url:      "/user/login",
             response: {
                 reason: "ERROR"
             },
-            status: 401
+            status:   401
         }).as("login");
 
         //Find the field for the username and type the text "test".

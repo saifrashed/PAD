@@ -29,7 +29,6 @@ class LandingController {
         let sortedGamesRating = this.games.sort(LandingController.compare);
 
         console.log(sortedGamesRating);
-
         console.log(this.games);
 
         await this.landingView.find('.gamesSlider').html(this.games.reverse().map(SliderBrick));

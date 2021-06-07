@@ -7,8 +7,10 @@ const httpOkCode           = 200;
 const badRequestCode       = 400;
 const authorizationErrCode = 401;
 
-var Client = require('ftp');
+const express    = require('express');
+const fileUpload = require('express-fileupload');
 
+var Client = require('ftp');
 
 /**
  * Get all grades
@@ -16,6 +18,46 @@ var Client = require('ftp');
 router.route('/grades/').get(async (req, res) => {
     db.handleQuery(connectionPool, {
         query: "SELECT * FROM grades"
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * Get a games rule(s)
+ */
+router.route('/rules/:id').get(async (req, res) => {
+    db.handleQuery(connectionPool, {
+        query:  "SELECT game_rules.description, game_rules.gameID  FROM games INNER JOIN game_rules ON games.gameID = game_rules.gameID WHERE games.gameID = ?;",
+        values: [req.params.id]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * Sets rating
+ */
+router.route('/rules/').post(async (req, res) => {
+    const {gameID, description} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "INSERT INTO game_rules (gameID, description) VALUES (?, ?)",
+        values: [gameID, description]
+    }, (data) => {
+        res.status(httpOkCode).json(data);
+    }, (err) => res.status(badRequestCode).json({reason: err}));
+});
+
+/**
+ * Sets rating
+ */
+router.route('/rules/').delete(async (req, res) => {
+    const {gameID} = req.body;
+
+    db.handleQuery(connectionPool, {
+        query:  "DELETE FROM game_rules WHERE gameID=?",
+        values: [gameID]
     }, (data) => {
         res.status(httpOkCode).json(data);
     }, (err) => res.status(badRequestCode).json({reason: err}));
@@ -241,6 +283,30 @@ router.route('/update/').post(async (req, res) => {
 });
 
 
+router.route('/upload/').post(async (req, res) => {
+    // let sampleFile;
+    // let uploadPath;
+    //
+    // if (!req.files || Object.keys(req.files).length === 0) {
+    //     return res.status(400).send('No files were uploaded.');
+    // }
+    //
+    // // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    // sampleFile = req.files.sampleFile;
+    // uploadPath = __dirname + '/somewhere/on/your/server/' + sampleFile.name;
+    //
+    // // Use the mv() method to place the file somewhere on your server
+    // sampleFile.mv(uploadPath, function(err) {
+    //     if (err)
+    //         return res.status(500).send(err);
+    //
+    //     res.send('File uploaded!');
+    // });
+    //
+
+    console.log(__dirname);
+});
+
 router.route('/create/').post(async (req, res) => {
     const {title, description, imageUrl, floorplanUrl, minPlayers, type, gradeID, materials} = req.body;
 
@@ -261,7 +327,6 @@ router.route('/create/').post(async (req, res) => {
         res.status(httpOkCode).json(data);
 
     }, (err) => res.status(badRequestCode).json({reason: err}));
-
 });
 
 

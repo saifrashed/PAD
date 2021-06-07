@@ -313,3 +313,10 @@ const DifficulyDesc = ({moeilijkheidsgraad, beschrijving}) => `
                          ${beschrijving}
                         </div>
                         `;
+
+const RuleTableItem = ({gameID, description}) => `
+                          <tr>
+                             <td>${description}</td>
+                          </tr>
+                        `;
+

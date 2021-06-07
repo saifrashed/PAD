@@ -35,6 +35,15 @@ class GameRepository {
         return await networkManager
             .doRequest(this.route + `/create/`, body, "POST");
     }
+    /**
+     * upload a game image
+     * @returns {Promise<void>}
+     */
+    async upload() {
+        return await networkManager
+            .doRequest(this.route + `/upload/`, {}, "POST");
+    }
+
 
     /**
      * Delete a game
@@ -64,6 +73,26 @@ class GameRepository {
     async getGrades() {
         return await networkManager
             .doRequest(this.route + `/grades/`, {}, "GET");
+    }
+
+    /**
+     * Get rules of a game
+     * @param gameID
+     * @returns {Promise<unknown>}
+     */
+    async getRules(gameID) {
+        return await networkManager
+            .doRequest(this.route + `/rules/${gameID}`, {}, "GET");
+    }
+
+    async addRules(body) {
+        return await networkManager
+            .doRequest(this.route + `/rules/`, body, "POST");
+    }
+
+    async deleteRules(body) {
+        return await networkManager
+            .doRequest(this.route + `/rules/`, body, "DELETE");
     }
 
     /**

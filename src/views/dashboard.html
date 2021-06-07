@@ -15,7 +15,7 @@
         </video>
         <div class="masthead-content">
             <div class="container">
-                <h1 class="masthead-heading mb-0">Dashboard</h1>
+                <h1 class="masthead-heading mb-0" id="adminHeading">Dashboard</h1>
             </div>
         </div>
         <div class="bg-circle-5 bg-red-circle"></div>
@@ -30,6 +30,45 @@
 </div>
 
 <div class="container pt-3">
+
+    <div class="row mb-4">
+        <div class="col-xs-12 col-md-4 p-2">
+            <div class="box">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <div class="statistic"><span class="value" id="averageRating">0.0</span><span>/5</span>
+                            <div class="statistic-description"><span>Gemiddelde beoordeling</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 p-2">
+            <div class="box">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <div class="statistic"><span class="value" id="amountUsers">0.0</span>
+                            <div class="statistic-description"><span>Aantal gebruikers</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 p-2">
+            <div class="box">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <div class="statistic"><span class="value" id="amountFavorites">0.0</span>
+                            <div class="statistic-description"><span>Favorieten spellen</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row mb-5">
         <div class="col-12 mb-2">
             <div class="auth-input-wrap">
@@ -59,13 +98,15 @@
                     </div>
 
                     <div class="modal-body">
-                        <form id="create-form">
+                        <form id="create-form" method="POST" encType="multipart/form-data"
+                              action="http://localhost:3000/general/upload/">
 
-                            <!--<div class="main-image-area mb-4">-->
-                                <!--<img id="mainImageResult" src="#" alt=""-->
-                                     <!--class="img-fluid rounded shadow-sm mx-auto d-block">-->
-                                <!--<input id="uploadMainImg" type="file" class="form-control border-0">-->
-                            <!--</div>-->
+                            <div class="main-image-area mb-4">
+                                <img id="mainImageResult" src="#" alt=""
+                                     class="img-fluid rounded shadow-sm mx-auto d-block">
+                                <input id="mainImgUrl" name="mainImgUrl" type="hidden" value=""/>
+                                <input id="uploadMainImg" name="mainImg" type="file" class="form-control border-0">
+                            </div>
 
                             <div class="form-group">
                                 <label>Naam</label>
@@ -99,11 +140,13 @@
                                 </select>
                             </div>
 
-                            <!--<div class="floorplan-image-area mb-4">-->
-                                <!--<img id="floorplanImageResult" src="#" alt=""-->
-                                     <!--class="img-fluid rounded shadow-sm mx-auto d-block">-->
-                                <!--<input id="uploadFloorplanImg" type="file" class="form-control border-0">-->
-                            <!--</div>-->
+                            <div class="floorplan-image-area mb-4">
+                                <img id="floorplanImageResult" src="#" alt=""
+                                     class="img-fluid rounded shadow-sm mx-auto d-block">
+                                <input id="floorplanImgUrl" name="floorplanImgUrl" type="hidden" value=""/>
+                                <input id="uploadFloorplanImg" name="floorplanImg" type="file"
+                                       class="form-control border-0">
+                            </div>
 
 
                             <div class="auth-button-container">
@@ -165,6 +208,24 @@
                             <select multiple name="update-material" class="form-control field-materials">
                             </select>
                         </div>
+
+                        <div class="form-group ">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Regels</th>
+                                </tr>
+                                </thead>
+                                <tbody class="gameUpdateRules">
+
+                                </tbody>
+                            </table>
+
+                            <button type="button" class="btn btn-success addUpdateRules"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-danger resetRules"><i class="fas fa-trash"></i></button>
+
+                        </div>
+
 
                         <div class="auth-button-container">
                             <button class="auth-button game-update" type="submit">

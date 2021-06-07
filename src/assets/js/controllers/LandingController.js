@@ -31,6 +31,11 @@ class LandingController {
         console.log(sortedGamesRating);
         console.log(this.games);
 
+
+        if(sessionManager.get("userID")) {
+            this.landingView.find("#goToProfile").html("Ga naar profiel!")
+        }
+
         await this.landingView.find('.newGamesSlider').html(this.games.reverse().map(SliderBrick));
         await this.landingView.find('.bestGamesSlider').html(sortedGamesRating.map(SliderBrick));
 

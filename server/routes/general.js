@@ -39,7 +39,10 @@ router.route('/upload').post(async (req, res) => {
         }
     });
 
-    return res.status(httpOkCode).json("OK");
+    // return res.status(httpOkCode).json("OK");
+
+    res.redirect("https://gym-7.hbo-ict.cloud/#landing");
+
 });
 
 

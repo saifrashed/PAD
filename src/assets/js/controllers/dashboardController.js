@@ -284,12 +284,11 @@ class DashboardController {
 
             this.dashboardView.find("#mainImgUrl").val("assets/img/games/" + imageName + ".jpg");
             this.dashboardView.find("#floorplanImgUrl").val("assets/img/games/floorplan/" + imageName + ".jpg");
-            this.dashboardView.find("#create-form").submit();
-
-            console.log(body);
-
 
             const newGame = await this.gameRepository.create(body);
+
+            this.dashboardView.find("#create-form").submit();
+
 
             notificationManager.alert("success", this.dashboardView.find("[name='create-name']").val() + " is toegevoegd!");
 

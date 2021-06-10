@@ -54,3 +54,28 @@
 #upload:hover {
     cursor: pointer;
 }
+
+
+
+.ratings {
+    padding: 54px;
+}
+
+.product-rating {
+    font-size: 50px
+}
+
+.stars i {
+    font-size: 18px;
+    color: #28a745;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.stars i:hover {
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+.rating-text {
+    margin-top: 10px
+}

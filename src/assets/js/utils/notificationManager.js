@@ -27,12 +27,33 @@ class NotificationManager {
         }
     }
 
+    input(text, submitCb) {
+
+
+        notie.input({
+            text: text,
+            submitText: "Verzenden", // optional, default = 'Submit'
+            cancelText: "Annuleren", // optional, default = 'Cancel'
+            position: "bottom", // optional, default = 'top', enum: ['top', 'bottom']
+            submitCallback: submitCb,
+        })
+    }
 
     select(title, choices) {
         notie.select({
             text:       title,
             cancelText: 'Sluit',
             choices:    choices
+        })
+    }
+
+    confirm(message, submitCallback) {
+        notie.confirm({
+            text: message,
+            submitText: "Ja", // optional, default = 'Yes'
+            cancelText: "Nee", // optional, default = 'Cancel'
+            position: "bottom", // optional, default = 'top', enum: ['top', 'bottom']
+            submitCallback: submitCallback, // optional
         })
     }
 }

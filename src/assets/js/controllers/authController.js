@@ -22,8 +22,8 @@ class AuthController {
 
         const isAdmin = await this.userRepository.isAdmin(sessionManager.get("userID"));
 
-        if(sessionManager.get("userID")) {
-            if(isAdmin[0].isAdmin) {
+        if (sessionManager.get("userID")) {
+            if (isAdmin[0].isAdmin) {
                 this.authBox.find(".admin-symbol a").on("click", (e) => this.handleDashbboardClick(e));
             } else {
                 this.authBox.find(".admin-symbol").remove();
@@ -150,11 +150,7 @@ class AuthController {
             sessionManager.set("userID", user.userID);
             location.reload();
         } catch (e) {
-            if (e.code === 401) {
-                notificationManager.alert("error", e.reason);
-            } else {
-                console.log(e);
-            }
+            (e.code === 401) ? notificationManager.alert("error", e.reason) : console.log(e);
         }
     }
 
@@ -229,12 +225,12 @@ class AuthController {
     async handleRenderLessonDetail(e) {
         try {
 
-            const lessonGames = await this.gameRepository.getLessonGames($(e.target).closest(".brick").attr("data-id"));
+            const lessonGames    = await this.gameRepository.getLessonGames($(e.target).closest(".brick").attr("data-id"));
             const selectedLesson = await this.gameRepository.getLesson($(e.target).closest(".brick").attr("data-id"));
 
             this.authBox.find(".lesson-screen-title").html(selectedLesson[0].title);
 
-            if(lessonGames.length > 0) {
+            if (lessonGames.length > 0) {
                 this.authBox.find(".lessons").html(LessonsDetailLayout({
                     lessonID:        $(e.target).closest(".brick").attr("data-id"),
                     title:           selectedLesson[0].title,
@@ -287,7 +283,7 @@ class AuthController {
 
             const deletedLesson = await this.gameRepository.deleteLesson({
                 lessonID: $(e.target).attr("data-id"),
-                userID: sessionManager.get("userID")
+                userID:   sessionManager.get("userID")
             });
 
             this.handleRenderLessons();
